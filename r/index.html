@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbell Buddy - Routine Preview</title>
+    <style>
+        :root {
+            --primary: #D4AF37;
+            --primary-variant: #A6882B;
+            --bg: #000000;
+            --surface: #1E1E1E;
+            --surface-card: #262626;
+            --text: #ECECEC;
+            --text-secondary: #A0A0A0;
+            --border: #333333;
+            --warmup: #FFB74D;
+            --dropset: #BA68C8;
+            --failure: #E57373;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 32px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7);
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+        }
+        h1 {
+            color: #FFFFFF;
+            font-size: 1.8rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .app-tag {
+            background-color: var(--primary);
+            color: #000000;
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .lang-select {
+            background-color: #121212;
+            color: var(--text);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+        }
+        .routine-header {
+            margin-bottom: 24px;
+        }
+        .routine-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin: 0 0 10px 0;
+        }
+        .routine-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .meta-pill {
+            background: #121212;
+            border: 1px solid var(--border);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .meta-pill.highlight {
+            border-color: var(--primary);
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .action-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 28px 0;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.15s ease, opacity 0.15s ease;
+            border: none;
+            text-align: center;
+        }
+        .btn:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: #000000;
+            flex: 1 1 240px;
+        }
+        .btn-secondary {
+            background: #141414;
+            color: var(--text);
+            border: 1px solid var(--border);
+            flex: 1 1 200px;
+        }
+        .btn-secondary:hover {
+            border-color: var(--primary);
+        }
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        .exercises-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .exercise-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px 20px;
+        }
+        .exercise-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .exercise-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0;
+        }
+        .rest-badge {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            background: #181818;
+            padding: 2px 8px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+        .sets-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+        .sets-table th {
+            text-align: left;
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            padding-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .sets-table td {
+            padding: 6px 0;
+            border-top: 1px solid #333333;
+        }
+        .badge-type {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-inline-start: 8px;
+        }
+        .badge-warmup {
+            background: rgba(255, 183, 77, 0.2);
+            color: var(--warmup);
+        }
+        .badge-dropset {
+            background: rgba(186, 104, 200, 0.2);
+            color: var(--dropset);
+        }
+        .badge-failure {
+            background: rgba(229, 115, 115, 0.2);
+            color: var(--failure);
+        }
+        .info-card {
+            background: rgba(212, 175, 55, 0.08);
+            border-inline-start: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .error-card {
+            background: rgba(207, 102, 121, 0.12);
+            border-inline-start: 4px solid #CF6679;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 18px;
+            }
+            .routine-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <h1>Barbell Buddy <span class="app-tag" id="t-badge">Routine</span></h1>
+            <select id="lang-switcher" class="lang-select" aria-label="Language">
+                <option value="en">🇬🇧 English</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="it">🇮🇹 Italiano</option>
+                <option value="pt">🇵🇹 Português</option>
+                <option value="nl">🇳🇱 Nederlands</option>
+                <option value="pl">🇵🇱 Polski</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="uk">🇺🇦 Українська</option>
+                <option value="tr">🇹🇷 Türkçe</option>
+                <option value="ar">🇸🇦 العربية</option>
+                <option value="hi">🇮🇳 हिन्दी</option>
+                <option value="bn">🇧🇩 বাংলা</option>
+                <option value="id">🇮🇩 Bahasa Indonesia</option>
+                <option value="vi">🇻🇳 Tiếng Việt</option>
+                <option value="th">🇹🇭 ไทย</option>
+                <option value="ja">🇯🇵 日本語</option>
+                <option value="ko">🇰🇷 한국어</option>
+                <option value="zh">🇨🇳 中文</option>
+            </select>
+        </div>
+
+        <div id="loading-state">
+            <p>Loading routine...</p>
+        </div>
+
+        <div id="error-state" style="display: none;">
+            <div class="error-card">
+                <h3 id="t-error-title" style="margin-top:0; color:#FF8A80;"></h3>
+                <p id="t-error-desc" style="margin-bottom:0;"></p>
+            </div>
+            <div class="action-group">
+                <a id="btn-playstore-error" href="https://play.google.com/store/apps/details?id=com.xavisprojects.barbellbible&utm_source=share_routine" class="btn btn-primary">
+                    <span id="t-store-btn-err">Get Barbell Buddy on Google Play</span>
+                </a>
+            </div>
+        </div>
+
+        <div id="content-state" style="display: none;">
+            <div class="routine-header">
+                <h2 id="routine-name" class="routine-title"></h2>
+                <div class="routine-meta">
+                    <span id="meta-day" class="meta-pill highlight" style="display: none;"></span>
+                    <span id="meta-exercises-count" class="meta-pill"></span>
+                    <span id="meta-sets-count" class="meta-pill"></span>
+                </div>
+            </div>
+
+            <div class="action-group">
+                <a id="btn-import-intent" href="#" class="btn btn-primary">
+                    <span id="t-import-btn">Import into Barbell Buddy</span>
+                </a>
+                <a id="btn-playstore" href="https://play.google.com/store/apps/details?id=com.xavisprojects.barbellbible&utm_source=share_routine" class="btn btn-secondary">
+                    <span id="t-store-btn">Google Play</span>
+                </a>
+            </div>
+
+            <h3 id="t-exercises-heading" class="section-title">Exercises</h3>
+            <div id="exercises-container" class="exercises-list"></div>
+        </div>
+
+        <footer>
+            &copy; 2026 Barbell Buddy · <a href="../" style="color: var(--primary); text-decoration: none;">Privacy Policy</a>
+        </footer>
+    </div>
+
+    <script>
+        const i18n = {
+            en: {
+                badge: "Routine",
+                import_btn: "Import into Barbell Buddy",
+                store_btn: "Get Barbell Buddy on Google Play",
+                exercises_heading: "Exercises",
+                sets: "Sets",
+                reps: "reps",
+                rest: "Rest",
+                sec: "s",
+                warmup: "Warmup",
+                dropset: "Drop Set",
+                failure: "Failure",
+                empty_title: "No routine data found",
+                empty_desc: "This link does not contain routine data. You can download Barbell Buddy to create and track your routines.",
+                error_title: "Unable to load routine",
+                error_desc: "The routine link appears to be invalid or corrupted."
+            },
+            es: {
+                badge: "Rutina",
+                import_btn: "Importar en Barbell Buddy",
+                store_btn: "Descargar Barbell Buddy en Google Play",
+                exercises_heading: "Ejercicios",
+                sets: "Series",
+                reps: "reps",
+                rest: "Descanso",
+                sec: "s",
+                warmup: "Calentamiento",
+                dropset: "Drop Set",
+                failure: "Fallo",
+                empty_title: "No se encontraron datos de la rutina",
+                empty_desc: "Este enlace no contiene información de rutina. Descarga Barbell Buddy para crear y seguir tus entrenamientos.",
+                error_title: "No se pudo cargar la rutina",
+                error_desc: "El enlace de la rutina no es válido o está dañado."
+            },
+            de: {
+                badge: "Trainingsplan",
+                import_btn: "In Barbell Buddy importieren",
+                store_btn: "Barbell Buddy bei Google Play holen",
+                exercises_heading: "Übungen",
+                sets: "Sätze",
+                reps: "Wdh.",
+                rest: "Pause",
+                sec: "s",
+                warmup: "Aufwärmsatz",
+                dropset: "Drop Set",
+                failure: "Muskelversagen",
+                empty_title: "Keine Daten gefunden",
+                empty_desc: "Dieser Link enthält keine Trainingsdaten.",
+                error_title: "Fehler beim Laden",
+                error_desc: "Der Trainingsplan-Link ist ungültig oder beschädigt."
+            },
+            fr: {
+                badge: "Routine",
+                import_btn: "Importer dans Barbell Buddy",
+                store_btn: "Obtenir Barbell Buddy sur Google Play",
+                exercises_heading: "Exercices",
+                sets: "Séries",
+                reps: "reps",
+                rest: "Repos",
+                sec: "s",
+                warmup: "Échauffement",
+                dropset: "Drop Set",
+                failure: "Échec",
+                empty_title: "Aucune routine trouvée",
+                empty_desc: "Ce lien ne contient pas de données de routine.",
+                error_title: "Impossible de charger la routine",
+                error_desc: "Le lien de la routine est invalide ou corrompu."
+            },
+            it: {
+                badge: "Scheda",
+                import_btn: "Importa in Barbell Buddy",
+                store_btn: "Scarica Barbell Buddy su Google Play",
+                exercises_heading: "Esercizi",
+                sets: "Serie",
+                reps: "rip.",
+                rest: "Recupero",
+                sec: "s",
+                warmup: "Riscaldamento",
+                dropset: "Drop Set",
+                failure: "Cedimento",
+                empty_title: "Nessun dato trovato",
+                empty_desc: "Questo link non contiene dati di scheda.",
+                error_title: "Impossibile caricare la scheda",
+                error_desc: "Il link della scheda non è valido o è danneggiato."
+            },
+            pt: {
+                badge: "Treino",
+                import_btn: "Importar no Barbell Buddy",
+                store_btn: "Baixar Barbell Buddy no Google Play",
+                exercises_heading: "Exercícios",
+                sets: "Séries",
+                reps: "reps",
+                rest: "Descanso",
+                sec: "s",
+                warmup: "Aquecimento",
+                dropset: "Drop Set",
+                failure: "Falha",
+                empty_title: "Nenhum dado encontrado",
+                empty_desc: "Este link não contém dados de rotina.",
+                error_title: "Não foi possível carregar o treino",
+                error_desc: "O link do treino é inválido ou está corrompido."
+            },
+            nl: {
+                badge: "Schema",
+                import_btn: "Importeren in Barbell Buddy",
+                store_btn: "Download Barbell Buddy op Google Play",
+                exercises_heading: "Oefeningen",
+                sets: "Sets",
+                reps: "reps",
+                rest: "Rust",
+                sec: "s",
+                warmup: "Warming-up",
+                dropset: "Drop Set",
+                failure: "Falen",
+                empty_title: "Geen schema gevonden",
+                empty_desc: "Deze link bevat geen schemagegevens.",
+                error_title: "Kan schema niet laden",
+                error_desc: "De link is ongeldig of beschadigd."
+            },
+            pl: {
+                badge: "Plan treningowy",
+                import_btn: "Importuj do Barbell Buddy",
+                store_btn: "Pobierz Barbell Buddy z Google Play",
+                exercises_heading: "Ćwiczenia",
+                sets: "Serie",
+                reps: "powt.",
+                rest: "Przerwa",
+                sec: "s",
+                warmup: "Rozgrzewka",
+                dropset: "Drop Set",
+                failure: "Do załamania",
+                empty_title: "Nie znaleziono planu",
+                empty_desc: "Ten link nie zawiera danych planu.",
+                error_title: "Błąd wczytywania",
+                error_desc: "Link do planu jest nieprawidłowy lub uszkodzony."
+            },
+            ru: {
+                badge: "Программа",
+                import_btn: "Импортировать в Barbell Buddy",
+                store_btn: "Скачать Barbell Buddy в Google Play",
+                exercises_heading: "Упражнения",
+                sets: "Подходы",
+                reps: "повт.",
+                rest: "Отдых",
+                sec: "с",
+                warmup: "Разминка",
+                dropset: "Дроп-сет",
+                failure: "Отказ",
+                empty_title: "Данные не найдены",
+                empty_desc: "Эта ссылка не содержит данных программы.",
+                error_title: "Не удалось загрузить программу",
+                error_desc: "Ссылка недействительна или повреждена."
+            },
+            uk: {
+                badge: "Програма",
+                import_btn: "Імпортувати в Barbell Buddy",
+                store_btn: "Завантажити Barbell Buddy в Google Play",
+                exercises_heading: "Вправи",
+                sets: "Підходи",
+                reps: "повт.",
+                rest: "Відпочинок",
+                sec: "с",
+                warmup: "Розминка",
+                dropset: "Дроп-сет",
+                failure: "До відмови",
+                empty_title: "Дані не знайдено",
+                empty_desc: "Це посилання не містить даних програми.",
+                error_title: "Помилка завантаження",
+                error_desc: "Посилання недійсне або пошкоджене."
+            },
+            tr: {
+                badge: "Program",
+                import_btn: "Barbell Buddy'ye Aktar",
+                store_btn: "Barbell Buddy'yi Google Play'den İndirin",
+                exercises_heading: "Egzersizler",
+                sets: "Set",
+                reps: "tekrar",
+                rest: "Dinlenme",
+                sec: "sn",
+                warmup: "Isınma",
+                dropset: "Drop Set",
+                failure: "Tükeniş",
+                empty_title: "Program bulunamadı",
+                empty_desc: "Bu bağlantı program verisi içermiyor.",
+                error_title: "Yüklenemedi",
+                error_desc: "Program bağlantısı geçersiz veya bozuk."
+            },
+            ar: {
+                badge: "الجدول التدريبي",
+                import_btn: "استيراد إلى Barbell Buddy",
+                store_btn: "تحميل Barbell Buddy من Google Play",
+                exercises_heading: "التمارين",
+                sets: "الجولات",
+                reps: "تكرار",
+                rest: "الراحة",
+                sec: "ث",
+                warmup: "إحماء",
+                dropset: "دروب سيت",
+                failure: "فشل عضلي",
+                empty_title: "لم يتم العثور على جدول",
+                empty_desc: "هذا الرابط لا يحتوي على بيانات تدريبية.",
+                error_title: "تعذر تحميل الجدول",
+                error_desc: "الرابط غير صالح أو تالف."
+            },
+            hi: {
+                badge: "रूटीन",
+                import_btn: "Barbell Buddy में आयात करें",
+                store_btn: "Google Play से Barbell Buddy डाउनलोड करें",
+                exercises_heading: "व्यायाम",
+                sets: "सेट्स",
+                reps: "रेप्स",
+                rest: "विश्राम",
+                sec: "से",
+                warmup: "वार्मअप",
+                dropset: "ड्रॉप सेट",
+                failure: "फेलियर",
+                empty_title: "कोई रूटीन डेटा नहीं मिला",
+                empty_desc: "इस लिंक में कोई रूटीन डेटा नहीं है।",
+                error_title: "रूटीन लोड करने में असमर्थ",
+                error_desc: "लिंक अमान्य या दूषित है।"
+            },
+            bn: {
+                badge: "রুটিন",
+                import_btn: "Barbell Buddy-তে ইমপোর্ট করুন",
+                store_btn: "Google Play থেকে Barbell Buddy পান",
+                exercises_heading: "ব্যায়াম",
+                sets: "সেট",
+                reps: "রেপস",
+                rest: "বিশ্রাম",
+                sec: "সেকেন্ড",
+                warmup: "ওয়ার্মআপ",
+                dropset: "ড্রপ সেট",
+                failure: "ব্যর্থতা",
+                empty_title: "রুটিন পাওয়া যায়নি",
+                empty_desc: "এই লিঙ্কে কোনো রুটিন তথ্য নেই।",
+                error_title: "রুটিন লোড করা যায়নি",
+                error_desc: "লিঙ্কটি অবৈধ বা ক্ষতিগ্রস্ত।"
+            },
+            id: {
+                badge: "Rutinitas",
+                import_btn: "Impor ke Barbell Buddy",
+                store_btn: "Dapatkan Barbell Buddy di Google Play",
+                exercises_heading: "Latihan",
+                sets: "Set",
+                reps: "rep",
+                rest: "Istirahat",
+                sec: "dtk",
+                warmup: "Pemanasan",
+                dropset: "Drop Set",
+                failure: "Kegagalan",
+                empty_title: "Data tidak ditemukan",
+                empty_desc: "Tautan ini tidak berisi data rutinitas.",
+                error_title: "Gagal memuat rutinitas",
+                error_desc: "Tautan tidak valid atau rusak."
+            },
+            vi: {
+                badge: "Lịch tập",
+                import_btn: "Nhập vào Barbell Buddy",
+                store_btn: "Tải Barbell Buddy trên Google Play",
+                exercises_heading: "Bài tập",
+                sets: "Hiệp",
+                reps: "lần",
+                rest: "Nghỉ",
+                sec: "giây",
+                warmup: "Khởi động",
+                dropset: "Drop Set",
+                failure: "Đến ngưỡng",
+                empty_title: "Không tìm thấy dữ liệu",
+                empty_desc: "Liên kết này không chứa lịch tập.",
+                error_title: "Không thể tải lịch tập",
+                error_desc: "Liên kết không hợp lệ hoặc đã hỏng."
+            },
+            th: {
+                badge: "ตารางซ้อม",
+                import_btn: "นำเข้าสู่ Barbell Buddy",
+                store_btn: "ดาวน์โหลด Barbell Buddy บน Google Play",
+                exercises_heading: "ท่าฝึก",
+                sets: "เซ็ต",
+                reps: "ครั้ง",
+                rest: "พัก",
+                sec: "วินาที",
+                warmup: "วอร์มอัพ",
+                dropset: "ดรอปเซ็ต",
+                failure: "จนหมดแรง",
+                empty_title: "ไม่พบข้อมูล",
+                empty_desc: "ลิงก์นี้ไม่มีข้อมูลตารางซ้อม",
+                error_title: "ไม่สามารถโหลดตารางซ้อมได้",
+                error_desc: "ลิงก์ไม่ถูกต้องหรือเสียหาย"
+            },
+            ja: {
+                badge: "ルーティン",
+                import_btn: "Barbell Buddy にインポート",
+                store_btn: "Google Play で入手",
+                exercises_heading: "種目",
+                sets: "セット",
+                reps: "回",
+                rest: "インターバル",
+                sec: "秒",
+                warmup: "ウォームアップ",
+                dropset: "ドロップセット",
+                failure: "限界まで",
+                empty_title: "データが見つかりません",
+                empty_desc: "このリンクにはルーティン情報が含まれていません。",
+                error_title: "読み込みエラー",
+                error_desc: "リンクが無効か破損しています。"
+            },
+            ko: {
+                badge: "루틴",
+                import_btn: "Barbell Buddy 로 가져오기",
+                store_btn: "Google Play 에서 다운로드",
+                exercises_heading: "운동 종목",
+                sets: "세트",
+                reps: "회",
+                rest: "휴식",
+                sec: "초",
+                warmup: "웜업",
+                dropset: "드롭세트",
+                failure: "실패지점",
+                empty_title: "루틴 정보를 찾을 수 없습니다",
+                empty_desc: "이 링크에는 루틴 데이터가 포함되어 있지 않습니다.",
+                error_title: "루틴 불러오기 실패",
+                error_desc: "링크가 올바르지 않거나 손상되었습니다."
+            },
+            zh: {
+                badge: "训练计划",
+                import_btn: "导入至 Barbell Buddy",
+                store_btn: "在 Google Play 下载",
+                exercises_heading: "训练动作",
+                sets: "组",
+                reps: "次",
+                rest: "组间休息",
+                sec: "秒",
+                warmup: "热身组",
+                dropset: "递减组",
+                failure: "力竭组",
+                empty_title: "未找到训练计划数据",
+                empty_desc: "此链接不包含有效的训练计划数据。",
+                error_title: "加载失败",
+                error_desc: "该训练计划链接无效或已损坏。"
+            }
+        };
+
+        let currentRoutine = null;
+        let currentHash = "";
+
+        function resolveInitialLang() {
+            const params = new URLSearchParams(window.location.search);
+            const queryLang = (params.get("lang") || "").toLowerCase().split("-")[0];
+            if (queryLang === "in") return "id";
+            if (i18n[queryLang]) return queryLang;
+
+            const browserLangs = navigator.languages || [navigator.language || "en"];
+            for (const raw of browserLangs) {
+                const code = (raw || "").toLowerCase().split("-")[0];
+                const normalized = code === "in" ? "id" : code;
+                if (i18n[normalized]) return normalized;
+            }
+            return "en";
+        }
+
+        function base64UrlToBytes(base64Url) {
+            let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            while (base64.length % 4 !== 0) {
+                base64 += '=';
+            }
+            const binary = atob(base64);
+            const bytes = new Uint8Array(binary.length);
+            for (let i = 0; i < binary.length; i++) {
+                bytes[i] = binary.charCodeAt(i);
+            }
+            return bytes;
+        }
+
+        async function decompressGzip(bytes) {
+            if (typeof DecompressionStream === 'undefined') {
+                throw new Error("DecompressionStream is not supported by your browser");
+            }
+            const ds = new DecompressionStream('gzip');
+            const writer = ds.writable.getWriter();
+            writer.write(bytes);
+            writer.close();
+            const res = new Response(ds.readable);
+            const buffer = await res.arrayBuffer();
+            return new TextDecoder().decode(buffer);
+        }
+
+        function renderLang(lang) {
+            const data = i18n[lang] || i18n.en;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+            document.title = currentRoutine ? `${currentRoutine.n} - Barbell Buddy` : `Barbell Buddy - ${data.badge}`;
+
+            document.getElementById("t-badge").textContent = data.badge;
+            document.getElementById("t-import-btn").textContent = data.import_btn;
+            document.getElementById("t-store-btn").textContent = data.store_btn;
+            document.getElementById("t-store-btn-err").textContent = data.store_btn;
+            document.getElementById("t-exercises-heading").textContent = data.exercises_heading;
+            document.getElementById("lang-switcher").value = lang;
+
+            if (currentRoutine) {
+                renderRoutineDetails(currentRoutine, data);
+            }
+        }
+
+        function renderRoutineDetails(routine, data) {
+            document.getElementById("routine-name").textContent = routine.n || "Routine";
+
+            const metaDay = document.getElementById("meta-day");
+            if (routine.d) {
+                metaDay.textContent = routine.d;
+                metaDay.style.display = "inline-block";
+            } else {
+                metaDay.style.display = "none";
+            }
+
+            const exCount = routine.e ? routine.e.length : 0;
+            let totalSets = 0;
+            if (routine.e) {
+                routine.e.forEach(ex => {
+                    totalSets += (ex.s ? ex.s.length : 0);
+                });
+            }
+
+            document.getElementById("meta-exercises-count").textContent = `${exCount} ${data.exercises_heading}`;
+            document.getElementById("meta-sets-count").textContent = `${totalSets} ${data.sets}`;
+
+            // Build exercises container
+            const container = document.getElementById("exercises-container");
+            container.innerHTML = "";
+
+            if (!routine.e || routine.e.length === 0) {
+                return;
+            }
+
+            routine.e.forEach((ex, idx) => {
+                const card = document.createElement("div");
+                card.className = "exercise-card";
+
+                const head = document.createElement("div");
+                head.className = "exercise-head";
+
+                const name = document.createElement("h4");
+                name.className = "exercise-name";
+                name.textContent = `${idx + 1}. ${ex.n}`;
+
+                const rest = document.createElement("span");
+                rest.className = "rest-badge";
+                rest.textContent = `⏱️ ${ex.r || 60}${data.sec} ${data.rest.toLowerCase()}`;
+
+                head.appendChild(name);
+                head.appendChild(rest);
+                card.appendChild(head);
+
+                if (ex.s && ex.s.length > 0) {
+                    const table = document.createElement("table");
+                    table.className = "sets-table";
+                    table.innerHTML = `
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">${data.sets}</th>
+                                <th style="width: 45%;">${data.reps}</th>
+                                <th style="width: 30%; text-align: right;">Weight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${ex.s.map((set, sIdx) => {
+                                let typeBadge = "";
+                                if (set.t === "WARMUP") typeBadge = `<span class="badge-type badge-warmup">${data.warmup}</span>`;
+                                else if (set.t === "DROPSET") typeBadge = `<span class="badge-type badge-dropset">${data.dropset}</span>`;
+                                else if (set.t === "FAILURE") typeBadge = `<span class="badge-type badge-failure">${data.failure}</span>`;
+
+                                const weightText = set.w > 0 ? `${set.w} kg` : "BW";
+                                return `
+                                    <tr>
+                                        <td>#${sIdx + 1} ${typeBadge}</td>
+                                        <td>${set.r} ${data.reps}</td>
+                                        <td style="text-align: right; font-weight: bold; color: var(--primary);">${weightText}</td>
+                                    </tr>
+                                `;
+                            }).join("")}
+                        </tbody>
+                    `;
+                    card.appendChild(table);
+                }
+
+                container.appendChild(card);
+            });
+        }
+
+        async function loadRoutineFromHash() {
+            const rawHash = (window.location.hash || "").replace(/^#/, "").trim();
+            currentHash = rawHash;
+
+            const loadingEl = document.getElementById("loading-state");
+            const errorEl = document.getElementById("error-state");
+            const contentEl = document.getElementById("content-state");
+
+            if (!rawHash) {
+                loadingEl.style.display = "none";
+                errorEl.style.display = "block";
+                contentEl.style.display = "none";
+                const lang = resolveInitialLang();
+                const data = i18n[lang] || i18n.en;
+                document.getElementById("t-error-title").textContent = data.empty_title;
+                document.getElementById("t-error-desc").textContent = data.empty_desc;
+                return;
+            }
+
+            try {
+                const compressedBytes = base64UrlToBytes(rawHash);
+                const jsonText = await decompressGzip(compressedBytes);
+                currentRoutine = JSON.parse(jsonText);
+
+                // Configure Intent button URI
+                const intentUrl = `intent://import_routine?data=${encodeURIComponent(rawHash)}#Intent;scheme=barbellbuddy;package=com.xavisprojects.barbellbible;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.xavisprojects.barbellbible%26utm_source%3Dshare_routine;end`;
+                document.getElementById("btn-import-intent").href = intentUrl;
+
+                loadingEl.style.display = "none";
+                errorEl.style.display = "none";
+                contentEl.style.display = "block";
+
+                renderLang(resolveInitialLang());
+            } catch (err) {
+                console.error("Failed to decode routine payload:", err);
+                loadingEl.style.display = "none";
+                errorEl.style.display = "block";
+                contentEl.style.display = "none";
+                const lang = resolveInitialLang();
+                const data = i18n[lang] || i18n.en;
+                document.getElementById("t-error-title").textContent = data.error_title;
+                document.getElementById("t-error-desc").textContent = data.error_desc;
+            }
+        }
+
+        const switcher = document.getElementById("lang-switcher");
+        switcher.addEventListener("change", (e) => {
+            const newLang = e.target.value;
+            renderLang(newLang);
+            const url = new URL(window.location);
+            url.searchParams.set("lang", newLang);
+            window.history.replaceState({}, "", url);
+        });
+
+        window.addEventListener("hashchange", loadRoutineFromHash);
+
+        loadRoutineFromHash();
+    </script>
+</body>
+</html>
