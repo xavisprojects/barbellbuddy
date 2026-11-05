@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbell Buddy - Terms of Service</title>
+    <style>
+        :root {
+            --primary: #D4AF37;
+            --primary-variant: #A6882B;
+            --bg: #000000;
+            --surface: #1E1E1E;
+            --text: #ECECEC;
+            --text-secondary: #A0A0A0;
+            --border: #333333;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 36px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7);
+        }
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 14px;
+            flex-wrap: wrap;
+        }
+        .nav-tab {
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            background: #121212;
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .nav-tab.active {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .nav-tab:hover {
+            text-decoration: none;
+            border-color: var(--primary);
+            color: #FFFFFF;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+        h1 {
+            color: #FFFFFF;
+            font-size: 1.9rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .app-tag {
+            background-color: var(--primary);
+            color: #000000;
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .lang-select {
+            background-color: #121212;
+            color: var(--text);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+        }
+        .date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            font-size: 1.25rem;
+        }
+        p, li {
+            color: var(--text);
+            font-size: 1rem;
+        }
+        ul {
+            padding-inline-start: 22px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-inline-start: 4px solid var(--primary);
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        code {
+            background: #111111;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--primary);
+            font-size: 0.92em;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 22px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-tabs">
+            <a href="index.html" id="nav-privacy" class="nav-tab">Privacy Policy</a>
+            <a href="terms.html" id="nav-terms" class="nav-tab active">Terms of Service</a>
+        </div>
+        <div class="top-bar">
+            <h1>Barbell Buddy <span class="app-tag" id="t-badge">Terms of Service</span></h1>
+            <select id="lang-switcher" class="lang-select" aria-label="Language">
+                <option value="en">🇬🇧 English</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="it">🇮🇹 Italiano</option>
+                <option value="pt">🇵🇹 Português</option>
+                <option value="nl">🇳🇱 Nederlands</option>
+                <option value="pl">🇵🇱 Polski</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="uk">🇺🇦 Українська</option>
+                <option value="tr">🇹🇷 Türkçe</option>
+                <option value="ar">🇸🇦 العربية</option>
+                <option value="hi">🇮🇳 हिन्दी</option>
+                <option value="bn">🇧🇩 বাংলা</option>
+                <option value="id">🇮🇩 Bahasa Indonesia</option>
+                <option value="vi">🇻🇳 Tiếng Việt</option>
+                <option value="th">🇹🇭 ไทย</option>
+                <option value="ja">🇯🇵 日本語</option>
+                <option value="ko">🇰🇷 한국어</option>
+                <option value="zh">🇨🇳 中文</option>
+            </select>
+        </div>
+
+        <div class="date" id="t-date"></div>
+        <p id="t-intro"></p>
+        <div class="highlight-box" id="t-summary"></div>
+
+        <h2 id="t-h1"></h2>
+        <ul id="t-list1"></ul>
+
+        <h2 id="t-h2"></h2>
+        <ul id="t-list2"></ul>
+
+        <h2 id="t-h3"></h2>
+        <p id="t-p3"></p>
+
+        <h2 id="t-h4"></h2>
+        <p id="t-p4"></p>
+
+        <h2 id="t-h5"></h2>
+        <p id="t-p5"></p>
+
+        <h2 id="t-h6"></h2>
+        <p><strong>Email:</strong> <a
+                href="mailto:xavisprojects@gmail.com">xavisprojects@gmail.com</a><br>
+            <strong>Package ID:</strong> <code>com.xavisprojects.barbellbible</code></p>
+
+        <footer>
+            &copy; 2026 Barbell Buddy. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        const privacyLabels = {
+            en: "Privacy Policy",
+            es: "Privacidad",
+            de: "Datenschutz",
+            fr: "Confidentialité",
+            it: "Privacy",
+            pt: "Privacidade",
+            nl: "Privacybeleid",
+            pl: "Prywatność",
+            ru: "Конфиденциальность",
+            uk: "Конфіденційність",
+            tr: "Gizlilik Politikası",
+            ar: "سياسة الخصوصية",
+            hi: "गोपनीयता नीति",
+            bn: "গোপনীয়তা নীতি",
+            id: "Kebijakan Privasi",
+            vi: "Chính sách Bảo mật",
+            th: "นโยบายความเป็นส่วนตัว",
+            ja: "プライバシーポリシー",
+            ko: "개인정보 처리방침",
+            zh: "隐私政策"
+        };
+
+        const i18n = {
+            en: {
+                badge: "Terms of Service",
+                date: "Last updated: November 2026",
+                intro: "Welcome to <strong>Barbell Buddy: Gym Tracker</strong> (package ID <code>com.xavisprojects.barbellbible</code>). By downloading or using our Android and Wear OS application, you agree to these Terms of Service.",
+                summary: "<strong>Key Summary:</strong> Your workout tracker, routines, and history are always accessible. Subscriptions and One-Time PRO Licenses are processed exclusively through <strong>Google Play Billing</strong>.",
+                h1: "1. Subscriptions & Free Trials",
+                list1: [
+                    "<strong>Auto-Renewing Subscriptions (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Subscriptions automatically renew at the end of each billing cycle unless canceled at least 24 hours before the renewal date in <em>Google Play Store &gt; Payments &amp; subscriptions</em>.",
+                    "<strong>7-Day Google Play Free Trial:</strong> Eligible new subscribers on the Annual Plan receive a 7-day free trial. If not canceled before the trial ends, the subscription converts into a paid annual plan.",
+                    "<strong>14-Day Local Welcome Trial (No Card Required):</strong> New installations may enjoy 14 days of local PRO access with zero automatic charges."
+                ],
+                h2: "2. Lifetime PRO License Scope & Cloud AI Exclusion",
+                list2: [
+                    "<strong>On-Device PRO Features Included (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> A one-time Lifetime purchase grants a non-exclusive, non-transferable license to all <strong>on-device local</strong> Barbell Buddy PRO features (<code>Buddy Coach</code> progression engine, plateau detector, 7/28-day volume analytics, and Wear OS Buddy Coach) for the active commercial lifetime of the <code>v3.x</code> app series on Google Play.",
+                    "<strong>Exclusion of Cloud AI &amp; Pay-Per-Use Server Services:</strong> The one-time Lifetime license covers features executed locally on your device. It <strong>expressly excludes</strong> optional future features that require external cloud servers, third-party generative Artificial Intelligence (AI) APIs, or recurring per-request/token server costs, which may be offered separately as optional add-ons or subscriptions without affecting your existing local PRO tools.",
+                    "<strong>Fair Use &amp; Device Binding:</strong> Your license is tied to your Google Play account and may be restored on your personal Android and Wear OS devices via Google Play."
+                ],
+                h3: "3. Refunds & Cancellations",
+                p3: "All financial transactions are processed directly by Google Play. Refund requests are subject to Google Play's official Refund Policies and statutory consumer laws in your jurisdiction (such as EEA/UK withdrawal rights for digital content). Deleting the app does not automatically cancel an active subscription.",
+                h4: "4. Medical & Fitness Disclaimer",
+                p4: "Barbell Buddy and the Buddy Coach progression engine provide algorithmic weight, rep, RIR, and 1RM suggestions for <strong>informational and educational purposes only</strong>. They do not constitute medical advice or professional personal training. Always consult a physician before starting a strength program and lift within your safe physical limits.",
+                h5: "5. Service Availability & Liability",
+                p5: "The app is provided 'as is'. Because workout records are stored locally on your device, you are responsible for keeping regular backups (via JSON/CSV export or Google Drive backup). To the maximum extent permitted by law, the developer shall not be liable for indirect damages, data loss, or physical injury.",
+                h6: "6. Trader Contact & Support"
+            },
+            es: {
+                badge: "Términos del Servicio",
+                date: "Última actualización: Noviembre de 2026",
+                intro: "Bienvenido a <strong>Barbell Buddy: Gym Tracker</strong> (identificador de paquete <code>com.xavisprojects.barbellbible</code>). Al descargar o utilizar nuestra aplicación para Android y Wear OS, aceptas los presentes Términos del Servicio.",
+                summary: "<strong>Resumen clave:</strong> Tu diario de entrenamiento e historial son siempre tuyos. Todas las suscripciones y licencias de pago único se procesan exclusivamente a través de <strong>Google Play Billing</strong>.",
+                h1: "1. Suscripciones y Pruebas Gratuitas",
+                list1: [
+                    "<strong>Suscripciones de Renovación Automática (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Se renuevan automáticamente al final de cada periodo salvo que se cancelen al menos 24 horas antes del vencimiento desde <em>Google Play Store &gt; Pagos y suscripciones</em>.",
+                    "<strong>Prueba Gratuita de 7 Días en Google Play:</strong> Los nuevos suscriptores elegibles del Plan Anual disponen de 7 días de prueba sin coste. Si no se cancela antes de finalizar el 7.º día, se aplicará el cargo anual indicado.",
+                    "<strong>Prueba Local de Bienvenida de 14 Días (Sin Tarjeta):</strong> Los nuevos usuarios disfrutan de 14 días de acceso PRO local sin necesidad de introducir método de pago ni cargos automáticos."
+                ],
+                h2: "2. Alcance de la Licencia Vitalicia PRO y Exclusión de IA en la Nube",
+                list2: [
+                    "<strong>Funciones Locales Incluidas (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> El pago único Vitalicio otorga una licencia perpetua, no exclusiva e intransferible para todas las herramientas de <strong>ejecución local en el dispositivo</strong> de Barbell Buddy PRO (motor algorítmico <code>Buddy Coach</code>, detector de estancamientos, analítica 7/28 días y <code>Wear OS Buddy Coach</code>) durante la vida comercial activa de la serie <code>v3.x</code> en Google Play.",
+                    "<strong>Exclusión Expresa de IA en la Nube y Costes de Servidor por Uso:</strong> La licencia de pago único cubre las funcionalidades que se ejecutan localmente en tu teléfono y reloj. <strong>Quedan expresamente excluidos</strong> los futuros módulos opcionales que requieran servidores externos en la nube, APIs de Inteligencia Artificial (IA) generativa de terceros o costes recurrentes por petición/token, los cuales podrán ofrecerse de forma independiente sin restar ninguna función local ya adquirida.",
+                    "<strong>Vinculación de Cuenta:</strong> La licencia está asociada a tu cuenta de Google Play y puede restaurarse en tus dispositivos personales Android y Wear OS."
+                ],
+                h3: "3. Reembolsos y Cancelaciones",
+                p3: "Todos los cobros son gestionados íntegramente por Google Play. Las solicitudes de reembolso se rigen por las Políticas de Reembolso de Google Play y la normativa vigente de protección al consumidor (incluidas las reglas sobre contenido digital en el EEE/Reino Unido). Desinstalar la aplicación no cancela una suscripción activa.",
+                h4: "4. Exención de Responsabilidad Médica y Deportiva",
+                p4: "Barbell Buddy y las sugerencias de peso, repeticiones, RIR y 1RM de <code>Buddy Coach</code> son cálculos algorítmicos con fines <strong>exclusivamente informativos y orientativos</strong>. No constituyen asesoramiento médico ni fisioterapéutico. Consulta con un profesional de la salud antes de realizar entrenamientos de alta intensidad y entrena siempre bajo tu propia responsabilidad.",
+                h5: "5. Disponibilidad del Servicio y Limitación de Responsabilidad",
+                p5: "La aplicación se proporciona «tal cual». Dado que tus entrenamientos se almacenan localmente en tu dispositivo, te recomendamos realizar copias de seguridad periódicas (exportación JSON/CSV o copia en Google Drive). En la medida permitida por la ley, el desarrollador no será responsable por pérdidas accidentales de datos o lesiones derivadas del entrenamiento.",
+                h6: "6. Datos de Contacto del Operador y Soporte"
+            },
+            de: {
+                badge: "Nutzungsbedingungen",
+                date: "Letzte Aktualisierung: November 2026",
+                intro: "Willkommen bei <strong>Barbell Buddy: Gym Tracker</strong> (Paket-ID <code>com.xavisprojects.barbellbible</code>). Durch die Nutzung unserer Android- und Wear OS-App stimmen Sie diesen Nutzungsbedingungen zu.",
+                summary: "<strong>Kurzfassung:</strong> Ihr Trainingstagebuch bleibt jederzeit lokal auf Ihrem Gerät. Alle Abonnements und Einmalkäufe werden sicher über <strong>Google Play Billing</strong> abgewickelt.",
+                h1: "1. Abonnements & Testphasen",
+                list1: [
+                    "<strong>Automatisch verlängernde Abos (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ablauf im <em>Google Play Store &gt; Zahlungen &amp; Abos</em> gekündigt werden.",
+                    "<strong>7-Tage-Testversion (Jahresabo):</strong> Berechtigte Neukunden erhalten 7 Tage kostenlosen Testzugang. Ohne rechtzeitige Kündigung geht dieser in das reguläre Jahresabo über.",
+                    "<strong>14-Tage lokaler Willkommenstest:</strong> Endet automatisch ohne Zahlungsmittel und ohne Kosten."
+                ],
+                h2: "2. Umfang der Lifetime-Lizenz & Ausschluss von Cloud-KI",
+                list2: [
+                    "<strong>Enthaltene lokale PRO-Funktionen (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> Gewährt dauerhaften Zugriff auf alle <strong>lokal auf dem Gerät ausgeführten</strong> PRO-Werkzeuge (<code>Buddy Coach</code>, Plateau-Erkennung, 7/28-Tage-Analyse, Wear OS Buddy Coach) für die aktive Laufzeit der <code>v3.x</code>-Generation im Google Play Store.",
+                    "<strong>Ausschluss von Cloud-KI &amp; Serverdiensten:</strong> Die Einmallizenz umfasst ausschließlich lokale Gerätefunktionen. Zukünftige optionale Funktionen, die externe Cloud-Server oder kostenpflichtige generative KI-Schnittstellen (Pay-per-Token/Request) von Drittanbietern erfordern, sind <strong>ausdrücklich ausgeschlossen</strong> und können separat angeboten werden.",
+                    "<strong>Kontobindung:</strong> Die Lizenz ist an Ihr Google Play-Konto gebunden und auf Ihren persönlichen Geräten wiederherstellbar."
+                ],
+                h3: "3. Rückerstattungen & Widerruf",
+                p3: "Zahlungen und Erstattungen werden direkt über Google Play gemäß den Google Play-Erstattungsrichtlinien sowie den gesetzlichen Verbraucherrechten (EWR/UK) abgewickelt.",
+                h4: "4. Medizinischer Haftungsausschluss",
+                p4: "Alle Gewichts-, RIR- und 1RM-Empfehlungen von <code>Buddy Coach</code> dienen ausschließlich der Information und ersetzen keine ärztliche Beratung. Das Training erfolgt auf eigene Verantwortung.",
+                h5: "5. Verfügbarkeit & Haftung",
+                p5: "Da Ihre Daten lokal gespeichert werden, empfehlen wir regelmäßige Backups (JSON/CSV). Eine Haftung für Datenverlust oder Trainingsverletzungen ist im gesetzlich zulässigen Rahmen ausgeschlossen.",
+                h6: "6. Anbieterkontakt & Support"
+            },
+            fr: {
+                badge: "Conditions d'utilisation",
+                date: "Dernière mise à jour : Novembre 2026",
+                intro: "Bienvenue sur <strong>Barbell Buddy: Gym Tracker</strong> (ID <code>com.xavisprojects.barbellbible</code>). En utilisant notre application Android et Wear OS, vous acceptez les présentes Conditions d'utilisation.",
+                summary: "<strong>Résumé :</strong> Vos données d'entraînement restent sur votre appareil. Les abonnements et achats uniques sont gérés exclusivement via <strong>Google Play Billing</strong>.",
+                h1: "1. Abonnements et Essais Gratuits",
+                list1: [
+                    "<strong>Renouvellement automatique (<code>pro_annual</code>, <code>pro_monthly</code>) :</strong> Renouvelé automatiquement sauf résiliation au moins 24 heures avant l'échéance dans <em>Google Play Store &gt; Paiements et abonnements</em>.",
+                    "<strong>Essai gratuit de 7 jours (Plan Annuel) :</strong> Converti en abonnement annuel payant s'il n'est pas annulé avant la fin des 7 jours.",
+                    "<strong>Essai local de 14 jours :</strong> Sans carte bancaire ni prélèvement automatique."
+                ],
+                h2: "2. Portée de la Licence à Vie PRO et Exclusion de l'IA Cloud",
+                list2: [
+                    "<strong>Fonctions locales incluses (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>) :</strong> Donne accès à toutes les fonctionnalités PRO <strong>exécutées localement sur l'appareil</strong> (moteur <code>Buddy Coach</code>, détecteur de stagnation, bilan 7/28 jours et Wear OS) pendant la durée de vie commerciale de la série <code>v3.x</code>.",
+                    "<strong>Exclusion des services Cloud et IA générative :</strong> La licence unique couvre uniquement les calculs locaux sur votre appareil. Elle <strong>exclut expressément</strong> les futurs modules optionnels nécessitant des serveurs cloud externes ou des API d'intelligence artificielle (IA) générative facturées à l'usage, qui pourront faire l'objet d'offres séparées.",
+                    "<strong>Restauration :</strong> Liée à votre compte Google Play sur vos appareils personnels."
+                ],
+                h3: "3. Remboursements et Résiliation",
+                p3: "Toutes les transactions sont gérées par Google Play selon ses conditions de remboursement et le droit de la consommation applicable (EEE/Royaume-Uni).",
+                h4: "4. Avertissement Médical et Sportif",
+                p4: "Les suggestions de charge, RIR et 1RM de <code>Buddy Coach</code> sont purement informatives et ne remplacent pas un avis médical. Vous vous entraînez sous votre propre responsabilité.",
+                h5: "5. Disponibilité et Responsabilité",
+                p5: "Vos données étant stockées localement, pensez à effectuer des sauvegardes JSON/CSV régulières.",
+                h6: "6. Contact de l'Opérateur"
+            },
+            it: {
+                badge: "Termini di Servizio",
+                date: "Ultimo aggiornamento: Novembre 2026",
+                intro: "Benvenuto in <strong>Barbell Buddy: Gym Tracker</strong> (ID <code>com.xavisprojects.barbellbible</code>). Utilizzando l'app Android e Wear OS, accetti i presenti Termini di Servizio.",
+                summary: "<strong>Riepilogo:</strong> I tuoi dati restano sul dispositivo. Abbonamenti e acquisti una tantum sono gestiti esclusivamente tramite <strong>Google Play Billing</strong>.",
+                h1: "1. Abbonamenti e Prove Gratuite",
+                list1: [
+                    "<strong>Rinnovo automatico (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Si rinnovano automaticamente salvo disdetta almeno 24 ore prima della scadenza in <em>Google Play Store &gt; Pagamenti e abbonamenti</em>.",
+                    "<strong>Prova gratuita di 7 giorni:</strong> Disponibile per i nuovi abbonati al piano annuale.",
+                    "<strong>Prova locale di 14 giorni:</strong> Senza carta di credito né addebiti automatici."
+                ],
+                h2: "2. Licenza a Vita PRO ed Esclusione di Servizi Cloud/IA",
+                list2: [
+                    "<strong>Funzioni locali incluse (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> Concede l'accesso a tutte le funzionalità PRO <strong>eseguite localmente sul dispositivo</strong> (<code>Buddy Coach</code>, rilevatore di stallo, analisi 7/28 giorni e Wear OS) per il ciclo di vita commerciale della serie <code>v3.x</code>.",
+                    "<strong>Esclusione di IA in Cloud e costi server:</strong> La licenza una tantum copre esclusivamente i calcoli locali sul dispositivo ed <strong>esclude espressamente</strong> futuri servizi opzionali basati su server cloud o modelli di Intelligenza Artificiale (IA) generativa con costi ricorrenti per token/richiesta.",
+                    "<strong>Account:</strong> Licenza legata al tuo account Google Play personale."
+                ],
+                h3: "3. Rimborsi",
+                p3: "I pagamenti e i rimborsi sono regolati dalle norme ufficiali di Google Play e dalle leggi a tutela dei consumatori (SEE/UK).",
+                h4: "4. Dichiarazione di Non Responsabilità Medica",
+                p4: "I suggerimenti di peso, RIR e 1RM hanno scopo puramente informativo e non sostituiscono il parere medico.",
+                h5: "5. Disponibilità e Backup",
+                p5: "Ti consigliamo di esportare regolarmente backup JSON/CSV dei tuoi dati locali.",
+                h6: "6. Contatti"
+            },
+            pt: {
+                badge: "Termos de Serviço",
+                date: "Última atualização: Novembro de 2026",
+                intro: "Bem-vindo ao <strong>Barbell Buddy: Gym Tracker</strong> (pacote <code>com.xavisprojects.barbellbible</code>). Ao utilizar a aplicação Android e Wear OS, concorda com estes Termos de Serviço.",
+                summary: "<strong>Resumo:</strong> Os seus dados ficam no seu aparelho. Assinaturas e compras únicas são processadas exclusivamente pelo <strong>Google Play Billing</strong>.",
+                h1: "1. Assinaturas e Testes Gratuitos",
+                list1: [
+                    "<strong>Renovação Automática (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Renovam-se automaticamente salvo cancelamento até 24 horas antes do fim do período na <em>Google Play Store &gt; Pagamentos e assinaturas</em>.",
+                    "<strong>Teste Gratuito de 7 Dias:</strong> Disponível no plano anual para novos assinantes.",
+                    "<strong>Teste Local de 14 Dias:</strong> Sem cartão e sem cobrança automática."
+                ],
+                h2: "2. Licença Vitalícia PRO e Exclusão de IA na Nuvem",
+                list2: [
+                    "<strong>Funções locais incluídas (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> Garante acesso a todas as ferramentas PRO <strong>executadas localmente no dispositivo</strong> (<code>Buddy Coach</code>, deteção de estagnação, análise 7/28 dias e Wear OS) durante a vida comercial da série <code>v3.x</code>.",
+                    "<strong>Exclusão de IA na Nuvem e custos de servidor:</strong> A compra única cobre apenas funcionalidades locais no aparelho, <strong>excluindo expressamente</strong> futuros serviços opcionais em nuvem ou APIs de Inteligência Artificial (IA) generativa com custos recorrentes por pedido/token.",
+                    "<strong>Conta:</strong> Associada à sua conta Google Play pessoal."
+                ],
+                h3: "3. Reembolsos e Cancelamentos",
+                p3: "Todas as compras seguem a Política de Reembolsos do Google Play e a legislação aplicável de defesa do consumidor.",
+                h4: "4. Aviso Médico e Desportivo",
+                p4: "As sugestões de carga, RIR e 1RM do <code>Buddy Coach</code> são apenas informativas e não substituem acompanhamento médico ou profissional.",
+                h5: "5. Disponibilidade e Cópias de Segurança",
+                p5: "Recomendamos exportar backups regulares em JSON/CSV dos seus dados locais.",
+                h6: "6. Contacto"
+            },
+            nl: {
+                badge: "Servicevoorwaarden",
+                date: "Laatst bijgewerkt: November 2026",
+                intro: "Welkom bij <strong>Barbell Buddy: Gym Tracker</strong> (<code>com.xavisprojects.barbellbible</code>). Door het gebruik van onze Android- en Wear OS-app gaat u akkoord met deze voorwaarden.",
+                summary: "<strong>Samenvatting:</strong> Alle betalingen en abonnementen verlopen veilig via <strong>Google Play Billing</strong>.",
+                h1: "1. Abonnementen & Proefperiodes",
+                list1: [
+                    "<strong>Automatische verlenging (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Wordt automatisch verlengd tenzij minimaal 24 uur voor afloop opgezegd via <em>Google Play Store &gt; Betalingen en abonnementen</em>.",
+                    "<strong>7 dagen gratis proefperiode:</strong> Voor nieuwe abonnees op het jaarabonnement.",
+                    "<strong>14 dagen lokale proefperiode:</strong> Zonder betaalkaart of automatische afschrijving."
+                ],
+                h2: "2. Levenslange PRO-licentie & Uitsluiting van Cloud-AI",
+                list2: [
+                    "<strong>Lokale PRO-functies (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> Geeft toegang tot alle <strong>lokaal op het toestel uitgevoerde</strong> PRO-functies (<code>Buddy Coach</code>, plateau-detectie, 7/28-dagen analyse en Wear OS) gedurende de commerciële levensduur van de <code>v3.x</code>-serie.",
+                    "<strong>Uitsluiting van Cloud-AI:</strong> De eenmalige aankoop dekt uitsluitend lokale toestelfuncties en <strong>sluit uitdrukkelijk</strong> toekomstige optionele cloud- of generatieve AI-diensten met terugkerende serverkosten per aanvraag/token uit.",
+                    "<strong>Account:</strong> Gekoppeld aan uw persoonlijke Google Play-account."
+                ],
+                h3: "3. Terugbetalingen",
+                p3: "Betalingen en terugbetalingen verlopen volgens het terugbetalingsbeleid van Google Play en de Europese consumentenwetgeving.",
+                h4: "4. Medische Disclaimer",
+                p4: "Suggesties voor gewicht, RIR en 1RM zijn uitsluitend informatief en vormen geen medisch advies.",
+                h5: "5. Back-ups & Aansprakelijkheid",
+                p5: "Maak regelmatig een back-up van uw lokale trainingsgegevens via JSON/CSV-export.",
+                h6: "6. Contact"
+            },
+            pl: {
+                badge: "Warunki korzystania",
+                date: "Ostatnia aktualizacja: Listopad 2026",
+                intro: "Witamy w <strong>Barbell Buddy: Gym Tracker</strong> (<code>com.xavisprojects.barbellbible</code>). Korzystając z aplikacji na Androida i Wear OS, akceptujesz niniejsze Warunki.",
+                summary: "<strong>Podsumowanie:</strong> Subskrypcje i zakupy jednorazowe są obsługiwane wyłącznie przez <strong>Google Play Billing</strong>.",
+                h1: "1. Subskrypcje i Okresy Próbne",
+                list1: [
+                    "<strong>Automatyczne odnawianie (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Odnawia się automatycznie, chyba że zostanie anulowane co najmniej 24 godziny przed końcem okresu w <em>Google Play Store &gt; Płatności i subskrypcje</em>.",
+                    "<strong>7-dniowy okres próbny:</strong> Dla nowych subskrybentów planu rocznego.",
+                    "<strong>14-dniowy lokalny okres próbny:</strong> Bez karty płatniczej i automatycznych opłat."
+                ],
+                h2: "2. Licencja Wieczysta PRO a Usługi Chmurowe AI",
+                list2: [
+                    "<strong>Lokalne funkcje PRO (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> Zapewnia dostęp do wszystkich funkcji PRO <strong>działających lokalnie na urządzeniu</strong> (<code>Buddy Coach</code>, detektor stagnacji, analiza 7/28 dni oraz Wear OS) przez okres aktywnego wsparcia serii <code>v3.x</code>.",
+                    "<strong>Wyłączenie Chmurowej AI:</strong> Jednorazowa licencja obejmuje wyłącznie obliczenia lokalne na urządzeniu i <strong>wyraźnie wyłącza</strong> przyszłe opcjonalne funkcje wymagające zewnętrznych serwerów chmurowych lub płatnych interfejsów generatywnej sztucznej inteligencji (AI) rozliczanych za zapytanie/token.",
+                    "<strong>Konto:</strong> Licencja przypisana do Twojego konta Google Play."
+                ],
+                h3: "3. Zwroty i Anulowanie",
+                p3: "Wszystkie transakcje i zwroty podlegają regulaminowi Google Play oraz przepisom prawa konsumenckiego (EOG/UK).",
+                h4: "4. Wyłączenie Odpowiedzialności Medycznej",
+                p4: "Sugestie ciężaru, RIR i 1RM mają charakter wyłącznie informacyjny i nie zastępują porady lekarskiej.",
+                h5: "5. Kopie Zapasowe",
+                p5: "Zalecamy regularne eksportowanie kopii zapasowych JSON/CSV.",
+                h6: "6. Kontakt"
+            },
+            ru: {
+                badge: "Условия использования",
+                date: "Последнее обновление: Ноябрь 2026 г.",
+                intro: "Добро пожаловать в <strong>Barbell Buddy: Gym Tracker</strong> (<code>com.xavisprojects.barbellbible</code>). Используя приложение для Android и Wear OS, вы соглашаетесь с настоящими Условиями.",
+                summary: "<strong>Кратко:</strong> Все подписки и разовые покупки обрабатываются исключительно через <strong>Google Play Billing</strong>.",
+                h1: "1. Подписки и Пробные периоды",
+                list1: [
+                    "<strong>Автопродление (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Продлевается автоматически, если не отменено минимум за 24 часа до окончания периода в <em>Google Play &gt; Платежи и подписки</em>.",
+                    "<strong>7-дневный пробный период:</strong> Доступен для новых подписчиков годового плана.",
+                    "<strong>14-дневный локальный пробный период:</strong> Без привязки карты и автосписаний."
+                ],
+                h2: "2. Навсегда (Lifetime PRO) и исключение Облачного ИИ",
+                list2: [
+                    "<strong>Локальные функции PRO (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> Предоставляет доступ ко всем функциям PRO, <strong>выполняемым локально на устройстве</strong> (<code>Buddy Coach</code>, детектор плато, аналитика 7/28 дней и Wear OS), в течение жизненного цикла линейки <code>v3.x</code>.",
+                    "<strong>Исключение облачного ИИ:</strong> Разовая покупка распространяется только на локальные алгоритмы устройства и <strong>явно исключает</strong> будущие дополнительные сервисы, требующие внешних облачных серверов или платных API генеративного искусственного интеллекта (ИИ) с оплатой за токены/запросы.",
+                    "<strong>Привязка к аккаунту:</strong> Лицензия привязана к вашему аккаунту Google Play."
+                ],
+                h3: "3. Возврат средств",
+                p3: "Все платежи и возвраты осуществляются в соответствии с правилами Google Play и применимым законодательством о защите прав потребителей.",
+                h4: "4. Медицинский отказ от ответственности",
+                p4: "Рекомендации веса, RIR и 1RM носят исключительно информационный характер и не заменяют консультацию врача.",
+                h5: "5. Резервное копирование",
+                p5: "Рекомендуем регулярно сохранять резервные копии тренировок в формате JSON/CSV.",
+                h6: "6. Контакты"
+            },
+            uk: {
+                badge: "Умови використання",
+                date: "Останнє оновлення: Листопад 2026 р.",
+                intro: "Ласкаво просимо до <strong>Barbell Buddy: Gym Tracker</strong> (<code>com.xavisprojects.barbellbible</code>). Використовуючи додаток для Android та Wear OS, ви погоджуєтеся з цими Умовами.",
+                summary: "<strong>Коротко:</strong> Усі підписки та разові покупки обробляються виключно через <strong>Google Play Billing</strong>.",
+                h1: "1. Підписки та Пробні періоди",
+                list1: [
+                    "<strong>Автоподовження (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Подовжується автоматично, якщо не скасовано щонайменше за 24 години до кінця періоду в <em>Google Play &gt; Платежі та підписки</em>.",
+                    "<strong>7-денний пробний період:</strong> Для нових передплатників річного плану.",
+                    "<strong>14-денний локальний пробний період:</strong> Без банківської картки та автосписань."
+                ],
+                h2: "2. Довічна ліцензія PRO та виключення Хмарного ШІ",
+                list2: [
+                    "<strong>Локальні функції PRO (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> Надає доступ до всіх інструментів PRO, що <strong>працюють локально на пристрої</strong> (<code>Buddy Coach</code>, детектор плато, аналітика 7/28 днів та Wear OS), протягом комерційного циклу серії <code>v3.x</code>.",
+                    "<strong>Виключення Хмарного ШІ:</strong> Одноразова покупка охоплює лише локальні обчислення на пристрої та <strong>прямо виключає</strong> майбутні опціональні функції, що потребують зовнішніх хмарних серверів або платних API генеративного штучного інтелекту (ШІ) з оплатою за запити/токени.",
+                    "<strong>Обліковий запис:</strong> Ліцензія прив'язана до вашого облікового запису Google Play."
+                ],
+                h3: "3. Повернення коштів",
+                p3: "Платежі та повернення коштів регулюються правилами Google Play і чинним законодавством про захист прав споживачів.",
+                h4: "4. Медичне застереження",
+                p4: "Рекомендації ваги, RIR та 1RM мають виключно інформаційний характер і не є медичною порадою.",
+                h5: "5. Резервні копії",
+                p5: "Рекомендуємо регулярно експортувати резервні копії тренувань у форматі JSON/CSV.",
+                h6: "6. Контакти"
+            },
+            tr: {
+                badge: "Hizmet Şartları",
+                date: "Son güncelleme: Kasım 2026",
+                intro: "<strong>Barbell Buddy: Gym Tracker</strong> (<code>com.xavisprojects.barbellbible</code>) uygulamasına hoş geldiniz. Uygulamamızı kullanarak bu Hizmet Şartlarını kabul etmiş olursunuz.",
+                summary: "<strong>Özet:</strong> Tüm abonelikler ve tek seferlik satın alımlar güvenli bir şekilde <strong>Google Play Billing</strong> üzerinden işlenir.",
+                h1: "1. Abonelikler ve Ücretsiz Denemeler",
+                list1: [
+                    "<strong>Otomatik Yenileme (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Dönem bitiminden en az 24 saat önce <em>Google Play Store &gt; Ödemeler ve abonelikler</em> menüsünden iptal edilmediği sürece otomatik yenilenir.",
+                    "<strong>7 Günlük Ücretsiz Deneme:</strong> Yıllık planda uygun yeni aboneler için geçerlidir.",
+                    "<strong>14 Günlük Yerel Deneme:</strong> Kredi kartı gerekmez ve otomatik ücretlendirme yapılmaz."
+                ],
+                h2: "2. Ömür Boyu PRO Lisansı Kapsamı ve Bulut YZ İstisnası",
+                list2: [
+                    "<strong>Dahil Olan Yerel PRO Özellikleri (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> <code>v3.x</code> serisinin Google Play'deki aktif ticari ömrü boyunca <strong>cihaz üzerinde yerel olarak çalışan</strong> tüm PRO araçlarına (<code>Buddy Coach</code>, plato dedektörü, 7/28 günlük analiz ve Wear OS) erişim sağlar.",
+                    "<strong>Bulut YZ (AI) Hizmetlerinin Hariç Tutulması:</strong> Tek seferlik lisans yalnızca cihaz içi yerel özellikleri kapsar; harici bulut sunucuları veya istek/token başına maliyet gerektiren üçüncü taraf üretken Yapay Zeka (AI) servislerini <strong>açıkça hariç tutar</strong>.",
+                    "<strong>Hesap Bağlantısı:</strong> Google Play hesabınıza bağlıdır."
+                ],
+                h3: "3. İadeler ve İptaller",
+                p3: "Ödemeler ve geri ödemeler Google Play İade Politikalarına ve geçerli tüketici yasalarına tabidir.",
+                h4: "4. Tıbbi Sorumluluk Reddi",
+                p4: "Ağırlık, RIR ve 1RM önerileri yalnızca bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez.",
+                h5: "5. Yedekleme ve Sorumluluk",
+                p5: "Yerel verilerinizi düzenli olarak JSON/CSV formatında yedeklemeniz önerilir.",
+                h6: "6. İletişim"
+            },
+            ar: {
+                badge: "شروط الخدمة",
+                date: "آخر تحديث: نوفمبر 2026",
+                intro: "مرحباً بك في <strong>Barbell Buddy: Gym Tracker</strong> (معرف الحزمة <code>com.xavisprojects.barbellbible</code>). باستخدامك لتطبيقنا على Android و Wear OS، فإنك توافق على شروط الخدمة هذه.",
+                summary: "<strong>ملخص:</strong> تتم معالجة جميع الاشتراكات والمشتريات لمرة واحدة حصرياً عبر <strong>Google Play Billing</strong>.",
+                h1: "1. الاشتراكات والفترات التجريبية",
+                list1: [
+                    "<strong>الاشتراكات المتجددة تلقائياً (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> تتجدد تلقائياً ما لم يتم إلغاؤها قبل 24 ساعة على الأقل من تاريخ التجديد عبر <em>متجر Google Play &gt; الدفعات والاشتراكات</em>.",
+                    "<strong>تجربة مجانية لمدة 7 أيام:</strong> متاحة للمشتركين الجدد المؤهلين في الخطة السنوية.",
+                    "<strong>تجربة ترحيبية محلية لمدة 14 يوماً:</strong> بدون بطاقة بنكية وبدون أي رسوم تلقائية."
+                ],
+                h2: "2. نطاق الترخيص مدى الحياة واستثناء الذكاء الاصطناعي السحابي",
+                list2: [
+                    "<strong>الميزات المحلية المشمولة (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> يمنحك الشراء لمرة واحدة ترخيصاً لاستخدام جميع ميزات PRO <strong>التي تعمل محلياً على جهازك</strong> (محرك <code>Buddy Coach</code>، كاشف ثبات المستوى، تحليلات 7/28 يوماً، وتطبيق الساعة) طوال فترة توفر سلسلة <code>v3.x</code> على Google Play.",
+                    "<strong>استثناء خدمات الذكاء الاصطناعي السحابي (Cloud AI):</strong> يغطي الترخيص مدى الحياة الميزات المحلية فقط، و<strong>يستثني صراحةً</strong> أي ميزات مستقبلية اختيارية تتطلب خوادم سحابية خارجية أو واجهات ذكاء اصطناعي توليدي ذات تكلفة مستمرة لكل طلب/رمز.",
+                    "<strong>ربط الحساب:</strong> الترخيص مرتبط بحسابك في Google Play."
+                ],
+                h3: "3. الاسترداد والإلغاء",
+                p3: "تخضع جميع المدفوعات وطلبات استرداد الأموال لسياسات استرداد الأموال الرسمية في Google Play وقوانين حماية المستهلك المعمول بها.",
+                h4: "4. إخلاء المسؤولية الطبية والرياضية",
+                p4: "اقتراحات الأوزان والتكرارات ومؤشر الجهد (RIR) هي للأغراض المعلوماتية فقط ولا تغني عن الاستشارة الطبية المتخصصة.",
+                h5: "5. النسخ الاحتياطي والمسؤولية",
+                p5: "نظراً لأن البيانات تُحفظ محلياً على جهازك، نوصي بتصدير نسخ احتياطية دورية بصيغة JSON/CSV.",
+                h6: "6. التواصل معنا"
+            },
+            hi: {
+                badge: "सेवा की शर्तें",
+                date: "अंतिम अपडेट: नवंबर 2026",
+                intro: "<strong>Barbell Buddy: Gym Tracker</strong> (<code>com.xavisprojects.barbellbible</code>) में आपका स्वागत है। हमारे Android और Wear OS ऐप का उपयोग करके आप इन शर्तों से सहमत होते हैं।",
+                summary: "<strong>सारांश:</strong> सभी सदस्यताएँ और लाइफटाइम खरीदारी केवल <strong>Google Play Billing</strong> के माध्यम से प्रोसेस की जाती हैं।",
+                h1: "1. सदस्यता और निःशुल्क ट्रायल",
+                list1: [
+                    "<strong>ऑटो-रिन्यूअल सदस्यता (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> अवधि समाप्त होने से कम से कम 24 घंटे पहले <em>Google Play Store &gt; Payments &amp; subscriptions</em> में रद्द न करने पर स्वतः नवीनीकृत हो जाती है।",
+                    "<strong>7-दिन का निःशुल्क ट्रायल:</strong> वार्षिक प्लान पर नए उपयोगकर्ताओं के लिए उपलब्ध।",
+                    "<strong>14-दिन का लोकल ट्रायल:</strong> बिना किसी कार्ड या ऑटो-चार्ज के।"
+                ],
+                h2: "2. लाइफटाइम PRO लाइसेंस और क्लाउड AI अपवाद",
+                list2: [
+                    "<strong>शामिल लोकल PRO फीचर्स (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> यह एकमुश्त खरीदारी <code>v3.x</code> सीरीज़ के लिए सभी <strong>डिवाइस पर लोकल रूप से चलने वाले</strong> PRO फीचर्स (<code>Buddy Coach</code>, स्टैग्नेशन डिटेक्टर, 7/28-दिन विश्लेषण और Wear OS) का एक्सेस देती है।",
+                    "<strong>क्लाउड AI सेवाओं का अपवाद:</strong> लाइफटाइम लाइसेंस में केवल लोकल ऑन-डिवाइस फीचर्स शामिल हैं। भविष्य के ऐसे वैकल्पिक फीचर्स जिनमें बाहरी क्लाउड सर्वर या प्रति-रिक्वेस्ट/टोकन शुल्क वाले जनरेटिव AI (Cloud AI) की आवश्यकता हो, <strong>स्पष्ट रूप से शामिल नहीं हैं</strong>।",
+                    "<strong>अकाउंट लिंकिंग:</strong> यह आपके Google Play खाते से जुड़ा होता है।"
+                ],
+                h3: "3. रिफंड और रद्दीकरण",
+                p3: "सभी भुगतान और रिफंड Google Play की आधिकारिक रिफंड नीतियों के अधीन हैं।",
+                h4: "4. चिकित्सा एवं फिटनेस अस्वीकरण",
+                p4: "वजन, RIR और 1RM सुझाव केवल जानकारी के लिए हैं और चिकित्सा सलाह का विकल्प नहीं हैं।",
+                h5: "5. डेटा बैकअप",
+                p5: "कृपया अपने लोकल डेटा का नियमित रूप से JSON/CSV बैकअप लें।",
+                h6: "6. संपर्क करें"
+            },
+            bn: {
+                badge: "পরিষেবার শর্তাবলী",
+                date: "সর্বশেষ আপডেট: নভেম্বর ২০২৬",
+                intro: "<strong>Barbell Buddy: Gym Tracker</strong> (<code>com.xavisprojects.barbellbible</code>)-এ স্বাগতম। অ্যাপটি ব্যবহারের মাধ্যমে আপনি এই শর্তাবলীতে সম্মত হচ্ছেন।",
+                summary: "<strong>সারসংক্ষেপ:</strong> সকল সাবস্ক্রিপশন এবং এককালীন কেনাকাটা শুধুমাত্র <strong>Google Play Billing</strong>-এর মাধ্যমে সম্পন্ন হয়।",
+                h1: "১. সাবস্ক্রিপশন ও ফ্রি ট্রায়াল",
+                list1: [
+                    "<strong>স্বয়ংক্রিয় নবায়ন (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> মেয়াদ শেষ হওয়ার অন্তত ২৪ ঘণ্টা আগে <em>Google Play Store &gt; Payments &amp; subscriptions</em> থেকে বাতিল না করলে স্বয়ংক্রিয়ভাবে নবায়ন হবে।",
+                    "<strong>৭ দিনের ফ্রি ট্রায়াল:</strong> বার্ষিক প্ল্যানে নতুন গ্রাহকদের জন্য প্রযোজ্য।",
+                    "<strong>১৪ দিনের লোকাল ট্রায়াল:</strong> কোনো কার্ড বা অটো-চার্জ ছাড়াই।"
+                ],
+                h2: "২. লাইফটাইম PRO লাইসেন্স এবং ক্লাউড AI বর্জন",
+                list2: [
+                    "<strong>অন্তর্ভুক্ত লোকাল PRO ফিচার (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> <code>v3.x</code> সিরিজের সকল <strong>ডিভাইসে লোকালভাবে চালিত</strong> PRO টুলস (<code>Buddy Coach</code>, প্ল্যাটো ডিটেক্টর, ৭/২৮ দিনের অ্যানালিটিক্স এবং Wear OS) ব্যবহারের অধিকার দেয়।",
+                    "<strong>ক্লাউড AI বর্জন:</strong> এককালীন লাইফটাইম লাইসেন্সে শুধুমাত্র লোকাল ডিভাইস ফিচার অন্তর্ভুক্ত। ভবিষ্যতের কোনো ঐচ্ছিক ক্লাউড সার্ভার বা জেনারেটিভ AI (Cloud AI) যা প্রতি রিকোয়েস্ট/টোকেন খরচের ওপর নির্ভরশীল, তা এর <strong>অন্তর্ভুক্ত নয়</strong>।",
+                    "<strong>অ্যাকাউন্ট:</strong> আপনার Google Play অ্যাকাউন্টের সাথে যুক্ত।"
+                ],
+                h3: "৩. রিফান্ড ও বাতিলকরণ",
+                p3: "সকল পেমেন্ট এবং রিফান্ড Google Play-এর নীতিমালা অনুযায়ী পরিচালিত হয়।",
+                h4: "৪. স্বাস্থ্য ও ফিটনেস দাবিত্যাগ",
+                p4: "ওজন, RIR এবং 1RM পরামর্শ শুধুমাত্র তথ্যের জন্য এবং চিকিৎসা পরামর্শের বিকল্প নয়।",
+                h5: "৫. ব্যাকআপ",
+                p5: "আপনার লোকাল ডেটা নিয়মিত JSON/CSV ফাইলে ব্যাকআপ রাখার পরামর্শ দেওয়া হচ্ছে।",
+                h6: "৬. যোগাযোগ"
+            },
+            id: {
+                badge: "Ketentuan Layanan",
+                date: "Terakhir diperbarui: November 2026",
+                intro: "Selamat datang di <strong>Barbell Buddy: Gym Tracker</strong> (<code>com.xavisprojects.barbellbible</code>). Dengan menggunakan aplikasi Android dan Wear OS kami, Anda menyetujui Ketentuan Layanan ini.",
+                summary: "<strong>Ringkasan:</strong> Semua langganan dan pembelian sekali bayar diproses secara aman melalui <strong>Google Play Billing</strong>.",
+                h1: "1. Langganan & Uji Coba Gratis",
+                list1: [
+                    "<strong>Perpanjangan Otomatis (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Diperpanjang otomatis kecuali dibatalkan minimal 24 jam sebelum akhir periode di <em>Google Play Store &gt; Pembayaran &amp; langganan</em>.",
+                    "<strong>Uji Coba Gratis 7 Hari:</strong> Tersedia pada Paket Tahunan untuk pelanggan baru.",
+                    "<strong>Uji Coba Lokal 14 Hari:</strong> Tanpa kartu dan tanpa tagihan otomatis."
+                ],
+                h2: "2. Cakupan Lisensi Seumur Hidup PRO & Pengecualian AI Cloud",
+                list2: [
+                    "<strong>Fitur PRO Lokal (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> Memberikan akses ke seluruh fitur PRO <strong>yang berjalan secara lokal di perangkat</strong> (<code>Buddy Coach</code>, detektor stagnasi, analitik 7/28 hari, dan Wear OS) selama masa aktif komersial seri <code>v3.x</code>.",
+                    "<strong>Pengecualian Cloud AI:</strong> Lisensi sekali bayar hanya mencakup fitur lokal di perangkat dan <strong>secara tegas mengecualikan</strong> layanan opsional di masa mendatang yang memerlukan server cloud eksternal atau API AI generatif berbayar per permintaan/token.",
+                    "<strong>Akun:</strong> Terhubung ke akun Google Play pribadi Anda."
+                ],
+                h3: "3. Pengembalian Dana",
+                p3: "Semua transaksi dan pengembalian dana tunduk pada Kebijakan Pengembalian Dana Google Play.",
+                h4: "4. Penafian Medis & Kebugaran",
+                p4: "Saran beban, RIR, dan 1RM hanya bersifat informatif dan bukan pengganti saran medis profesional.",
+                h5: "5. Cadangan Data",
+                p5: "Kami menyarankan Anda mengekspor cadangan JSON/CSV secara berkala.",
+                h6: "6. Kontak"
+            },
+            vi: {
+                badge: "Điều khoản Dịch vụ",
+                date: "Cập nhật lần cuối: Tháng 11/2026",
+                intro: "Chào mừng bạn đến với <strong>Barbell Buddy: Gym Tracker</strong> (<code>com.xavisprojects.barbellbible</code>). Khi sử dụng ứng dụng Android và Wear OS của chúng tôi, bạn đồng ý với các Điều khoản này.",
+                summary: "<strong>Tóm tắt:</strong> Mọi gói đăng ký và mua trọn đời đều được xử lý qua <strong>Google Play Billing</strong>.",
+                h1: "1. Gói Đăng ký & Dùng thử Miễn phí",
+                list1: [
+                    "<strong>Tự động gia hạn (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> Tự động gia hạn trừ khi hủy ít nhất 24 giờ trước ngày gia hạn trong <em>Google Play Store &gt; Thanh toán và gói thuê bao</em>.",
+                    "<strong>7 ngày dùng thử miễn phí:</strong> Áp dụng cho người đăng ký mới gói Năm.",
+                    "<strong>14 ngày dùng thử cục bộ:</strong> Không cần thẻ và không tự động trừ tiền."
+                ],
+                h2: "2. Phạm vi Bản quyền Trọn đời PRO & Loại trừ AI Đám mây",
+                list2: [
+                    "<strong>Tính năng PRO cục bộ (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> Cấp quyền truy cập toàn bộ tính năng PRO <strong>chạy cục bộ trên thiết bị</strong> (<code>Buddy Coach</code>, phát hiện chững tạ, phân tích 7/28 ngày và Wear OS) trong suốt vòng đời thương mại của dòng <code>v3.x</code>.",
+                    "<strong>Loại trừ Cloud AI:</strong> Gói mua một lần chỉ bao gồm các thuật toán chạy trên thiết bị và <strong>loại trừ rõ ràng</strong> các dịch vụ đám mây hoặc AI tạo sinh bên thứ ba phát sinh chi phí máy chủ theo mỗi yêu cầu/token trong tương lai.",
+                    "<strong>Tài khoản:</strong> Gắn liền với tài khoản Google Play của bạn."
+                ],
+                h3: "3. Hoàn tiền & Hủy bỏ",
+                p3: "Mọi giao dịch và yêu cầu hoàn tiền tuân theo Chính sách Hoàn tiền chính thức của Google Play.",
+                h4: "4. Miễn trừ Trách nhiệm Y tế",
+                p4: "Các gợi ý mức tạ, RIR và 1RM chỉ mang tính chất tham khảo và không thay thế lời khuyên y tế.",
+                h5: "5. Sao lưu Dữ liệu",
+                p5: "Bạn nên thường xuyên xuất bản sao lưu JSON/CSV cho dữ liệu trên máy.",
+                h6: "6. Liên hệ"
+            },
+            th: {
+                badge: "ข้อกำหนดในการให้บริการ",
+                date: "อัปเดตล่าสุด: พฤศจิกายน 2026",
+                intro: "ยินดีต้อนรับสู่ <strong>Barbell Buddy: Gym Tracker</strong> (<code>com.xavisprojects.barbellbible</code>) การใช้งานแอป Android และ Wear OS ถือว่าคุณยอมรับข้อกำหนดเหล่านี้",
+                summary: "<strong>สรุป:</strong> การสมัครสมาชิกและการซื้อครั้งเดียวทั้งหมดดำเนินการผ่าน <strong>Google Play Billing</strong> เท่านั้น",
+                h1: "1. การสมัครสมาชิกและการทดลองใช้ฟรี",
+                list1: [
+                    "<strong>การต่ออายุอัตโนมัติ (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> ต่ออายุอัตโนมัติเว้นแต่จะยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบบิลใน <em>Google Play Store &gt; การชำระเงินและการสมัครใช้บริการ</em>",
+                    "<strong>ทดลองใช้ฟรี 7 วัน:</strong> สำหรับผู้สมัครใหม่ในแผนรายปี",
+                    "<strong>ทดลองใช้ในเครื่อง 14 วัน:</strong> ไม่ต้องใช้บัตรและไม่มีการเรียกเก็บเงินอัตโนมัติ"
+                ],
+                h2: "2. ขอบเขตสิทธิ์ตลอดชีพ PRO และการยกเว้น Cloud AI",
+                list2: [
+                    "<strong>ฟีเจอร์ PRO บนอุปกรณ์ (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> ให้สิทธิ์ใช้งานฟีเจอร์ PRO <strong>ที่ประมวลผลในเครื่อง</strong>ทั้งหมด (<code>Buddy Coach</code>, ระบบตรวจจับการหยุดนิ่ง, วิเคราะห์ 7/28 วัน และ Wear OS) ตลอดอายุการให้บริการของซีรีส์ <code>v3.x</code>",
+                    "<strong>การยกเว้น Cloud AI:</strong> การซื้อครั้งเดียวครอบคลุมเฉพาะฟีเจอร์ที่ทำงานบนอุปกรณ์ และ<strong>ไม่รวมถึง</strong>บริการเสริมในอนาคตที่ต้องใช้เซิร์ฟเวอร์คลาวด์หรือ Generative AI ที่มีค่าใช้จ่ายตามการใช้งาน (Pay-per-token)",
+                    "<strong>บัญชี:</strong> ผูกกับบัญชี Google Play ของคุณ"
+                ],
+                h3: "3. การคืนเงิน",
+                p3: "การชำระเงินและการขอคืนเงินเป็นไปตามนโยบายการคืนเงินของ Google Play",
+                h4: "4. ข้อจำกัดความรับผิดชอบทางการแพทย์",
+                p4: "คำแนะนำน้ำหนัก RIR และ 1RM เป็นเพียงข้อมูลเบื้องต้นและไม่ใช่คำแนะนำทางการแพทย์",
+                h5: "5. การสำรองข้อมูล",
+                p5: "แนะนำให้ส่งออกไฟล์สำรอง JSON/CSV อย่างสม่ำเสมอ",
+                h6: "6. ติดต่อเรา"
+            },
+            ja: {
+                badge: "利用規約",
+                date: "最終更新日：2026年11月",
+                intro: "<strong>Barbell Buddy: Gym Tracker</strong>（パッケージID <code>com.xavisprojects.barbellbible</code>）へようこそ。本AndroidおよびWear OSアプリをご利用いただくことで、本利用規約に同意したものとみなされます。",
+                summary: "<strong>概要：</strong> サブスクリプションおよび買い切りライセンスの決済はすべて <strong>Google Play Billing</strong> を通じて安全に処理されます。",
+                h1: "1. サブスクリプションと無料トライアル",
+                list1: [
+                    "<strong>自動更新サブスクリプション（<code>pro_annual</code>, <code>pro_monthly</code>）：</strong> 更新日の24時間前までに <em>Google Play ストア &gt; お支払いと定期購入</em> から解約しない限り自動的に更新されます。",
+                    "<strong>7日間無料トライアル：</strong> 年間プランの新規対象ユーザーに提供されます。",
+                    "<strong>14日間ローカルお試し期間：</strong> カード登録不要で自動課金も一切発生しません。"
+                ],
+                h2: "2. 買い切り（Lifetime）PROライセンスの範囲とクラウドAIの除外",
+                list2: [
+                    "<strong>含まれる端末内PRO機能（<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>）：</strong> Google Playにおける<code>v3.x</code>シリーズの提供期間中、<strong>端末内でローカル実行される</strong>すべてのPRO機能（<code>Buddy Coach</code>、停滞検知、7/28日分析、Wear OS連携）を永続的に利用できます。",
+                    "<strong>クラウドAI・外部サーバー課金機能の除外：</strong> 買い切りライセンスは端末内で完結するローカル機能のみを対象としており、外部クラウドサーバーや従量課金制の生成AI（Cloud AI API）を必要とする将来のオプション機能は<strong>明示的に対象外</strong>となります。",
+                    "<strong>アカウント連携：</strong> お客様のGoogle Playアカウントに紐づき、ご自身の端末で復元可能です。"
+                ],
+                h3: "3. 返金および解約",
+                p3: "すべての決済および返金はGoogle Playの返金ポリシーおよび適用される消費者保護法に従います。アプリをアンインストールしても定期購入は自動解約されません。",
+                h4: "4. 免責事項（医療・フィットネス）",
+                p4: "<code>Buddy Coach</code>による重量・回数・RIR・1RMの提案は情報提供のみを目的としており、医師や専門家の指導に代わるものではありません。",
+                h5: "5. バックアップと免責",
+                p5: "記録は端末内に保存されるため、定期的にJSON/CSVエクスポートでバックアップを行うことを推奨します。",
+                h6: "6. お問い合わせ"
+            },
+            ko: {
+                badge: "서비스 이용약관",
+                date: "최종 업데이트: 2026년 11월",
+                intro: "<strong>Barbell Buddy: Gym Tracker</strong>(패키지 ID <code>com.xavisprojects.barbellbible</code>)를 이용해 주셔서 감사합니다. Android 및 Wear OS 앱을 사용함으로써 본 이용약관에 동의하게 됩니다.",
+                summary: "<strong>요약:</strong> 모든 정기 결제 및 평생 소장 라이선스는 <strong>Google Play Billing</strong>을 통해 안전하게 처리됩니다.",
+                h1: "1. 구독 및 무료 체험",
+                list1: [
+                    "<strong>자동 갱신 구독 (<code>pro_annual</code>, <code>pro_monthly</code>):</strong> 갱신일 최소 24시간 전에 <em>Google Play 스토어 &gt; 결제 및 정기 결제</em>에서 해지하지 않으면 자동으로 갱신됩니다.",
+                    "<strong>7일 무료 체험:</strong> 연간 플랜 신규 구독자에게 제공됩니다.",
+                    "<strong>14일 로컬 체험:</strong> 카드 등록 없이 제공되며 자동 결제가 발생하지 않습니다."
+                ],
+                h2: "2. 평생 소장(Lifetime) PRO 라이선스 범위 및 클라우드 AI 제외",
+                list2: [
+                    "<strong>포함된 로컬 PRO 기능 (<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>):</strong> <code>v3.x</code> 시리즈의 서비스 기간 동안 <strong>기기 내에서 로컬로 실행되는</strong> 모든 PRO 기능(<code>Buddy Coach</code>, 정체기 감지, 7/28일 볼륨 분석 및 Wear OS)을 이용할 수 있습니다.",
+                    "<strong>클라우드 AI 및 서버 비용 기능 제외:</strong> 일회성 평생 라이선스는 기기 내 로컬 알고리즘만 포함하며, 외부 클라우드 서버나 요청/토큰당 비용이 발생하는 생성형 인공지능(Cloud AI) 기능은 <strong>명시적으로 제외</strong>됩니다.",
+                    "<strong>계정 연동:</strong> 사용자의 Google Play 계정에 귀속됩니다."
+                ],
+                h3: "3. 환불 및 해지",
+                p3: "모든 결제와 환불은 Google Play 환불 정책 및 관련 소비자 보호법을 따릅니다.",
+                h4: "4. 의료 및 운동 면책 조항",
+                p4: "<code>Buddy Coach</code>의 중량, RIR 및 1RM 제안은 참고용 정보일 뿐이며 의학적 조언을 대신하지 않습니다.",
+                h5: "5. 데이터 백업",
+                p5: "운동 데이터는 기기에 로컬로 저장되므로 정기적으로 JSON/CSV 백업을 권장합니다.",
+                h6: "6. 문의하기"
+            },
+            zh: {
+                badge: "服务条款",
+                date: "最后更新：2026年11月",
+                intro: "欢迎使用 <strong>Barbell Buddy: Gym Tracker</strong>（应用包名 <code>com.xavisprojects.barbellbible</code>）。下载或使用我们的 Android 与 Wear OS 应用即表示您同意本服务条款。",
+                summary: "<strong>核心摘要：</strong> 所有订阅与一次性买断均通过 <strong>Google Play Billing</strong> 安全处理。",
+                h1: "1. 订阅与免费试用",
+                list1: [
+                    "<strong>自动续订（<code>pro_annual</code>, <code>pro_monthly</code>）：</strong> 除非在当前计费周期结束前至少 24 小时在 <em>Google Play 商店 &gt; 付款和订阅</em> 中取消，否则订阅将自动续订。",
+                    "<strong>7 天免费试用：</strong> 符合条件的年度计划新订阅用户可享 7 天免费试用。",
+                    "<strong>14 天本地欢迎试用：</strong> 无需绑定银行卡，到期后绝无自动扣费。"
+                ],
+                h2: "2. 终身版（Lifetime PRO）授权范围与云端 AI 排除条款",
+                list2: [
+                    "<strong>包含的本地 PRO 功能（<code>pro_lifetime</code> / <code>pro_lifetime_welcome</code>）：</strong> 一次性买断授予您在 <code>v3.x</code> 系列于 Google Play 运营期间使用所有<strong>设备端本地运行</strong>的 PRO 功能（<code>Buddy Coach</code> 智能进阶引擎、平台期检测、7/28 天容量分析及 Wear OS 手表辅助）。",
+                    "<strong>云端 AI 与按量计费服务器功能除外：</strong> 买断授权仅涵盖在您设备本地执行的算法与功能，<strong>明确不包含</strong>未来需要外部云服务器或按请求/Token 持续计费的第三方生成式人工智能（Cloud AI）可选服务。",
+                    "<strong>账户绑定：</strong> 授权绑定至您的 Google Play 账户，可在您的个人设备上恢复购买。"
+                ],
+                h3: "3. 退款与取消政策",
+                p3: "所有付款与退款请求均由 Google Play 依据其官方退款政策及适用消费者保护法律处理。卸载应用不会自动取消订阅。",
+                h4: "4. 医疗与运动免责声明",
+                p4: "<code>Buddy Coach</code> 提供的重量、次数、RIR 及 1RM 建议仅供参考，不构成医疗或专业康复建议。请根据自身身体状况量力而行。",
+                h5: "5. 数据备份与责任限制",
+                p5: "由于训练数据保存在设备本地，建议您定期通过 JSON/CSV 导出功能备份数据。",
+                h6: "6. 联系方式"
+            }
+        };
+
+        function resolveInitialLang() {
+            const params = new URLSearchParams(window.location.search);
+            const queryLang = (params.get("lang") || "").toLowerCase().split("-")[0];
+            if (queryLang === "in") return "id";
+            if (i18n[queryLang]) return queryLang;
+
+            const browserLangs = navigator.languages || [navigator.language || "en"];
+            for (const raw of browserLangs) {
+                const code = (raw || "").toLowerCase().split("-")[0];
+                const normalized = code === "in" ? "id" : code;
+                if (i18n[normalized]) return normalized;
+            }
+            return "en";
+        }
+
+        function renderLang(lang) {
+            const data = i18n[lang] || i18n.en;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+            document.title = `Barbell Buddy - ${data.badge}`;
+
+            const navPrivacy = document.getElementById("nav-privacy");
+            const navTerms = document.getElementById("nav-terms");
+            if (navPrivacy) {
+                navPrivacy.textContent = privacyLabels[lang] || privacyLabels.en;
+                navPrivacy.href = `index.html?lang=${lang}`;
+            }
+            if (navTerms) {
+                navTerms.textContent = data.badge;
+                navTerms.href = `terms.html?lang=${lang}`;
+            }
+
+            document.getElementById("t-badge").textContent = data.badge;
+            document.getElementById("t-date").textContent = data.date;
+            document.getElementById("t-intro").innerHTML = data.intro;
+            document.getElementById("t-summary").innerHTML = data.summary;
+
+            document.getElementById("t-h1").textContent = data.h1;
+            document.getElementById("t-list1").innerHTML = data.list1.map(item => `<li>${item}</li>`).join("");
+
+            document.getElementById("t-h2").textContent = data.h2;
+            document.getElementById("t-list2").innerHTML = data.list2.map(item => `<li>${item}</li>`).join("");
+
+            document.getElementById("t-h3").textContent = data.h3;
+            document.getElementById("t-p3").innerHTML = data.p3;
+
+            document.getElementById("t-h4").textContent = data.h4;
+            document.getElementById("t-p4").innerHTML = data.p4;
+
+            document.getElementById("t-h5").textContent = data.h5;
+            document.getElementById("t-p5").innerHTML = data.p5;
+
+            document.getElementById("t-h6").textContent = data.h6;
+            document.getElementById("lang-switcher").value = lang;
+        }
+
+        const switcher = document.getElementById("lang-switcher");
+        switcher.addEventListener("change", (e) => {
+            const newLang = e.target.value;
+            renderLang(newLang);
+            const url = new URL(window.location);
+            url.searchParams.set("lang", newLang);
+            window.history.replaceState({}, "", url);
+        });
+
+        renderLang(resolveInitialLang());
+    </script>
+</body>
+</html>
