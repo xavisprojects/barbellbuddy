@@ -226,642 +226,662 @@
         const i18n = {
             en: {
                 badge: "Privacy Policy",
-                date: "Last updated: October 2026",
+                date: "Last updated: November 2026",
                 intro: "At <strong>Barbell Buddy</strong> (formerly <em>Barbell Bible</em>, package ID <code>com.xavisprojects.barbellbible</code>), we respect and protect your privacy. This Privacy Policy explains how information is handled across our Android mobile app and Wear OS smartwatch app.",
                 summary: "<strong>Privacy Summary:</strong> Your workout routines, sets, and personal records are stored <strong>locally on your device</strong>. We do not sell, rent, or monetize your personal or biometric data with third parties.",
                 h1: "1. Information We Handle",
                 list1: [
-                    "<strong>Workout & Fitness Data:</strong> Exercises, sets, reps, weights (KG/LBS), RPE, 1RM estimates, and session history are stored locally in your device's SQLite/Room database.",
+                    "<strong>Workout &amp; Fitness Data:</strong> Exercises, sets, reps, weights (KG/LBS), RPE/RIR, 1RM estimates, and session history are stored locally in your device's SQLite/Room database.",
                     "<strong>Wear OS Synchronization:</strong> Routines and completed sets are transmitted directly between your phone and your Wear OS watch via Google Play Services Wearable Data Layer API.",
-                    "<strong>Health Connect (Optional):</strong> If you grant permission, the app reads/writes workout sessions, heart rate, and body weight with Google Health Connect on your device.",
-                    "<strong>Subscriptions &amp; In-App Purchases (Google Play Billing &amp; RevenueCat):</strong> Purchases and PRO entitlements are processed securely by Google Play Billing and validated via RevenueCat using an anonymous app identifier (<code>$RCAnonymousID</code>). We never receive or store your credit card, bank details, or billing address.",
-                    "<strong>Anonymous Usage Statistics (Optional – Google Firebase Analytics):</strong> To improve stability, the app may collect anonymous usage events via Google Firebase Analytics (with Advertising ID disabled). No personal identity or health records are shared, and you can disable this anytime in <em>Settings &gt; Privacy</em>."
+                    "<strong>Health Connect (Optional &amp; Limited Use):</strong> With your explicit permission, the app writes completed workout sessions and heart rate (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) and reads sleep and resting heart rate (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) strictly on-device to suggest Light Session recovery adjustments. In compliance with Google Play's Health Connect Permissions Policy (including Limited Use requirements), Health Connect data is never sent to external servers, never sold, and never used for advertising.",
+                    "<strong>Embedded Exercise Videos (YouTube):</strong> When you choose to play an exercise demonstration video, the app loads video thumbnails (<code>img.youtube.com</code>) and the official YouTube Player (<code>youtube.com</code>), subject to Google's Privacy Policy.",
+                    "<strong>Subscriptions &amp; In-App Purchases (Google Play Billing &amp; RevenueCat):</strong> Purchases and PRO entitlements are processed securely by Google Play Billing and validated via RevenueCat using an anonymous app identifier (<code>$RCAnonymousID</code>). We never receive or store your credit card, bank details, or email address.",
+                    "<strong>Anonymous Usage Statistics (Optional – Google Firebase Analytics):</strong> When enabled in <em>Settings &gt; Privacy</em>, Google Firebase Analytics logs anonymous app interaction events, an anonymous app-instance ID, and approximate IP-derived region to improve stability, with Advertising ID (AD_ID) disabled. Routine names, notes, lifted weights, and Health Connect records are never collected."
                 ],
                 h2: "2. How Data Is Used",
                 list2: [
                     "To log, track, and analyze your strength, cardio, and mobility workouts.",
                     "To calculate personal records (PRs), muscle heatmaps, and estimated 1RM.",
                     "To synchronize active workouts and rest timers between your phone and Wear OS smartwatch.",
-                    "To maintain app reliability and fix technical issues."
+                    "To validate PRO entitlements via Google Play Billing &amp; RevenueCat and maintain technical stability."
                 ],
                 h3: "3. Data Storage, Backups & Third Parties",
-                p3: "All workout data resides locally on your device. You can export and import JSON/CSV backups at any time, and Android Auto Backup may back up your local database to your personal Google Drive account. We do not include third-party advertising networks or sell data to data brokers.",
+                p3: "All workout and health data resides locally on your device. You can export and import JSON/CSV backups at any time, and Android Auto Backup may back up your local database to your personal Google Drive account. We do not include third-party advertising networks or sell data to data brokers.",
                 h4: "4. Device Permissions",
                 list4: [
-                    "<strong>Notifications & Foreground Service:</strong> To run rest timers and keep active workouts alive on phone and Wear OS.",
-                    "<strong>Health Connect & Body Sensors (Wear OS):</strong> Optional, to measure live heart rate (BPM) and calories during workouts.",
+                    "<strong>Notifications &amp; Foreground Service:</strong> To run rest timers, trial reminders, and keep active workouts alive on phone and Wear OS.",
+                    "<strong>Health Connect, Body Sensors (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) &amp; Activity Recognition:</strong> Optional, to sync workouts/sleep/resting HR with Health Connect and measure live heart rate (BPM), activity, and calories on Wear OS.",
                     "<strong>Bluetooth / Wearable Data Layer:</strong> To sync routines and completed workouts between your phone and smartwatch."
                 ],
                 h5: "5. Your Rights & Control (GDPR)",
-                p5: "You have full control over your data: you can toggle anonymous telemetry off in <strong>Settings</strong>, export your data to JSON, or permanently erase all records by clearing the app's storage or uninstalling the application.",
+                p5: "You have full control over your data: you can toggle anonymous telemetry off in <strong>Settings</strong>, revoke Health Connect permissions anytime in Android settings, export your data to JSON, or erase all local records by clearing app storage or uninstalling. To request deletion of anonymous RevenueCat purchase IDs, email our support address below.",
                 h6: "6. Contact"
             },
             es: {
                 badge: "Privacidad",
-                date: "Última actualización: Octubre de 2026",
+                date: "Última actualización: Noviembre de 2026",
                 intro: "En <strong>Barbell Buddy</strong> (anteriormente <em>Barbell Bible</em>, paquete interno <code>com.xavisprojects.barbellbible</code>), valoramos y protegemos tu privacidad. Esta Política de Privacidad describe cómo se maneja la información en nuestra aplicación móvil Android y en el reloj inteligente Wear OS.",
                 summary: "<strong>Resumen de Privacidad:</strong> Tus rutinas, series y marcas personales se almacenan <strong>localmente en tu dispositivo</strong>. No vendemos, alquilamos ni comercializamos tus datos personales o biométricos con terceros.",
                 h1: "1. Información que Manejamos",
                 list1: [
-                    "<strong>Datos de Entrenamiento y Fuerza:</strong> Ejercicios, series, repeticiones, peso (KG/LBS), RPE, 1RM estimado e historial se guardan exclusivamente en la base de datos local (Room/SQLite) de tu dispositivo.",
+                    "<strong>Datos de Entrenamiento y Fuerza:</strong> Ejercicios, series, repeticiones, peso (KG/LBS), RPE/RIR, 1RM estimado e historial se guardan exclusivamente en la base de datos local (Room/SQLite) de tu dispositivo.",
                     "<strong>Sincronización con Wear OS:</strong> Las rutinas y series completadas se sincronizan directamente entre tu móvil y tu reloj mediante la API Wearable Data Layer de Google Play Services.",
-                    "<strong>Health Connect (Opcional):</strong> Si lo autorizas, la aplicación sincroniza tus sesiones, frecuencia cardíaca y peso corporal con Google Health Connect en tu dispositivo.",
-                    "<strong>Suscripciones y Compras Integradas (Google Play Billing y RevenueCat):</strong> Los pagos se procesan de forma segura a través de Google Play y el estado de licencia PRO se verifica mediante RevenueCat usando un identificador anónimo (<code>$RCAnonymousID</code>). Nunca recibimos ni almacenamos tus datos bancarios ni tarjetas de pago.",
-                    "<strong>Estadísticas de Uso Anónimas (Opcional – Google Firebase Analytics):</strong> Para mejorar la estabilidad, la app puede registrar eventos de uso agregados y anónimos mediante Google Firebase Analytics (sin ID de publicidad ni datos personales o de salud). Puedes desactivarlo en cualquier momento desde <em>Ajustes &gt; Privacidad</em>."
+                    "<strong>Health Connect (Opcional y Uso Limitado):</strong> Con tu permiso explícito, la aplicación escribe sesiones de entrenamiento y frecuencia cardíaca (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) y lee sueño y frecuencia cardíaca en reposo (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) localmente en tu dispositivo para sugerir el Modo Sesión Ligera. Cumplimos estrictamente con la Política de Permisos de Health Connect de Google Play (incluido el requisito de Uso Limitado): tus datos de salud nunca salen a servidores propios, nunca se venden ni se usan para publicidad.",
+                    "<strong>Vídeos Demostrativos Integrados (YouTube):</strong> Si reproduces un vídeo de técnica en el detalle de un ejercicio, se cargan miniaturas (<code>img.youtube.com</code>) y el reproductor oficial de YouTube (<code>youtube.com</code>), sujeto a la Política de Privacidad de Google.",
+                    "<strong>Suscripciones y Compras Integradas (Google Play Billing y RevenueCat):</strong> Los pagos se procesan de forma segura a través de Google Play y el estado de licencia PRO se verifica mediante RevenueCat usando un identificador anónimo (<code>$RCAnonymousID</code>). Nunca recibimos ni almacenamos tarjetas, datos bancarios ni direcciones de correo electrónico.",
+                    "<strong>Estadísticas de Uso Anónimas (Opcional – Google Firebase Analytics):</strong> Cuando está activado en <em>Ajustes &gt; Privacidad</em>, Google Firebase Analytics registra interacciones anónimas, un ID de instancia anónimo y región aproximada por IP con el ID de publicidad (AD_ID) desactivado. Nunca se recopilan nombres de rutinas, notas, pesos levantados ni datos de Health Connect."
                 ],
                 h2: "2. Uso de la Información",
                 list2: [
                     "Registrar, medir y analizar tu progreso en entrenamientos de fuerza, cardio y movilidad.",
                     "Calcular récords personales (PRs), mapas musculares y estimaciones de 1RM.",
                     "Sincronizar temporizadores de descanso y sesiones entre tu teléfono y tu smartwatch Wear OS.",
-                    "Mejorar el rendimiento y la estabilidad técnica de la aplicación."
+                    "Validar licencias PRO mediante Google Play Billing y RevenueCat y mantener la estabilidad técnica."
                 ],
                 h3: "3. Almacenamiento, Copias de Seguridad y Terceros",
-                p3: "Todos tus registros residen en tu dispositivo. Puedes exportar e importar copias de seguridad locales en JSON/CSV cuando quieras, y Android Auto Backup puede respaldar tus datos en tu cuenta personal de Google Drive. No incluimos redes publicitarias ni vendemos datos a terceros.",
+                p3: "Todos tus registros y datos de salud residen en tu dispositivo. Puedes exportar e importar copias de seguridad locales en JSON/CSV cuando quieras, y Android Auto Backup puede respaldar tus datos en tu cuenta personal de Google Drive. No incluimos redes publicitarias ni vendemos datos a terceros.",
                 h4: "4. Permisos del Dispositivo",
                 list4: [
-                    "<strong>Notificaciones y Servicio en Primer Plano:</strong> Para avisarte del final del descanso y mantener activo el seguimiento del entrenamiento.",
-                    "<strong>Health Connect y Sensores Corporales (Wear OS):</strong> Opcional, para medir pulsaciones (BPM) y calorías durante la sesión.",
+                    "<strong>Notificaciones y Servicio en Primer Plano:</strong> Para avisarte del final del descanso, recordatorios de prueba y mantener activo el seguimiento en teléfono y Wear OS.",
+                    "<strong>Health Connect, Sensores Corporales (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) y Actividad Física:</strong> Opcional, para sincronizar sesiones/sueño/FC en reposo con Health Connect y medir pulsaciones (BPM), actividad y calorías en Wear OS.",
                     "<strong>Bluetooth / Wearable:</strong> Para sincronizar rutinas y entrenamientos con tu reloj Wear OS."
                 ],
                 h5: "5. Tus Derechos y Control (RGPD)",
-                p5: "Tienes control total sobre tus datos: puedes desactivar las estadísticas anónimas en <strong>Ajustes</strong>, exportar tu historial completo en JSON, o eliminar permanentemente todos tus datos borrando el almacenamiento de la app o desinstalándola.",
+                p5: "Tienes control total sobre tus datos: puedes desactivar las estadísticas anónimas en <strong>Ajustes</strong>, revocar los permisos de Health Connect en Android, exportar tu historial completo en JSON o eliminar todo borrando el almacenamiento o desinstalando la app. Para solicitar el borrado del identificador anónimo en RevenueCat, escríbenos al correo de contacto.",
                 h6: "6. Contacto"
             },
             de: {
                 badge: "Datenschutz",
-                date: "Letzte Aktualisierung: Oktober 2026",
+                date: "Letzte Aktualisierung: November 2026",
                 intro: "Bei <strong>Barbell Buddy</strong> (ehemals <em>Barbell Bible</em>, Paket-ID <code>com.xavisprojects.barbellbible</code>) schützen wir Ihre Privatsphäre. Diese Datenschutzerklärung erläutert die Datenverarbeitung in unserer Android- und Wear OS-App.",
                 summary: "<strong>Kurzfassung:</strong> Ihre Trainingspläne, Sätze und Rekorde werden <strong>lokal auf Ihrem Gerät</strong> gespeichert. Wir verkaufen oder teilen keine persönlichen oder biometrischen Daten mit Dritten.",
                 h1: "1. Verarbeitete Daten",
                 list1: [
-                    "<strong>Trainingsdaten:</strong> Übungen, Sätze, Wiederholungen, Gewicht (KG/LBS), RPE und 1RM-Werte werden lokal in der Gerätedatenbank gespeichert.",
+                    "<strong>Trainingsdaten:</strong> Übungen, Sätze, Wiederholungen, Gewicht (KG/LBS), RPE/RIR und 1RM-Werte werden lokal in der Gerätedatenbank gespeichert.",
                     "<strong>Wear OS-Synchronisierung:</strong> Routinen und Ergebnisse werden direkt über die Google Play Services Wearable Data Layer API zwischen Smartphone und Uhr synchronisiert.",
-                    "<strong>Health Connect (Optional):</strong> Nach Ihrer Freigabe synchronisiert die App Trainingseinheiten, Herzfrequenz und Körpergewicht lokal mit Google Health Connect.",
-                    "<strong>Abonnements &amp; In-App-Käufe (Google Play Billing &amp; RevenueCat):</strong> Zahlungen werden sicher über Google Play abgewickelt und der PRO-Status wird über RevenueCat anhand einer anonymen Kennung (<code>$RCAnonymousID</code>) geprüft. Wir speichern keinerlei Zahlungs- oder Kreditkartendaten.",
-                    "<strong>Anonyme Nutzungsstatistiken (Optional – Google Firebase Analytics):</strong> Zur Verbesserung der Stabilität können anonyme Nutzungsereignisse über Google Firebase Analytics erfasst werden. Dies ist jederzeit unter <em>Einstellungen &gt; Datenschutz</em> deaktivierbar."
+                    "<strong>Health Connect (Optional &amp; Eingeschränkte Nutzung):</strong> Nach Freigabe schreibt die App Trainingseinheiten und Herzfrequenz (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) und liest Schlaf sowie Ruheherzfrequenz (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) ausschließlich lokal für Erholungshinweise. Gemäß der Google Play Health Connect-Richtlinie (Limited Use) werden diese Daten niemals an externe Server gesendet, verkauft oder für Werbung genutzt.",
+                    "<strong>Eingebettete Übungsvideos (YouTube):</strong> Beim Abspielen von Übungsvideos werden Vorschaubilder (<code>img.youtube.com</code>) und der offizielle YouTube-Player (<code>youtube.com</code>) gemäß den Datenschutzbestimmungen von Google geladen.",
+                    "<strong>Abonnements &amp; In-App-Käufe (Google Play Billing &amp; RevenueCat):</strong> Zahlungen werden sicher über Google Play abgewickelt und der PRO-Status wird über RevenueCat anhand einer anonymen Kennung (<code>$RCAnonymousID</code>) geprüft. Wir speichern weder Zahlungsdaten noch E-Mail-Adressen.",
+                    "<strong>Anonyme Nutzungsstatistiken (Optional – Google Firebase Analytics):</strong> Sofern unter <em>Einstellungen &gt; Datenschutz</em> aktiviert, erfasst Firebase Analytics anonyme Interaktionen, eine anonyme App-Instanz-ID und die ungefähre Region per IP (mit deaktivierter Werbe-ID). Routinennamen, Notizen, Gewichte und Health Connect-Daten werden niemals erfasst."
                 ],
                 h2: "2. Zweck der Datenverarbeitung",
                 list2: [
                     "Protokollierung und Auswertung Ihrer Kraft-, Cardio- und Mobilitätstrainings.",
                     "Berechnung persönlicher Rekorde (PRs), Muskelkarten und 1RM-Schätzungen.",
                     "Synchronisierung von Pausentimern und Sitzungen zwischen Smartphone und Wear OS.",
-                    "Optimierung der technischen App-Stabilität."
+                    "Prüfung der PRO-Lizenz über Google Play &amp; RevenueCat und Verbesserung der App-Stabilität."
                 ],
                 h3: "3. Speicherung, Backups & Dritte",
-                p3: "Alle Trainingsdaten verbleiben lokal auf Ihrem Gerät. Sie können jederzeit JSON/CSV-Backups exportieren. Die App enthält keine Werbenetzwerke und verkauft keine Daten an Dritte.",
+                p3: "Alle Trainings- und Gesundheitsdaten verbleiben lokal auf Ihrem Gerät. Sie können jederzeit JSON/CSV-Backups exportieren. Die App enthält keine Werbenetzwerke und verkauft keine Daten an Dritte.",
                 h4: "4. Geräteberechtigungen",
                 list4: [
-                    "<strong>Benachrichtigungen & Vordergrunddienst:</strong> Für Pausentimer und aktives Trainingstracking.",
-                    "<strong>Health Connect & Körpersensoren (Wear OS):</strong> Optional zur Messung von Herzfrequenz (BPM) und Kalorien.",
+                    "<strong>Benachrichtigungen &amp; Vordergrunddienst:</strong> Für Pausentimer, Test-Erinnerungen und aktives Trainingstracking.",
+                    "<strong>Health Connect, Körpersensoren (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) &amp; Aktivitätserkennung:</strong> Optional zur lokalen Health Connect-Synchronisierung und Messung von Herzfrequenz (BPM), Aktivität und Kalorien auf Wear OS.",
                     "<strong>Bluetooth / Wearable:</strong> Für die Verbindung zwischen Smartphone und Smartwatch."
                 ],
                 h5: "5. Ihre Rechte & Kontrolle (DSGVO)",
-                p5: "Sie behalten die volle Kontrolle: Sie können anonyme Statistiken in den <strong>Einstellungen</strong> deaktivieren, Daten exportieren oder alle lokalen Daten durch Deinstallation der App restlos löschen.",
+                p5: "Sie behalten die volle Kontrolle: Sie können anonyme Statistiken in den <strong>Einstellungen</strong> deaktivieren, Health Connect-Berechtigungen widerrufen, Daten exportieren oder alles durch Deinstallation löschen. Zur Löschung anonymer RevenueCat-IDs kontaktieren Sie uns per E-Mail.",
                 h6: "6. Kontakt"
             },
             fr: {
                 badge: "Confidentialité",
-                date: "Dernière mise à jour : Octobre 2026",
+                date: "Dernière mise à jour : Novembre 2026",
                 intro: "Chez <strong>Barbell Buddy</strong> (anciennement <em>Barbell Bible</em>, identifiant <code>com.xavisprojects.barbellbible</code>), nous protégeons votre vie privée. Cette politique décrit la gestion des données sur notre application Android et Wear OS.",
                 summary: "<strong>Résumé :</strong> Vos routines, séries et records personnels sont stockés <strong>localement sur votre appareil</strong>. Nous ne vendons ni ne partageons vos données personnelles ou biométriques.",
                 h1: "1. Données traitées",
                 list1: [
-                    "<strong>Données d'entraînement :</strong> Exercices, séries, répétitions, poids (KG/LBS), RPE et 1RM sont enregistrés localement dans la base SQLite/Room de votre appareil.",
+                    "<strong>Données d'entraînement :</strong> Exercices, séries, répétitions, poids (KG/LBS), RPE/RIR et 1RM sont enregistrés localement dans la base SQLite/Room de votre appareil.",
                     "<strong>Synchronisation Wear OS :</strong> Échange direct entre téléphone et montre via l'API Google Play Services Wearable Data Layer.",
-                    "<strong>Health Connect (Optionnel) :</strong> Synchronisation locale des séances, de la fréquence cardiaque et du poids avec Google Health Connect si vous l'autorisez.",
-                    "<strong>Abonnements et Achats intégrés (Google Play Billing &amp; RevenueCat) :</strong> Les paiements sont traités par Google Play et les droits PRO sont vérifiés via RevenueCat à l'aide d'un identifiant anonyme (<code>$RCAnonymousID</code>). Nous n'avons jamais accès à vos coordonnées bancaires.",
-                    "<strong>Statistiques anonymes (Optionnel – Google Firebase Analytics) :</strong> Événements techniques anonymes via Google Firebase Analytics pour améliorer la stabilité, désactivables à tout moment dans <em>Paramètres &gt; Confidentialité</em>."
+                    "<strong>Health Connect (Optionnel et Usage Limité) :</strong> Avec votre accord, l'app écrit les séances et la fréquence cardiaque (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) et lit le sommeil et la FC au repos (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) uniquement sur l'appareil pour suggérer une séance légère. Conformément à la politique Health Connect de Google Play (Limited Use), aucune donnée de santé n'est envoyée vers des serveurs externes, vendue ou utilisée à des fins publicitaires.",
+                    "<strong>Vidéos d'exercices intégrées (YouTube) :</strong> L'affichage optionnel d'une vidéo technique charge la miniature (<code>img.youtube.com</code>) et le lecteur officiel YouTube (<code>youtube.com</code>), soumis à la politique de confidentialité de Google.",
+                    "<strong>Abonnements et Achats intégrés (Google Play Billing &amp; RevenueCat) :</strong> Les paiements sont traités par Google Play et les droits PRO sont vérifiés via RevenueCat à l'aide d'un identifiant anonyme (<code>$RCAnonymousID</code>). Nous ne collectons ni coordonnées bancaires ni adresse e-mail.",
+                    "<strong>Statistiques anonymes (Optionnel – Google Firebase Analytics) :</strong> Lorsqu'elles sont activées dans <em>Paramètres &gt; Confidentialité</em>, des interactions anonymes, un ID d'instance anonyme et la région approximative (IP) sont enregistrés avec l'ID publicitaire désactivé. Aucun nom de routine, note, poids ou donnée Health Connect n'est collecté."
                 ],
                 h2: "2. Utilisation des données",
                 list2: [
                     "Enregistrer et suivre vos séances de musculation, cardio et mobilité.",
                     "Calculer vos records (PR), cartes musculaires et estimations de 1RM.",
                     "Synchroniser les temps de repos et séances avec votre montre Wear OS.",
-                    "Assurer la stabilité technique de l'application."
+                    "Valider l'accès PRO via Google Play &amp; RevenueCat et assurer la stabilité de l'application."
                 ],
                 h3: "3. Stockage, Sauvegardes et Tiers",
                 p3: "Toutes vos données restent sur votre appareil. Vous pouvez exporter/importer des sauvegardes JSON/CSV. L'application ne contient aucune publicité et ne vend aucune donnée.",
                 h4: "4. Autorisations de l'appareil",
                 list4: [
-                    "<strong>Notifications et Service au premier plan :</strong> Pour les minuteurs de repos et le suivi continu de la séance.",
-                    "<strong>Health Connect et Capteurs corporels (Wear OS) :</strong> Optionnel, pour mesurer les BPM et calories pendant l'effort.",
+                    "<strong>Notifications et Service au premier plan :</strong> Pour les minuteurs de repos, rappels d'essai et le suivi continu de la séance.",
+                    "<strong>Health Connect, Capteurs corporels (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) et Activité physique :</strong> Optionnel, pour synchroniser avec Health Connect et mesurer les BPM, l'activité et les calories sur Wear OS.",
                     "<strong>Bluetooth / Wearable :</strong> Pour synchroniser le téléphone et la montre."
                 ],
                 h5: "5. Vos droits (RGPD)",
-                p5: "Vous avez le contrôle total : vous pouvez désactiver la télémétrie anonyme dans les <strong>Paramètres</strong>, exporter vos données ou tout supprimer en désinstallant l'application.",
+                p5: "Vous avez le contrôle total : désactivez la télémétrie dans les <strong>Paramètres</strong>, révoquez Health Connect dans Android, exportez vos données ou supprimez l'app. Pour effacer l'ID anonyme RevenueCat, contactez notre support.",
                 h6: "6. Contact"
             },
             it: {
                 badge: "Privacy",
-                date: "Ultimo aggiornamento: Ottobre 2026",
+                date: "Ultimo aggiornamento: Novembre 2026",
                 intro: "In <strong>Barbell Buddy</strong> (in precedenza <em>Barbell Bible</em>, pacchetto <code>com.xavisprojects.barbellbible</code>), rispettiamo la tua privacy. Questa informativa spiega come vengono gestiti i dati nell'app Android e Wear OS.",
                 summary: "<strong>Riepilogo:</strong> Schede, serie e record personali sono salvati <strong>localmente sul tuo dispositivo</strong>. Non vendiamo né cediamo i tuoi dati personali o biometrici a terzi.",
                 h1: "1. Dati gestiti",
                 list1: [
-                    "<strong>Dati di allenamento:</strong> Esercizi, serie, ripetizioni, pesi (KG/LBS), RPE e 1RM sono archiviati localmente nel database del dispositivo.",
+                    "<strong>Dati di allenamento:</strong> Esercizi, serie, ripetizioni, pesi (KG/LBS), RPE/RIR e 1RM sono archiviati localmente nel database del dispositivo.",
                     "<strong>Sincronizzazione Wear OS:</strong> Comunicazione diretta tra telefono e smartwatch tramite Google Play Services Wearable Data Layer.",
-                    "<strong>Health Connect (Opzionale):</strong> Sincronizzazione locale di allenamenti, battito cardiaco e peso con Google Health Connect previa autorizzazione.",
-                    "<strong>Abbonamenti e Acquisti in-app (Google Play Billing &amp; RevenueCat):</strong> I pagamenti sono gestiti da Google Play e lo stato PRO è verificato tramite RevenueCat con un ID anonimo (<code>$RCAnonymousID</code>). Non memorizziamo mai dati di carte o pagamenti.",
-                    "<strong>Statistiche anonime (Opzionale – Google Firebase Analytics):</strong> Metriche tecniche anonime tramite Google Firebase Analytics per migliorare la stabilità, disattivabili in qualsiasi momento in <em>Impostazioni &gt; Privacy</em>."
+                    "<strong>Health Connect (Opzionale e Uso Limitato):</strong> Con il tuo consenso, l'app scrive sessioni e battito cardiaco (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) e legge sonno e FC a riposo (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) esclusivamente sul dispositivo per suggerire sessioni leggere. In conformità con la policy Health Connect di Google Play (Limited Use), i dati sanitari non vengono mai inviati a server esterni, venduti o usati per pubblicità.",
+                    "<strong>Video dimostrativi integrati (YouTube):</strong> La riproduzione opzionale dei video tecnici carica le miniature (<code>img.youtube.com</code>) e il player ufficiale YouTube (<code>youtube.com</code>), soggetti alle norme sulla privacy di Google.",
+                    "<strong>Abbonamenti e Acquisti in-app (Google Play Billing &amp; RevenueCat):</strong> I pagamenti sono gestiti da Google Play e lo stato PRO è verificato tramite RevenueCat con un ID anonimo (<code>$RCAnonymousID</code>). Non raccogliamo dati di pagamento né indirizzi email.",
+                    "<strong>Statistiche anonime (Opzionale – Google Firebase Analytics):</strong> Se attive in <em>Impostazioni &gt; Privacy</em>, raccolgono interazioni anonime, un ID istanza anonimo e la regione approssimativa da IP con ID pubblicitario disattivato. Nomi di schede, note, pesi e dati Health Connect non vengono mai raccolti."
                 ],
                 h2: "2. Utilizzo dei dati",
                 list2: [
                     "Registrare e monitorare i tuoi allenamenti di forza, cardio e mobilità.",
                     "Calcolare record personali (PR), mappa muscolare e 1RM stimato.",
                     "Sincronizzare timer di recupero e sessioni con lo smartwatch Wear OS.",
-                    "Migliorare le prestazioni e la stabilità dell'app."
+                    "Verificare lo stato PRO tramite Google Play &amp; RevenueCat e migliorare la stabilità dell'app."
                 ],
                 h3: "3. Archiviazione, Backup e Terze Parti",
                 p3: "Tutti i dati risiedono sul tuo dispositivo. Puoi esportare e importare backup JSON/CSV in qualsiasi momento. L'app non contiene pubblicità e non vende dati a terzi.",
                 h4: "4. Autorizzazioni del dispositivo",
                 list4: [
-                    "<strong>Notifiche e Servizio in primo piano:</strong> Per gli avvisi del timer di recupero e il tracciamento della sessione attiva.",
-                    "<strong>Health Connect e Sensori corporei (Wear OS):</strong> Opzionale, per rilevare frequenza cardiaca (BPM) e calorie.",
+                    "<strong>Notifiche e Servizio in primo piano:</strong> Per gli avvisi del timer di recupero, promemoria di prova e tracciamento della sessione attiva.",
+                    "<strong>Health Connect, Sensori corporei (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) e Attività fisica:</strong> Opzionale, per sincronizzare con Health Connect e rilevare frequenza cardiaca (BPM), attività e calorie su Wear OS.",
                     "<strong>Bluetooth / Wearable:</strong> Per la sincronizzazione con l'orologio Wear OS."
                 ],
                 h5: "5. I tuoi diritti (GDPR)",
-                p5: "Hai il pieno controllo: puoi disattivare le statistiche anonime nelle <strong>Impostazioni</strong>, esportare i tuoi dati o cancellarli definitivamente disinstallando l'app.",
+                p5: "Hai il pieno controllo: disattiva le statistiche anonime nelle <strong>Impostazioni</strong>, revoca Health Connect dalle impostazioni Android, esporta i dati o disinstalla l'app. Per eliminare l'ID anonimo RevenueCat, scrivici via email.",
                 h6: "6. Contatti"
             },
             pt: {
                 badge: "Privacidade",
-                date: "Última atualização: Outubro de 2026",
+                date: "Última atualização: Novembro de 2026",
                 intro: "No <strong>Barbell Buddy</strong> (anteriormente <em>Barbell Bible</em>, pacote <code>com.xavisprojects.barbellbible</code>), respeitamos a sua privacidade. Esta Política descreve como os dados são tratados no aplicativo Android e Wear OS.",
                 summary: "<strong>Resumo:</strong> As suas rotinas, séries e recordes pessoais são armazenados <strong>localmente no seu dispositivo</strong>. Não vendemos nem compartilhamos dados pessoais ou biométricos com terceiros.",
                 h1: "1. Informações que Tratamos",
                 list1: [
-                    "<strong>Dados de Treino:</strong> Exercícios, séries, repetições, cargas (KG/LBS), RPE e 1RM ficam guardados localmente no banco de dados do seu aparelho.",
+                    "<strong>Dados de Treino:</strong> Exercícios, séries, repetições, cargas (KG/LBS), RPE/RIR e 1RM ficam guardados localmente no banco de dados do seu aparelho.",
                     "<strong>Sincronização Wear OS:</strong> Rotinas e séries são sincronizadas diretamente entre o telemóvel/celular e o relógio via Google Play Services Wearable Data Layer.",
-                    "<strong>Health Connect (Opcional):</strong> Mediante permissão, sincroniza sessões, frequência cardíaca e peso corporal com o Google Health Connect no dispositivo.",
-                    "<strong>Assinaturas e Compras na App (Google Play Billing &amp; RevenueCat):</strong> Os pagamentos são processados pelo Google Play e o acesso PRO é validado via RevenueCat usando um ID anónimo (<code>$RCAnonymousID</code>). Nunca armazenamos dados bancários ou de cartões.",
-                    "<strong>Estatísticas Anónimas (Opcional – Google Firebase Analytics):</strong> Eventos técnicos anónimos via Google Firebase Analytics para melhorar a estabilidade, que podem ser desativados em <em>Definições/Configurações &gt; Privacidade</em>."
+                    "<strong>Health Connect (Opcional e Uso Limitado):</strong> Mediante permissão, grava sessões e frequência cardíaca (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) e lê sono e FC em repouso (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) apenas localmente para sugerir sessões leves. Em total conformidade com a política do Health Connect do Google Play (Uso Limitado), nenhum dado de saúde é enviado a servidores externos, vendido ou usado para anúncios.",
+                    "<strong>Vídeos de Exercícios Integrados (YouTube):</strong> Ao reproduzir vídeos de técnica, a app carrega miniaturas (<code>img.youtube.com</code>) e o player oficial do YouTube (<code>youtube.com</code>), sujeitos à Política de Privacidade do Google.",
+                    "<strong>Assinaturas e Compras na App (Google Play Billing &amp; RevenueCat):</strong> Os pagamentos são processados pelo Google Play e o acesso PRO é validado via RevenueCat usando um ID anónimo (<code>$RCAnonymousID</code>). Nunca armazenamos dados bancários, cartões ou e-mail.",
+                    "<strong>Estatísticas Anónimas (Opcional – Google Firebase Analytics):</strong> Quando ativado em <em>Definições/Configurações &gt; Privacidade</em>, regista interações anónimas, ID de instância anónimo e região aproximada por IP com ID de publicidade desativado. Nomes de rotinas, notas, cargas e dados do Health Connect nunca são recolhidos."
                 ],
                 h2: "2. Uso das Informações",
                 list2: [
                     "Registar e acompanhar os seus treinos de musculação, cárdio e mobilidade.",
                     "Calcular recordes pessoais (PRs), mapa muscular e 1RM estimado.",
                     "Sincronizar cronómetros de descanso e treinos com o smartwatch Wear OS.",
-                    "Garantir a estabilidade e desempenho técnico da aplicação."
+                    "Validar licenças PRO via Google Play &amp; RevenueCat e garantir a estabilidade técnica."
                 ],
                 h3: "3. Armazenamento, Backups e Terceiros",
                 p3: "Todos os registos ficam no seu dispositivo. Pode exportar e importar backups JSON/CSV a qualquer momento. A aplicação não exibe anúncios nem vende dados a terceiros.",
                 h4: "4. Permissões do Dispositivo",
                 list4: [
-                    "<strong>Notificações e Serviço em Primeiro Plano:</strong> Para alertas do temporizador de descanso e rastreio do treino ativo.",
-                    "<strong>Health Connect e Sensores Corporais (Wear OS):</strong> Opcional, para medir batimentos cardíacos (BPM) e calorias.",
+                    "<strong>Notificações e Serviço em Primeiro Plano:</strong> Para alertas do temporizador de descanso, avisos de teste e rastreio do treino ativo.",
+                    "<strong>Health Connect, Sensores Corporais (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) e Atividade Física:</strong> Opcional, para sincronizar com o Health Connect e medir batimentos (BPM), atividade e calorias no Wear OS.",
                     "<strong>Bluetooth / Wearable:</strong> Para sincronização com o relógio Wear OS."
                 ],
                 h5: "5. Os Seus Direitos (RGPD / LGPD)",
-                p5: "Tem controlo total sobre os seus dados: pode desativar a telemetria anónima nas <strong>Configurações</strong>, exportar o histórico em JSON ou apagar tudo desinstalando a aplicação.",
+                p5: "Tem controlo total: pode desativar a telemetria nas <strong>Configurações</strong>, revogar o Health Connect no Android, exportar o histórico ou apagar tudo ao desinstalar. Para eliminar IDs anónimos do RevenueCat, contacte o suporte.",
                 h6: "6. Contacto"
             },
             nl: {
                 badge: "Privacybeleid",
-                date: "Laatst bijgewerkt: Oktober 2026",
+                date: "Laatst bijgewerkt: November 2026",
                 intro: "Bij <strong>Barbell Buddy</strong> (voorheen <em>Barbell Bible</em>, pakket-ID <code>com.xavisprojects.barbellbible</code>) respecteren wij uw privacy. Dit beleid legt uit hoe gegevens worden verwerkt in onze Android- en Wear OS-app.",
                 summary: "<strong>Samenvatting:</strong> Uw trainingsschema's, sets en persoonlijke records worden <strong>lokaal op uw apparaat</strong> opgeslagen. Wij verkopen of delen geen persoonlijke of biometrische gegevens met derden.",
                 h1: "1. Gegevens die wij verwerken",
                 list1: [
-                    "<strong>Trainingsgegevens:</strong> Oefeningen, sets, herhalingen, gewicht (KG/LBS), RPE en 1RM worden lokaal op uw toestel bewaard.",
+                    "<strong>Trainingsgegevens:</strong> Oefeningen, sets, herhalingen, gewicht (KG/LBS), RPE/RIR en 1RM worden lokaal op uw toestel bewaard.",
                     "<strong>Wear OS-synchronisatie:</strong> Directe synchronisatie tussen telefoon en smartwatch via Google Play Services Wearable Data Layer.",
-                    "<strong>Health Connect (Optioneel):</strong> Synchroniseert met uw toestemming trainingen, hartslag en lichaamsgewicht met Google Health Connect.",
-                    "<strong>Abonnementen &amp; In-app aankopen (Google Play Billing &amp; RevenueCat):</strong> Betalingen verlopen via Google Play en uw PRO-status wordt geverifieerd via RevenueCat met een anonieme ID (<code>$RCAnonymousID</code>). Wij slaan geen betaalgegevens op.",
-                    "<strong>Anonieme gebruiksstatistieken (Optioneel – Google Firebase Analytics):</strong> Anonieme technische statistieken voor app-stabiliteit, uitschakelbaar via <em>Instellingen &gt; Privacy</em>."
+                    "<strong>Health Connect (Optioneel &amp; Beperkt Gebruik):</strong> Met uw toestemming schrijft de app trainingen en hartslag (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) en leest slaap en rusthartslag (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) uitsluitend lokaal voor hersteladvies. Conform het Google Play Health Connect-beleid (Limited Use) worden gezondheidsgegevens nooit naar externe servers verzonden, verkocht of voor advertenties gebruikt.",
+                    "<strong>Ingesloten oefenvideo's (YouTube):</strong> Bij het afspelen van instructievideo's worden miniaturen (<code>img.youtube.com</code>) en de officiële YouTube-speler (<code>youtube.com</code>) geladen onder het privacybeleid van Google.",
+                    "<strong>Abonnementen &amp; In-app aankopen (Google Play Billing &amp; RevenueCat):</strong> Betalingen verlopen via Google Play en uw PRO-status wordt geverifieerd via RevenueCat met een anonieme ID (<code>$RCAnonymousID</code>). Wij slaan geen betaalgegevens of e-mailadressen op.",
+                    "<strong>Anonieme gebruiksstatistieken (Optioneel – Google Firebase Analytics):</strong> Indien ingeschakeld in <em>Instellingen &gt; Privacy</em>, verzamelt Firebase anonieme interacties, een anonieme app-instantie-ID en geschatte IP-regio met advertentie-ID uitgeschakeld. Schemanamen, gewichten en Health Connect-gegevens worden nooit verzameld."
                 ],
                 h2: "2. Gebruik van gegevens",
                 list2: [
                     "Het bijhouden en analyseren van uw kracht-, cardio- en mobiliteitstrainingen.",
                     "Het berekenen van persoonlijke records (PR's), spierkaarten en geschatte 1RM.",
                     "Het synchroniseren van rusttimers en sessies met uw Wear OS-smartwatch.",
-                    "Het verbeteren van de stabiliteit van de app."
+                    "Het verifiëren van PRO-licenties via Google Play &amp; RevenueCat en verbeteren van app-stabiliteit."
                 ],
                 h3: "3. Opslag, Back-ups & Derden",
                 p3: "Alle gegevens blijven lokaal op uw apparaat. U kunt op elk moment JSON/CSV-back-ups exporteren. De app bevat geen advertenties en verkoopt geen gegevens.",
                 h4: "4. Apparaatmachtigingen",
                 list4: [
-                    "<strong>Meldingen & Voorgrondservice:</strong> Voor rusttimers en het actief houden van uw trainingssessie.",
-                    "<strong>Health Connect & Lichaamssensoren (Wear OS):</strong> Optioneel, voor hartslag (BPM) en calorieën.",
+                    "<strong>Meldingen &amp; Voorgrondservice:</strong> Voor rusttimers, proefherinneringen en het actief houden van uw trainingssessie.",
+                    "<strong>Health Connect, Lichaamssensoren (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) &amp; Activiteitsherkenning:</strong> Optioneel voor Health Connect-synchronisatie en meting van hartslag (BPM), activiteit en calorieën op Wear OS.",
                     "<strong>Bluetooth / Wearable:</strong> Voor synchronisatie tussen telefoon en horloge."
                 ],
                 h5: "5. Uw rechten (AVG / GDPR)",
-                p5: "U hebt volledige controle: schakel anonieme statistieken uit in <strong>Instellingen</strong>, exporteer uw gegevens of verwijder alles door de app te de-installeren.",
+                p5: "U hebt volledige controle: schakel anonieme statistieken uit in <strong>Instellingen</strong>, trek Health Connect in via Android-instellingen, exporteer gegevens of verwijder de app. Voor verwijdering van anonieme RevenueCat-ID's kunt u ons e-mailen.",
                 h6: "6. Contact"
             },
             pl: {
                 badge: "Prywatność",
-                date: "Ostatnia aktualizacja: Październik 2026",
+                date: "Ostatnia aktualizacja: Listopad 2026",
                 intro: "W <strong>Barbell Buddy</strong> (dawniej <em>Barbell Bible</em>, pakiet <code>com.xavisprojects.barbellbible</code>) dbamy o Twoją prywatność. Niniejsza Polityka opisuje zasady przetwarzania danych w aplikacji na Androida oraz Wear OS.",
                 summary: "<strong>Podsumowanie:</strong> Twoje plany treningowe, serie i rekordy są przechowywane <strong>lokalnie na Twoim urządzeniu</strong>. Nie sprzedajemy ani nie udostępniamy Twoich danych osobowych ani biometrycznych podmiotom trzecim.",
                 h1: "1. Przetwarzane dane",
                 list1: [
-                    "<strong>Dane treningowe:</strong> Ćwiczenia, serie, powtórzenia, ciężar (KG/LBS), RPE oraz 1RM są zapisywane lokalnie w bazie danych urządzenia.",
+                    "<strong>Dane treningowe:</strong> Ćwiczenia, serie, powtórzenia, ciężar (KG/LBS), RPE/RIR oraz 1RM są zapisywane lokalnie w bazie danych urządzenia.",
                     "<strong>Synchronizacja z Wear OS:</strong> Bezpośrednia wymiana danych między telefonem a zegarkiem przez Google Play Services Wearable Data Layer.",
-                    "<strong>Health Connect (Opcjonalnie):</strong> Za Twoją zgodą aplikacja synchronizuje treningi, tętno i masę ciała z usługą Google Health Connect.",
-                    "<strong>Subskrypcje i Zakupy w aplikacji (Google Play Billing &amp; RevenueCat):</strong> Płatności są obsługiwane przez Google Play, a status PRO jest weryfikowany przez RevenueCat za pomocą anonimowego identyfikatora (<code>$RCAnonymousID</code>). Nie przechowujemy danych kart płatniczych.",
-                    "<strong>Anonimowe statystyki (Opcjonalnie – Google Firebase Analytics):</strong> Anonimowe dane techniczne służące poprawie stabilności, które można wyłączyć w <em>Ustawienia &gt; Prywatność</em>."
+                    "<strong>Health Connect (Opcjonalnie i Ograniczone Użycie):</strong> Za Twoją zgodą aplikacja zapisuje treningi i tętno (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) oraz odczytuje sen i tętno spoczynkowe (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) wyłącznie lokalnie do oceny regeneracji. Zgodnie z zasadami Health Connect w Google Play (Limited Use), dane te nie są przesyłane na serwery zewnętrzne, sprzedawane ani używane do reklam.",
+                    "<strong>Osadzone filmy z ćwiczeniami (YouTube):</strong> Odtwarzanie filmów instruktażowych ładuje miniatury (<code>img.youtube.com</code>) oraz oficjalny odtwarzacz YouTube (<code>youtube.com</code>) zgodnie z polityką prywatności Google.",
+                    "<strong>Subskrypcje i Zakupy w aplikacji (Google Play Billing &amp; RevenueCat):</strong> Płatności obsługuje Google Play, a status PRO weryfikuje RevenueCat za pomocą anonimowego identyfikatora (<code>$RCAnonymousID</code>). Nie gromadzimy danych kart ani adresów e-mail.",
+                    "<strong>Anonimowe statystyki (Opcjonalnie – Google Firebase Analytics):</strong> Po włączeniu w <em>Ustawienia &gt; Prywatność</em> zbierane są anonimowe interakcje, anonimowy ID instancji i przybliżony region z IP przy wyłączonym ID reklamowym. Nazwy planów, ciężary i dane Health Connect nigdy nie są zbierane."
                 ],
                 h2: "2. Wykorzystanie danych",
                 list2: [
                     "Rejestrowanie i analiza treningów siłowych, cardio oraz mobilności.",
                     "Obliczanie rekordów życiowych (PR), mapy mięśni oraz szacowanego 1RM.",
                     "Synchronizacja przerw i treningów ze smartwatchem Wear OS.",
-                    "Zapewnienie niezawodności i stabilności aplikacji."
+                    "Weryfikacja subskrypcji PRO przez Google Play &amp; RevenueCat i poprawa stabilności aplikacji."
                 ],
                 h3: "3. Przechowywanie, Kopie zapasowe i Podmioty trzecie",
                 p3: "Wszystkie dane znajdują się na Twoim urządzeniu. Możesz w każdej chwili wyeksportować kopię zapasową JSON/CSV. Aplikacja nie zawiera reklam i nie sprzedaje danych.",
                 h4: "4. Uprawnienia urządzenia",
                 list4: [
-                    "<strong>Powiadomienia i Usługa pierwszoplanowa:</strong> Do obsługi minutnika przerw i aktywnego treningu.",
-                    "<strong>Health Connect i Czujniki ciała (Wear OS):</strong> Opcjonalnie, do pomiaru tętna (BPM) i kalorii.",
+                    "<strong>Powiadomienia i Usługa pierwszoplanowa:</strong> Do obsługi minutnika przerw, przypomnień i aktywnego treningu.",
+                    "<strong>Health Connect, Czujniki ciała (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) i Rozpoznawanie aktywności:</strong> Opcjonalnie, do synchronizacji z Health Connect oraz pomiaru tętna (BPM), aktywności i kalorii w Wear OS.",
                     "<strong>Bluetooth / Wearable:</strong> Do komunikacji ze smartwatchem Wear OS."
                 ],
                 h5: "5. Twoje prawa (RODO / GDPR)",
-                p5: "Masz pełną kontrolę nad swoimi danymi: możesz wyłączyć anonimową telemetrię w <strong>Ustawieniach</strong>, wyeksportować historię lub trwale usunąć dane poprzez odinstalowanie aplikacji.",
+                p5: "Masz pełną kontrolę: wyłącz telemetrię w <strong>Ustawieniach</strong>, cofnij dostęp Health Connect w Androidzie, wyeksportuj historię lub odinstaluj aplikację. Aby usunąć anonimowe ID RevenueCat, napisz na nasz e-mail.",
                 h6: "6. Kontakt"
             },
             ru: {
                 badge: "Конфиденциальность",
-                date: "Последнее обновление: Октябрь 2026 г.",
+                date: "Последнее обновление: Ноябрь 2026 г.",
                 intro: "В <strong>Barbell Buddy</strong> (ранее <em>Barbell Bible</em>, пакет <code>com.xavisprojects.barbellbible</code>) мы уважаем вашу конфиденциальность. Настоящая Политика описывает обработку данных в приложениях для Android и Wear OS.",
                 summary: "<strong>Кратко:</strong> Ваши программы тренировок, подходы и личные рекорды хранятся <strong>локально на вашем устройстве</strong>. Мы не продаем и не передаем личные или биометрические данные третьим лицам.",
                 h1: "1. Какие данные обрабатываются",
                 list1: [
-                    "<strong>Данные о тренировках:</strong> Упражнения, подходы, повторения, вес (КГ/ФУНТЫ), RPE и 1ПМ (1RM) сохраняются локально в базе данных вашего устройства.",
+                    "<strong>Данные о тренировках:</strong> Упражнения, подходы, повторения, вес (КГ/ФУНТЫ), RPE/RIR и 1ПМ (1RM) сохраняются локально в базе данных вашего устройства.",
                     "<strong>Синхронизация с Wear OS:</strong> Прямая передача данных между телефоном и часами через Google Play Services Wearable Data Layer.",
-                    "<strong>Health Connect (Опционально):</strong> С вашего разрешения приложение синхронизирует тренировки, пульс и вес тела с Google Health Connect.",
-                    "<strong>Подписки и покупки (Google Play Billing и RevenueCat):</strong> Платежи обрабатываются Google Play, а статус PRO проверяется через RevenueCat по анонимному идентификатору (<code>$RCAnonymousID</code>). Мы не храним данные банковских карт.",
-                    "<strong>Анонимная статистика (Опционально – Google Firebase Analytics):</strong> Обезличенные технические события для повышения стабильности (отключается в разделе <em>Настройки &gt; Конфиденциальность</em>)."
+                    "<strong>Health Connect (Опционально и Ограниченное использование):</strong> С вашего согласия приложение записывает тренировки и пульс (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) и считывает сон и пульс в покое (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) локально на устройстве для оценки восстановления. Согласно политике Google Play Health Connect (Limited Use), эти данные не передаются на внешние серверы, не продаются и не используются для рекламы.",
+                    "<strong>Встроенные видео упражнений (YouTube):</strong> При открытии видео техники загружаются превью (<code>img.youtube.com</code>) и официальный плеер YouTube (<code>youtube.com</code>) согласно политике конфиденциальности Google.",
+                    "<strong>Подписки и покупки (Google Play Billing и RevenueCat):</strong> Платежи обрабатываются Google Play, а статус PRO проверяется через RevenueCat по анонимному ID (<code>$RCAnonymousID</code>). Мы не собираем данные карт и адреса электронной почты.",
+                    "<strong>Анонимная статистика (Опционально – Google Firebase Analytics):</strong> Если включено в разделе <em>Настройки &gt; Конфиденциальность</em>, регистрируются обезличенные действия, анонимный ID экземпляра и примерный регион по IP (рекламный ID отключен). Названия программ, веса и данные Health Connect никогда не собираются."
                 ],
                 h2: "2. Использование данных",
                 list2: [
                     "Запись и отслеживание силовых, кардио тренировок и растяжки.",
                     "Расчет личных рекордов (PR), карты мышц и расчетного максимума (1RM).",
                     "Синхронизация таймеров отдыха и тренировок с часами Wear OS.",
-                    "Улучшение стабильности работы приложения."
+                    "Проверка PRO-подписки через Google Play &amp; RevenueCat и повышение стабильности приложения."
                 ],
                 h3: "3. Хранение, Резервные копии и Третьи лица",
                 p3: "Все данные хранятся на вашем устройстве. Вы можете экспортировать и импортировать резервные копии JSON/CSV. Приложение не содержит рекламы и не продает данные.",
                 h4: "4. Разрешения устройства",
                 list4: [
-                    "<strong>Уведомления и Фоновая служба:</strong> Для работы таймера отдыха и отслеживания активной тренировки.",
-                    "<strong>Health Connect и Датчики тела (Wear OS):</strong> Опционально, для измерения пульса (BPM) и калорий.",
+                    "<strong>Уведомления и Фоновая служба:</strong> Для работы таймера отдыха, напоминаний и отслеживания активной тренировки.",
+                    "<strong>Health Connect, Датчики тела (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) и Физическая активность:</strong> Опционально, для синхронизации с Health Connect и измерения пульса (BPM), активности и калорий на Wear OS.",
                     "<strong>Bluetooth / Wearable:</strong> Для синхронизации со смарт-часами Wear OS."
                 ],
                 h5: "5. Ваши права и управление данными",
-                p5: "Вы полностью контролируете свои данные: можете отключить анонимную статистику в <strong>Настройках</strong>, экспортировать историю в JSON или удалить все данные, удалив приложение.",
+                p5: "Вы контролируете свои данные: отключите статистику в <strong>Настройках</strong>, отзовите доступ к Health Connect в системе, экспортируйте историю или удалите приложение. Для удаления анонимного ID RevenueCat напишите на нашу почту.",
                 h6: "6. Контакты"
             },
             uk: {
                 badge: "Конфіденційність",
-                date: "Останнє оновлення: Жовтень 2026 р.",
+                date: "Останнє оновлення: Листопад 2026 р.",
                 intro: "У <strong>Barbell Buddy</strong> (раніше <em>Barbell Bible</em>, пакет <code>com.xavisprojects.barbellbible</code>) ми дбаємо про вашу приватність. Ця Політика пояснює обробку даних у додатках для Android та Wear OS.",
                 summary: "<strong>Коротко:</strong> Ваші програми тренувань, підходи та особисті рекорди зберігаються <strong>локально на вашому пристрої</strong>. Ми не продаємо і не передаємо ваші дані третім особам.",
                 h1: "1. Дані, які ми обробляємо",
                 list1: [
-                    "<strong>Дані тренувань:</strong> Вправи, підходи, повторення, вага (КГ/ФУНТИ), RPE та 1ПМ (1RM) зберігаються локально у базі даних вашого пристрою.",
+                    "<strong>Дані тренувань:</strong> Вправи, підходи, повторення, вага (КГ/ФУНТИ), RPE/RIR та 1ПМ (1RM) зберігаються локально у базі даних вашого пристрою.",
                     "<strong>Синхронізація з Wear OS:</strong> Прямий обмін між телефоном і годинником через Google Play Services Wearable Data Layer.",
-                    "<strong>Health Connect (Опціонально):</strong> За вашою згодою синхронізує тренування, пульс і вагу тіла з Google Health Connect.",
-                    "<strong>Підписки та покупки в додатку (Google Play Billing і RevenueCat):</strong> Платежі обробляються Google Play, а статус PRO перевіряється через RevenueCat за анонімним ідентифікатором (<code>$RCAnonymousID</code>). Ми не зберігаємо платіжні дані.",
-                    "<strong>Анонімна статистика (Опціонально – Google Firebase Analytics):</strong> Технічні події для покращення стабільності, які можна вимкнути у меню <em>Налаштування &gt; Конфіденційність</em>."
+                    "<strong>Health Connect (Опціонально та Обмежене використання):</strong> За вашою згодою додаток записує тренування й пульс (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) та читає сон і пульс у спокої (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) локально на пристрої для порад щодо відновлення. Відповідно до політики Google Play Health Connect (Limited Use), ці дані ніколи не передаються на зовнішні сервери, не продаються і не використовуються для реклами.",
+                    "<strong>Вбудовані відео вправ (YouTube):</strong> При відкритті відео техніки завантажуються мініатюри (<code>img.youtube.com</code>) та офіційний плеєр YouTube (<code>youtube.com</code>) згідно з політикою конфіденційності Google.",
+                    "<strong>Підписки та покупки в додатку (Google Play Billing і RevenueCat):</strong> Платежі обробляються Google Play, а статус PRO перевіряється через RevenueCat за анонімним ID (<code>$RCAnonymousID</code>). Ми не збираємо платіжні дані чи електронні адреси.",
+                    "<strong>Анонімна статистика (Опціонально – Google Firebase Analytics):</strong> Коли увімкнено у меню <em>Налаштування &gt; Конфіденційність</em>, фіксуються знеособлені події, анонімний ID екземпляра та приблизний регіон за IP (рекламний ID вимкнено). Назви програм, ваги та дані Health Connect не збираються."
                 ],
                 h2: "2. Використання даних",
                 list2: [
                     "Запис і аналіз силових, кардіо тренувань та мобільності.",
                     "Розрахунок особистих рекордів (PR), карти м'язів та прогнозованого 1RM.",
                     "Синхронізація таймерів відпочинку зі смарт-годинником Wear OS.",
-                    "Підтримка технічної стабільності додатка."
+                    "Перевірка статусу PRO через Google Play &amp; RevenueCat і підтримка стабільності додатка."
                 ],
                 h3: "3. Зберігання, Резервні копії та Треті сторони",
                 p3: "Усі записи зберігаються на вашому пристрої. Ви можете будь-коли експортувати резервні копії у форматі JSON/CSV. Додаток не містить реклами.",
                 h4: "4. Дозволи пристрою",
                 list4: [
-                    "<strong>Сповіщення та Фонова служба:</strong> Для таймера відпочинку та активного тренування.",
-                    "<strong>Health Connect і Датчики тіла (Wear OS):</strong> Опціонально, для вимірювання пульсу (BPM) і калорій.",
+                    "<strong>Сповіщення та Фонова служба:</strong> Для таймера відпочинку, нагадувань та активного тренування.",
+                    "<strong>Health Connect, Датчики тіла (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) та Фізична активність:</strong> Опціонально, для синхронізації з Health Connect та вимірювання пульсу (BPM), активності й калорій на Wear OS.",
                     "<strong>Bluetooth / Wearable:</strong> Для зв'язку з годинником Wear OS."
                 ],
                 h5: "5. Ваші права та контроль",
-                p5: "Ви маєте повний контроль над даними: можете вимкнути анонімну статистику в <strong>Налаштуваннях</strong>, експортувати дані або видалити їх разом із додатком.",
+                p5: "Ви маєте повний контроль: вимкніть телеметрію в <strong>Налаштуваннях</strong>, відкличте дозвіл Health Connect у системі, експортуйте дані або видаліть додаток. Для видалення анонімного ID RevenueCat напишіть на пошту підтримки.",
                 h6: "6. Контакти"
             },
             tr: {
                 badge: "Gizlilik Politikası",
-                date: "Son güncelleme: Ekim 2026",
+                date: "Son güncelleme: Kasım 2026",
                 intro: "<strong>Barbell Buddy</strong> (eski adıyla <em>Barbell Bible</em>, paket kimliği <code>com.xavisprojects.barbellbible</code>) olarak gizliliğinize saygı duyuyoruz. Bu politika, Android ve Wear OS uygulamamızda verilerin nasıl işlendiğini açıklar.",
                 summary: "<strong>Özet:</strong> Antrenman rutinleriniz, setleriniz ve kişisel rekorlarınız <strong>cihazınızda yerel olarak</strong> saklanır. Kişisel veya biyometrik verilerinizi üçüncü taraflara satmıyoruz.",
                 h1: "1. İşlenen Veriler",
                 list1: [
-                    "<strong>Antrenman Verileri:</strong> Egzersizler, setler, tekrarlar, ağırlık (KG/LBS), RPE ve 1RM tahminleri cihazınızın yerel veritabanında saklanır.",
+                    "<strong>Antrenman Verileri:</strong> Egzersizler, setler, tekrarlar, ağırlık (KG/LBS), RPE/RIR ve 1RM tahminleri cihazınızın yerel veritabanında saklanır.",
                     "<strong>Wear OS Senkronizasyonu:</strong> Telefon ve akıllı saat arasında Google Play Services Wearable Data Layer aracılığıyla doğrudan senkronize edilir.",
-                    "<strong>Health Connect (İsteğe Bağlı):</strong> İzin vermeniz halinde antrenmanları, kalp atış hızını ve vücut ağırlığını Google Health Connect ile senkronize eder.",
-                    "<strong>Abonelikler ve Uygulama İçi Satın Alımlar (Google Play Billing &amp; RevenueCat):</strong> Ödemeler Google Play tarafından işlenir ve PRO durumu anonim bir kimlik (<code>$RCAnonymousID</code>) ile RevenueCat üzerinden doğrulanır. Kart bilgileriniz saklanmaz.",
-                    "<strong>Anonim Kullanım İstatistikleri (İsteğe Bağlı – Google Firebase Analytics):</strong> Kararlılığı artırmak için anonim teknik veriler toplanabilir; <em>Ayarlar &gt; Gizlilik</em> bölümünden istediğiniz zaman kapatılabilir."
+                    "<strong>Health Connect (İsteğe Bağlı ve Sınırlı Kullanım):</strong> İzninizle uygulama antrenmanları ve kalp atış hızını yazar (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) ve toparlanma önerileri için uyku ile dinlenme nabzını okur (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>). Google Play Health Connect İzin Politikası (Sınırlı Kullanım) uyarınca bu veriler asla harici sunuculara gönderilmez, satılmaz veya reklam için kullanılmaz.",
+                    "<strong>Gömülü Egzersiz Videoları (YouTube):</strong> Egzersiz videolarını oynattığınızda Google Gizlilik Politikasına tabi olarak küçük resimler (<code>img.youtube.com</code>) ve resmi YouTube oynatıcısı (<code>youtube.com</code>) yüklenir.",
+                    "<strong>Abonelikler ve Uygulama İçi Satın Alımlar (Google Play Billing &amp; RevenueCat):</strong> Ödemeler Google Play tarafından işlenir ve PRO durumu anonim bir kimlik (<code>$RCAnonymousID</code>) ile RevenueCat üzerinden doğrulanır. Kart bilgileriniz ve e-posta adresiniz saklanmaz.",
+                    "<strong>Anonim Kullanım İstatistikleri (İsteğe Bağlı – Google Firebase Analytics):</strong> <em>Ayarlar &gt; Gizlilik</em>'ten etkinleştirildiğinde reklam kimliği kapalı olarak anonim etkileşimler, anonim uygulama örneği kimliği ve yaklaşık IP bölgesi toplanır. Rutin adları, ağırlıklar ve Health Connect verileri asla toplanmaz."
                 ],
                 h2: "2. Verilerin Kullanım Amacı",
                 list2: [
                     "Kuvvet, kardiyo ve mobilite antrenmanlarınızı kaydetmek ve takip etmek.",
                     "Kişisel rekorları (PR), kas haritasını ve tahmini 1RM değerlerini hesaplamak.",
                     "Dinlenme zamanlayıcılarını Wear OS akıllı saatinizle senkronize etmek.",
-                    "Uygulama performansını ve kararlılığını iyileştirmek."
+                    "Google Play &amp; RevenueCat üzerinden PRO lisanslarını doğrulamak ve kararlılığı iyileştirmek."
                 ],
                 h3: "3. Depolama, Yedekleme ve Üçüncü Taraflar",
                 p3: "Tüm antrenman verileri cihazınızda kalır. İstediğiniz zaman JSON/CSV yedeği alabilirsiniz. Uygulamada reklam ağı bulunmaz ve verileriniz satılmaz.",
                 h4: "4. Cihaz İzinleri",
                 list4: [
-                    "<strong>Bildirimler ve Ön Plan Hizmeti:</strong> Dinlenme süresi uyarıları ve aktif antrenman takibi için.",
-                    "<strong>Health Connect ve Vücut Sensörleri (Wear OS):</strong> İsteğe bağlı olarak nabız (BPM) ve kalori ölçümü için.",
+                    "<strong>Bildirimler ve Ön Plan Hizmeti:</strong> Dinlenme süresi uyarıları, deneme hatırlatıcıları ve aktif antrenman takibi için.",
+                    "<strong>Health Connect, Vücut Sensörleri (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) ve Aktivite Tanıma:</strong> İsteğe bağlı olarak Health Connect senkronizasyonu ve Wear OS'te nabız (BPM), aktivite ve kalori ölçümü için.",
                     "<strong>Bluetooth / Wearable:</strong> Saat ve telefon senkronizasyonu için."
                 ],
                 h5: "5. Haklarınız ve Veri Kontrolü",
-                p5: "Verileriniz üzerinde tam kontrole sahipsiniz: <strong>Ayarlar</strong>'dan anonim istatistikleri kapatabilir, JSON yedeği alabilir veya uygulamayı kaldırarak tüm yerel verileri silebilirsiniz.",
+                p5: "Tam kontrole sahipsiniz: <strong>Ayarlar</strong>'dan anonim istatistikleri kapatabilir, Android ayarlarından Health Connect izinlerini kaldırabilir veya uygulamayı kaldırarak tüm yerel verileri silebilirsiniz. Anonim RevenueCat kimliğinin silinmesi için bize e-posta gönderebilirsiniz.",
                 h6: "6. İletişim"
             },
             ar: {
                 badge: "سياسة الخصوصية",
-                date: "آخر تحديث: أكتوبر 2026",
+                date: "آخر تحديث: نوفمبر 2026",
                 intro: "في تطبيق <strong>Barbell Buddy</strong> (المعروف سابقاً باسم <em>Barbell Bible</em>، معرف الحزمة <code>com.xavisprojects.barbellbible</code>)، نحترم خصوصيتك ونحميها. توضح سياسة الخصوصية هذه كيفية التعامل مع البيانات في تطبيق الهاتف (Android) والساعة الذكية (Wear OS).",
                 summary: "<strong>ملخص الخصوصية:</strong> يتم تخزين جداول تمارينك، المجموعات، والأرقام القياسية <strong>محلياً على جهازك فقط</strong>. نحن لا نبيع أو نشارك بياناتك الشخصية أو الحيوية مع أي طرف ثالث.",
                 h1: "1. البيانات التي نتعامل معها",
                 list1: [
-                    "<strong>بيانات التمارين واللياقة:</strong> يتم حفظ التمارين، التكرارات، الأوزان (كجم/رطل)، ومؤشر الجهد (RPE) وتقديرات 1RM محلياً في قاعدة بيانات جهازك.",
+                    "<strong>بيانات التمارين واللياقة:</strong> يتم حفظ التمارين، التكرارات، الأوزان (كجم/رطل)، ومؤشر الجهد (RPE/RIR) وتقديرات 1RM محلياً في قاعدة بيانات جهازك.",
                     "<strong>مزامنة Wear OS:</strong> تتم مزامنة الجداول والنتائج مباشرة بين هاتفك وساعتك الذكية عبر خدمة Google Play Services Wearable Data Layer.",
-                    "<strong>خدمة Health Connect (اختياري):</strong> بموافقتك، يزامن التطبيق جلسات التمرين، نبضات القلب، ووزن الجسم مع Google Health Connect على جهازك.",
-                    "<strong>الاشتراكات والمشتريات داخل التطبيق (Google Play Billing و RevenueCat):</strong> تتم معالجة المدفوعات بأمان عبر Google Play والتحقق من حالة PRO عبر RevenueCat باستخدام معرف مجهول (<code>$RCAnonymousID</code>). نحن لا نخزن بيانات بطاقتك البنكية أبداً.",
-                    "<strong>إحصاءات الاستخدام المجهولة (اختياري – Google Firebase Analytics):</strong> لتحسين استقرار التطبيق، قد يتم تسجيل أحداث تقنية مجهولة الهوية، ويمكنك إيقافها في أي وقت من <em>الإعدادات &gt; الخصوصية</em>."
+                    "<strong>خدمة Health Connect (اختياري واستخدام محدود):</strong> بموافقتك، يكتب التطبيق جلسات التمرين ونبضات القلب (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) ويقرأ النوم ومعدل ضربات القلب أثناء الراحة (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) محلياً فقط لتقديم توصيات التعافي. وفقاً لسياسة أذونات Health Connect في Google Play (الاستخدام المحدود)، لا يتم إرسال بيانات الصحة إلى خوادم خارجية ولا تُباع ولا تُستخدم للإعلانات.",
+                    "<strong>مقاطع فيديو التمارين المدمجة (YouTube):</strong> عند تشغيل فيديو توضيحي لتمرين، يتم تحميل الصور المصغرة (<code>img.youtube.com</code>) ومشغل YouTube الرسمي (<code>youtube.com</code>) وفقاً لسياسة خصوصية Google.",
+                    "<strong>الاشتراكات والمشتريات داخل التطبيق (Google Play Billing و RevenueCat):</strong> تتم معالجة المدفوعات بأمان عبر Google Play والتحقق من حالة PRO عبر RevenueCat باستخدام معرف مجهول (<code>$RCAnonymousID</code>). نحن لا نخزن بيانات بطاقتك أو بريدك الإلكتروني.",
+                    "<strong>إحصاءات الاستخدام المجهولة (اختياري – Google Firebase Analytics):</strong> عند التفعيل في <em>الإعدادات &gt; الخصوصية</em>، يتم تسجيل التفاعلات المجهولة ومعرف التطبيق المجهول والمنطقة التقريبية مع تعطيل معرف الإعلانات (AD_ID). لا يتم جمع أسماء الجداول أو الأوزان أو بيانات Health Connect."
                 ],
                 h2: "2. كيفية استخدام البيانات",
                 list2: [
                     "تسجيل ومتابعة تمارين القوة، الكارديو، والمرونة.",
                     "حساب الأرقام القياسية الشخصية (PRs)، خريطة العضلات، وأقصى وزن لرفعة واحدة (1RM).",
                     "مزامنة مؤقتات الراحة والتمارين مع ساعة Wear OS.",
-                    "تحسين أداء واستقرار التطبيق."
+                    "التحقق من ترخيص PRO عبر Google Play و RevenueCat وتحسين استقرار التطبيق."
                 ],
                 h3: "3. التخزين والنسخ الاحتياطي والأطراف الثالثة",
                 p3: "تبقى جميع بياناتك على جهازك. يمكنك تصدير واستيراد نسخ احتياطية بصيغة JSON/CSV في أي وقت. لا يحتوي التطبيق على إعلانات ولا يبيع بياناتك.",
                 h4: "4. أذونات الجهاز",
                 list4: [
-                    "<strong>الإشعارات وخدمة الواجهة الأمامية:</strong> لتنبيهات مؤقت الراحة واستمرار التمرين النشط.",
-                    "<strong>Health Connect ومستشعرات الجسم (Wear OS):</strong> اختياري، لقياس نبضات القلب (BPM) والسعرات الحرارية.",
+                    "<strong>الإشعارات وخدمة الواجهة الأمامية:</strong> لتنبيهات مؤقت الراحة، تذكيرات الفترة التجريبية واستمرار التمرين النشط.",
+                    "<strong>Health Connect ومستشعرات الجسم (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) والنشاط البدني:</strong> اختياري، لمزامنة Health Connect وقياس نبضات القلب (BPM) والنشاط والسعرات في Wear OS.",
                     "<strong>البلوتوث / الأجهزة القابلة للارتداء:</strong> للمزامنة بين الهاتف والساعة."
                 ],
                 h5: "5. حقوقك والتحكم في بياناتك",
-                p5: "لديك تحكم كامل في بياناتك: يمكنك إيقاف الإحصاءات المجهولة من <strong>الإعدادات</strong>، أو تصدير بياناتك، أو حذفها نهائياً عبر مسح بيانات التطبيق أو إلغاء تثبيته.",
+                p5: "لديك تحكم كامل: أوقف الإحصاءات من <strong>الإعدادات</strong>، اسحب إذن Health Connect من نظام Android، أو احذف التطبيق لإزالة كافة البيانات. لطلب حذف معرف RevenueCat المجهول راسلنا عبر البريد.",
                 h6: "6. التواصل معنا"
             },
             hi: {
                 badge: "गोपनीयता नीति",
-                date: "अंतिम अपडेट: अक्टूबर 2026",
+                date: "अंतिम अपडेट: नवंबर 2026",
                 intro: "<strong>Barbell Buddy</strong> (पूर्व में <em>Barbell Bible</em>, पैकेज आईडी <code>com.xavisprojects.barbellbible</code>) में हम आपकी गोपनीयता का सम्मान करते हैं। यह नीति हमारे Android और Wear OS ऐप में डेटा प्रबंधन को स्पष्ट करती है।",
                 summary: "<strong>सारांश:</strong> आपके वर्कआउट रूटीन, सेट और व्यक्तिगत रिकॉर्ड <strong>आपके डिवाइस पर लोकल रूप से</strong> सुरक्षित रहते हैं। हम आपका व्यक्तिगत या बायोमेट्रिक डेटा किसी तीसरे पक्ष को नहीं बेचते हैं।",
                 h1: "1. हम कौन सा डेटा संभालते हैं",
                 list1: [
-                    "<strong>वर्कआउट डेटा:</strong> एक्सरसाइज, सेट, रेप्स, वजन (KG/LBS), RPE और 1RM आपके डिवाइस के लोकल डेटाबेस में सेव होते हैं।",
+                    "<strong>वर्कआउट डेटा:</strong> एक्सरसाइज, सेट, रेप्स, वजन (KG/LBS), RPE/RIR और 1RM आपके डिवाइस के लोकल डेटाबेस में सेव होते हैं।",
                     "<strong>Wear OS सिंक:</strong> रूटीन और सेट Google Play Services Wearable Data Layer के माध्यम से सीधे आपके फोन और स्मार्टवॉच के बीच सिंक होते हैं।",
-                    "<strong>Health Connect (वैकल्पिक):</strong> आपकी अनुमति से ऐप वर्कआउट, हृदय गति और शरीर के वजन को Google Health Connect के साथ सिंक करता है।",
-                    "<strong>सदस्यता और इन-ऐप खरीदारी (Google Play Billing और RevenueCat):</strong> भुगतान Google Play द्वारा सुरक्षित रूप से प्रोसेस किए जाते हैं और PRO स्थिति की पुष्टि अनाम आईडी (<code>$RCAnonymousID</code>) के माध्यम से RevenueCat द्वारा की जाती है। हम आपके कार्ड विवरण कभी स्टोर नहीं करते।",
-                    "<strong>अनाम उपयोग आँकड़े (वैकल्पिक – Google Firebase Analytics):</strong> ऐप की स्थिरता सुधारने के लिए अनाम तकनीकी इवेंट लॉग किए जा सकते हैं, जिन्हें आप <em>Settings &gt; Privacy</em> में कभी भी बंद कर सकते हैं।"
+                    "<strong>Health Connect (वैकल्पिक और सीमित उपयोग):</strong> आपकी अनुमति से ऐप वर्कआउट सत्र और हृदय गति लिखता है (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) तथा रिकवरी सुझाव के लिए नींद और विश्राम हृदय गति पढ़ता है (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>)। Google Play Health Connect नीति (सीमित उपयोग) के अनुसार यह स्वास्थ्य डेटा कभी बाहरी सर्वर पर नहीं भेजा जाता, बेचा नहीं जाता और विज्ञापनों में उपयोग नहीं होता।",
+                    "<strong>एम्बेडेड एक्सरसाइज वीडियो (YouTube):</strong> एक्सरसाइज वीडियो चलाने पर Google की गोपनीयता नीति के अधीन थंबनेल (<code>img.youtube.com</code>) और आधिकारिक YouTube प्लेयर (<code>youtube.com</code>) लोड होते हैं।",
+                    "<strong>सदस्यता और इन-ऐप खरीदारी (Google Play Billing और RevenueCat):</strong> भुगतान Google Play द्वारा प्रोसेस किए जाते हैं और PRO स्थिति की पुष्टि अनाम आईडी (<code>$RCAnonymousID</code>) से RevenueCat द्वारा की जाती है। हम कार्ड विवरण या ईमेल स्टोर नहीं करते।",
+                    "<strong>अनाम उपयोग आँकड़े (वैकल्पिक – Google Firebase Analytics):</strong> <em>Settings &gt; Privacy</em> में चालू होने पर, विज्ञापन आईडी बंद रखते हुए अनाम इंटरैक्शन, ऐप इंस्टेंस आईडी और अनुमानित IP क्षेत्र लॉग होते हैं। रूटीन नाम, वजन या Health Connect डेटा कभी एकत्र नहीं होता।"
                 ],
                 h2: "2. डेटा का उपयोग",
                 list2: [
                     "आपकी स्ट्रेंथ, कार्डियो और मोबिलिटी ट्रेनिंग को ट्रैक करने के लिए।",
                     "पर्सनल रिकॉर्ड (PRs), मसल मैप और अनुमानित 1RM की गणना के लिए।",
                     "फोन और Wear OS वॉच के बीच रेस्ट टाइमर और वर्कआउट सिंक करने के लिए।",
-                    "ऐप के प्रदर्शन और स्थिरता को बेहतर बनाने के लिए।"
+                    "Google Play व RevenueCat से PRO सत्यापन और ऐप की स्थिरता सुधारने के लिए।"
                 ],
                 h3: "3. स्टोरेज, बैकअप और तृतीय पक्ष",
                 p3: "सारा डेटा आपके फोन में रहता है। आप कभी भी JSON/CSV बैकअप एक्सपोर्ट कर सकते हैं। ऐप में कोई विज्ञापन नहीं है और डेटा किसी को बेचा नहीं जाता।",
                 h4: "4. डिवाइस अनुमतियाँ",
                 list4: [
-                    "<strong>नोटिफिकेशन और फोरग्राउंड सर्विस:</strong> रेस्ट टाइमर और सक्रिय वर्कआउट ट्रैकिंग के लिए।",
-                    "<strong>Health Connect और बॉडी सेंसर (Wear OS):</strong> वैकल्पिक, हार्ट रेट (BPM) और कैलोरी मापने के लिए।",
+                    "<strong>नोटिफिकेशन और फोरग्राउंड सर्विस:</strong> रेस्ट टाइमर, ट्रायल रिमाइंडर और सक्रिय वर्कआउट ट्रैकिंग के लिए।",
+                    "<strong>Health Connect, बॉडी सेंसर (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) और एक्टिविटी रिकग्निशन:</strong> वैकल्पिक, Health Connect सिंक और Wear OS पर हार्ट रेट (BPM) व कैलोरी मापने के लिए।",
                     "<strong>ब्लूटूथ / वियरेबल:</strong> स्मार्टवॉच के साथ डेटा सिंक करने के लिए।"
                 ],
                 h5: "5. आपके अधिकार और नियंत्रण",
-                p5: "अपने डेटा पर आपका पूरा नियंत्रण है: आप <strong>Settings</strong> में अनाम टेलीमेट्री बंद कर सकते हैं, बैकअप ले सकते हैं, या ऐप अनइंस्टॉल करके सारा डेटा हटा सकते हैं।",
+                p5: "पूरा नियंत्रण आपके पास है: आप <strong>Settings</strong> में टेलीमेट्री बंद कर सकते हैं, Android सेटिंग्स से Health Connect हटा सकते हैं, या ऐप अनइंस्टॉल कर सकते हैं। RevenueCat अनाम ID हटाने के लिए ईमेल करें।",
                 h6: "6. संपर्क करें"
             },
             bn: {
                 badge: "গোপনীয়তা নীতি",
-                date: "সর্বশেষ আপডেট: অক্টোবর ২০২৬",
+                date: "সর্বশেষ আপডেট: নভেম্বর ২০২৬",
                 intro: "<strong>Barbell Buddy</strong> (পূর্বে <em>Barbell Bible</em>, প্যাকেজ আইডি <code>com.xavisprojects.barbellbible</code>)-এ আমরা আপনার গোপনীয়তাকে সম্মান করি। এই নীতি আমাদের Android এবং Wear OS অ্যাপে ডেটা ব্যবস্থাপনা ব্যাখ্যা করে।",
                 summary: "<strong>সারসংক্ষেপ:</strong> আপনার ওয়ার্কআউট রুটিন, সেট এবং ব্যক্তিগত রেকর্ড <strong>আপনার ডিভাইসে লোকালভাবে</strong> সংরক্ষিত থাকে। আমরা আপনার ব্যক্তিগত বা বায়োমেট্রিক ডেটা কোনো তৃতীয় পক্ষের কাছে বিক্রি করি না।",
                 h1: "১. আমরা যে তথ্য প্রক্রিয়া করি",
                 list1: [
-                    "<strong>ওয়ার্কআউট ডেটা:</strong> ব্যায়াম, সেট, রেপস, ওজন (KG/LBS), RPE এবং 1RM আপনার ডিভাইসের লোকাল ডেটাবেসে সংরক্ষিত থাকে।",
+                    "<strong>ওয়ার্কআউট ডেটা:</strong> ব্যায়াম, সেট, রেপস, ওজন (KG/LBS), RPE/RIR এবং 1RM আপনার ডিভাইসের লোকাল ডেটাবেসে সংরক্ষিত থাকে।",
                     "<strong>Wear OS সিঙ্ক:</strong> Google Play Services Wearable Data Layer-এর মাধ্যমে সরাসরি আপনার ফোন এবং ঘড়ির মধ্যে সিঙ্ক হয়।",
-                    "<strong>Health Connect (ঐচ্ছিক):</strong> আপনার অনুমতিতে অ্যাপটি ওয়ার্কআউট, হার্ট রেট এবং শরীরের ওজন Google Health Connect-এর সাথে সিঙ্ক করে।",
-                    "<strong>সাবস্ক্রিপশন ও ইন-অ্যাপ কেনাকাটা (Google Play Billing ও RevenueCat):</strong> পেমেন্ট Google Play দ্বারা সম্পন্ন হয় এবং বেনামী আইডির (<code>$RCAnonymousID</code>) মাধ্যমে RevenueCat দ্বারা PRO স্ট্যাটাস যাচাই করা হয়। আমরা কোনো কার্ড বা ব্যাংক তথ্য সংরক্ষণ করি না।",
-                    "<strong>বেনামী ব্যবহারের পরিসংখ্যান (ঐচ্ছিক – Google Firebase Analytics):</strong> অ্যাপের স্থায়িত্ব বাড়াতে বেনামী কারিগরি ইভেন্ট সংগৃহীত হতে পারে, যা <em>Settings &gt; Privacy</em> থেকে যেকোনো সময় বন্ধ করা যায়।"
+                    "<strong>Health Connect (ঐচ্ছিক ও সীমিত ব্যবহার):</strong> আপনার অনুমতিতে অ্যাপটি ওয়ার্কআউট এবং হার্ট রেট লেখে (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) এবং রিকভারি পরামর্শের জন্য ঘুম ও বিশ্রামকালীন হার্ট রেট পড়ে (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>)। Google Play Health Connect নীতি (Limited Use) অনুযায়ী এই স্বাস্থ্য তথ্য কখনো বাহ্যিক সার্ভারে পাঠানো, বিক্রি বা বিজ্ঞাপনে ব্যবহৃত হয় না।",
+                    "<strong>এম্বেডেড ব্যায়াম ভিডিও (YouTube):</strong> ব্যায়ামের ভিডিও চালালে Google-এর গোপনীয়তা নীতি অনুসারে থাম্বনেইল (<code>img.youtube.com</code>) ও অফিসিয়াল YouTube প্লেয়ার (<code>youtube.com</code>) লোড হয়।",
+                    "<strong>সাবস্ক্রিপশন ও ইন-অ্যাপ কেনাকাটা (Google Play Billing ও RevenueCat):</strong> পেমেন্ট Google Play সম্পন্ন করে এবং বেনামী আইডি (<code>$RCAnonymousID</code>) দিয়ে RevenueCat দ্বারা PRO যাচাই করা হয়। আমরা কার্ড তথ্য বা ইমেইল সংরক্ষণ করি না।",
+                    "<strong>বেনামী ব্যবহারের পরিসংখ্যান (ঐচ্ছিক – Google Firebase Analytics):</strong> <em>Settings &gt; Privacy</em>-এ চালু থাকলে বিজ্ঞাপন আইডি বন্ধ রেখে বেনামী ইভেন্ট ও আনুমানিক IP অঞ্চল সংগৃহীত হতে পারে। রুটিন নাম, ওজন বা Health Connect তথ্য কখনো সংগৃহীত হয় না।"
                 ],
                 h2: "২. তথ্যের ব্যবহার",
                 list2: [
                     "আপনার স্ট্রেংথ, কার্ডিও এবং মোবিলিটি ওয়ার্কআউট ট্র্যাক করতে।",
                     "পার্সোনাল রেকর্ড (PR), মাসল ম্যাপ এবং 1RM হিসাব করতে।",
                     "ফোন এবং Wear OS স্মার্টওয়াচের মধ্যে রেস্ট টাইমার সিঙ্ক করতে।",
-                    "অ্যাপের কারিগরি মান উন্নত করতে।"
+                    "Google Play ও RevenueCat-এ PRO যাচাই এবং অ্যাপের কারিগরি মান উন্নত করতে।"
                 ],
                 h3: "৩. স্টোরেজ, ব্যাকআপ এবং তৃতীয় পক্ষ",
                 p3: "সমস্ত ডেটা আপনার ডিভাইসেই থাকে। আপনি যেকোনো সময় JSON/CSV ব্যাকআপ এক্সপোর্ট করতে পারেন। অ্যাপে কোনো বিজ্ঞাপন নেই।",
                 h4: "৪. ডিভাইস অনুমতি",
                 list4: [
-                    "<strong>নোটিফিকেশন ও ফোরগ্রাউন্ড সার্ভিস:</strong> রেস্ট টাইমার এবং সক্রিয় সেশন চালু রাখার জন্য।",
-                    "<strong>Health Connect ও বডি সেন্সর (Wear OS):</strong> ঐচ্ছিক, হার্ট রেট (BPM) এবং ক্যালোরি মাপার জন্য।",
+                    "<strong>নোটিফিকেশন ও ফোরগ্রাউন্ড সার্ভিস:</strong> রেস্ট টাইমার, ট্রায়াল রিমাইন্ডার এবং সক্রিয় সেশন চালু রাখার জন্য।",
+                    "<strong>Health Connect, বডি সেন্সর (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) ও অ্যাক্টিভিটি রিকগনিশন:</strong> ঐচ্ছিক, Health Connect সিঙ্ক এবং Wear OS-এ হার্ট রেট (BPM) ও ক্যালোরি মাপার জন্য।",
                     "<strong>ব্লুটুথ / ওয়্যারেবল:</strong> স্মার্টওয়াচের সাথে সিঙ্ক করার জন্য।"
                 ],
                 h5: "৫. আপনার অধিকার ও নিয়ন্ত্রণ",
-                p5: "আপনার ডেটার ওপর আপনার পূর্ণ নিয়ন্ত্রণ রয়েছে: আপনি <strong>Settings</strong> থেকে টেলিমেট্রি বন্ধ করতে পারেন, ডেটা এক্সপোর্ট করতে পারেন বা অ্যাপ আনইনস্টল করে সব ডেটা মুছে ফেলতে পারেন।",
+                p5: "আপনার পূর্ণ নিয়ন্ত্রণ রয়েছে: <strong>Settings</strong> থেকে টেলিমেট্রি বন্ধ করুন, Android সেটিংস থেকে Health Connect বাতিল করুন বা অ্যাপ আনইনস্টল করুন। RevenueCat বেনামী ID মুছতে ইমেইল করুন।",
                 h6: "৬. যোগাযোগ"
             },
             id: {
                 badge: "Kebijakan Privasi",
-                date: "Terakhir diperbarui: Oktober 2026",
+                date: "Terakhir diperbarui: November 2026",
                 intro: "Di <strong>Barbell Buddy</strong> (sebelumnya <em>Barbell Bible</em>, ID paket <code>com.xavisprojects.barbellbible</code>), kami menghormati dan melindungi privasi Anda. Kebijakan ini menjelaskan pengelolaan data di aplikasi Android dan Wear OS kami.",
                 summary: "<strong>Ringkasan Privasi:</strong> Rutinitas latihan, set, dan rekor pribadi Anda disimpan <strong>secara lokal di perangkat Anda</strong>. Kami tidak menjual atau membagikan data pribadi maupun biometrik Anda kepada pihak ketiga.",
                 h1: "1. Informasi yang Kami Kelola",
                 list1: [
-                    "<strong>Data Latihan & Kebugaran:</strong> Latihan, set, repetisi, beban (KG/LBS), RPE, dan estimasi 1RM disimpan secara lokal di database perangkat Anda.",
+                    "<strong>Data Latihan &amp; Kebugaran:</strong> Latihan, set, repetisi, beban (KG/LBS), RPE/RIR, dan estimasi 1RM disimpan secara lokal di database perangkat Anda.",
                     "<strong>Sinkronisasi Wear OS:</strong> Rutinitas dan hasil latihan dikirim langsung antara ponsel dan smartwatch melalui Google Play Services Wearable Data Layer.",
-                    "<strong>Health Connect (Opsional):</strong> Dengan izin Anda, aplikasi menyinkronkan sesi latihan, detak jantung, dan berat badan dengan Google Health Connect.",
-                    "<strong>Langganan &amp; Pembelian Dalam Aplikasi (Google Play Billing &amp; RevenueCat):</strong> Pembayaran diproses secara aman oleh Google Play dan status PRO diverifikasi melalui RevenueCat menggunakan ID anonim (<code>$RCAnonymousID</code>). Kami tidak menyimpan data kartu pembayaran Anda.",
-                    "<strong>Statistik Penggunaan Anonim (Opsional – Google Firebase Analytics):</strong> Untuk meningkatkan stabilitas, aplikasi dapat mencatat event teknis anonim yang dapat dinonaktifkan kapan saja di <em>Pengaturan &gt; Privasi</em>."
+                    "<strong>Health Connect (Opsional &amp; Penggunaan Terbatas):</strong> Dengan izin Anda, aplikasi menulis sesi latihan &amp; detak jantung (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) serta membaca tidur &amp; detak jantung istirahat (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) secara lokal untuk saran pemulihan. Sesuai Kebijakan Izin Health Connect Google Play (Limited Use), data kesehatan ini tidak pernah dikirim ke server luar, dijual, atau dipakai untuk iklan.",
+                    "<strong>Video Latihan Tersemat (YouTube):</strong> Memutar video teknik memuat gambar mini (<code>img.youtube.com</code>) dan pemutar YouTube resmi (<code>youtube.com</code>) sesuai Kebijakan Privasi Google.",
+                    "<strong>Langganan &amp; Pembelian Dalam Aplikasi (Google Play Billing &amp; RevenueCat):</strong> Pembayaran diproses oleh Google Play dan status PRO diverifikasi melalui RevenueCat menggunakan ID anonim (<code>$RCAnonymousID</code>). Kami tidak menyimpan data kartu pembayaran maupun email Anda.",
+                    "<strong>Statistik Penggunaan Anonim (Opsional – Google Firebase Analytics):</strong> Jika diaktifkan di <em>Pengaturan &gt; Privasi</em>, interaksi anonim, ID instans aplikasi, dan wilayah IP perkiraan dicatat dengan ID iklan dinonaktifkan. Nama rutinitas, beban, dan data Health Connect tidak pernah dikumpulkan."
                 ],
                 h2: "2. Penggunaan Informasi",
                 list2: [
                     "Mencatat dan memantau perkembangan latihan beban, kardio, dan mobilitas Anda.",
                     "Menghitung rekor pribadi (PR), peta otot, dan estimasi 1RM.",
                     "Menyinkronkan timer istirahat dan sesi latihan dengan smartwatch Wear OS.",
-                    "Meningkatkan kinerja dan stabilitas aplikasi."
+                    "Memverifikasi akses PRO lewat Google Play &amp; RevenueCat serta meningkatkan stabilitas aplikasi."
                 ],
                 h3: "3. Penyimpanan, Cadangan & Pihak Ketiga",
                 p3: "Semua catatan latihan tersimpan di perangkat Anda. Anda dapat mengekspor dan mengimpor cadangan JSON/CSV kapan saja. Aplikasi ini bebas iklan dan tidak menjual data.",
                 h4: "4. Izin Perangkat",
                 list4: [
-                    "<strong>Notifikasi & Layanan Latar Depan:</strong> Untuk pengingat waktu istirahat dan menjaga sesi latihan tetap aktif.",
-                    "<strong>Health Connect & Sensor Tubuh (Wear OS):</strong> Opsional, untuk mengukur detak jantung (BPM) dan kalori.",
+                    "<strong>Notifikasi &amp; Layanan Latar Depan:</strong> Untuk pengingat waktu istirahat, pengingat uji coba, dan menjaga sesi latihan tetap aktif.",
+                    "<strong>Health Connect, Sensor Tubuh (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) &amp; Pengenalan Aktivitas:</strong> Opsional, untuk sinkronisasi Health Connect dan mengukur detak jantung (BPM), aktivitas, serta kalori di Wear OS.",
                     "<strong>Bluetooth / Wearable:</strong> Untuk sinkronisasi ponsel dan jam tangan pintar."
                 ],
                 h5: "5. Hak & Kontrol Anda",
-                p5: "Anda memegang kendali penuh: Anda dapat mematikan statistik anonim di <strong>Pengaturan</strong>, mengekspor data ke JSON, atau menghapus seluruh data dengan mencopot aplikasi.",
+                p5: "Anda memegang kendali penuh: matikan statistik di <strong>Pengaturan</strong>, cabut izin Health Connect di pengaturan Android, ekspor data, atau hapus aplikasi. Untuk menghapus ID anonim RevenueCat, hubungi email kami.",
                 h6: "6. Kontak"
             },
             vi: {
                 badge: "Chính sách Bảo mật",
-                date: "Cập nhật lần cuối: Tháng 10/2026",
+                date: "Cập nhật lần cuối: Tháng 11/2026",
                 intro: "Tại <strong>Barbell Buddy</strong> (trước đây là <em>Barbell Bible</em>, mã gói <code>com.xavisprojects.barbellbible</code>), chúng tôi tôn trọng quyền riêng tư của bạn. Chính sách này giải thích cách xử lý dữ liệu trên ứng dụng Android và Wear OS.",
                 summary: "<strong>Tóm tắt:</strong> Lịch tập, số hiệp và kỷ lục cá nhân của bạn được lưu trữ <strong>cục bộ trên thiết bị của bạn</strong>. Chúng tôi không bán hoặc chia sẻ dữ liệu cá nhân hay sinh trắc học cho bên thứ ba.",
                 h1: "1. Dữ liệu chúng tôi xử lý",
                 list1: [
-                    "<strong>Dữ liệu Tập luyện:</strong> Bài tập, hiệp, số lần lặp, mức tạ (KG/LBS), RPE và 1RM được lưu cục bộ trong cơ sở dữ liệu trên thiết bị.",
+                    "<strong>Dữ liệu Tập luyện:</strong> Bài tập, hiệp, số lần lặp, mức tạ (KG/LBS), RPE/RIR và 1RM được lưu cục bộ trong cơ sở dữ liệu trên thiết bị.",
                     "<strong>Đồng bộ Wear OS:</strong> Dữ liệu trao đổi trực tiếp giữa điện thoại và đồng hồ qua Google Play Services Wearable Data Layer.",
-                    "<strong>Health Connect (Tùy chọn):</strong> Khi được cấp quyền, ứng dụng đồng bộ buổi tập, nhịp tim và cân nặng với Google Health Connect.",
-                    "<strong>Gói đăng ký &amp; Mua hàng trong ứng dụng (Google Play Billing &amp; RevenueCat):</strong> Thanh toán được xử lý qua Google Play và trạng thái PRO được xác thực qua RevenueCat bằng mã ẩn danh (<code>$RCAnonymousID</code>). Chúng tôi không lưu trữ thông tin thẻ thanh toán của bạn.",
-                    "<strong>Thống kê ẩn danh (Tùy chọn – Google Firebase Analytics):</strong> Thu thập sự kiện kỹ thuật ẩn danh để cải thiện độ ổn định; có thể tắt bất cứ lúc nào trong <em>Cài đặt &gt; Quyền riêng tư</em>."
+                    "<strong>Health Connect (Tùy chọn &amp; Sử dụng Giới hạn):</strong> Khi được cấp quyền, ứng dụng ghi buổi tập &amp; nhịp tim (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) và đọc giấc ngủ &amp; nhịp tim nghỉ ngơi (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) cục bộ để gợi ý phục hồi. Tuân thủ chính sách Health Connect của Google Play (Limited Use), dữ liệu sức khỏe không bao giờ được gửi ra máy chủ ngoài, bán hoặc dùng cho quảng cáo.",
+                    "<strong>Video Hướng dẫn Nhúng (YouTube):</strong> Khi phát video kỹ thuật, ứng dụng tải ảnh thu nhỏ (<code>img.youtube.com</code>) và trình phát YouTube chính thức (<code>youtube.com</code>) theo Chính sách Quyền riêng tư của Google.",
+                    "<strong>Gói đăng ký &amp; Mua hàng trong ứng dụng (Google Play Billing &amp; RevenueCat):</strong> Thanh toán do Google Play xử lý và trạng thái PRO được xác thực qua RevenueCat bằng mã ẩn danh (<code>$RCAnonymousID</code>). Chúng tôi không lưu thông tin thẻ hay email của bạn.",
+                    "<strong>Thống kê ẩn danh (Tùy chọn – Google Firebase Analytics):</strong> Khi bật trong <em>Cài đặt &gt; Quyền riêng tư</em>, chỉ ghi nhận tương tác ẩn danh, mã cài đặt ứng dụng và vùng IP ước tính với ID quảng cáo đã tắt. Tên lịch tập, mức tạ và dữ liệu Health Connect không bao giờ được thu thập."
                 ],
                 h2: "2. Mục đích sử dụng dữ liệu",
                 list2: [
                     "Ghi chép và theo dõi tiến độ tập tạ, cardio và độ linh hoạt.",
                     "Tính toán kỷ lục cá nhân (PR), bản đồ cơ bắp và 1RM ước tính.",
                     "Đồng bộ đồng hồ bấm giờ nghỉ với đồng hồ thông minh Wear OS.",
-                    "Nâng cao hiệu suất và độ ổn định của ứng dụng."
+                    "Xác thực quyền PRO qua Google Play &amp; RevenueCat và nâng cao độ ổn định của ứng dụng."
                 ],
                 h3: "3. Lưu trữ, Sao lưu & Bên thứ ba",
                 p3: "Mọi dữ liệu nằm trên thiết bị của bạn. Bạn có thể xuất/nhập bản sao lưu JSON/CSV bất kỳ lúc nào. Ứng dụng không chứa quảng cáo và không bán dữ liệu.",
                 h4: "4. Quyền thiết bị",
                 list4: [
-                    "<strong>Thông báo & Dịch vụ tiền cảnh:</strong> Cho bộ đếm thời gian nghỉ và theo dõi buổi tập đang diễn ra.",
-                    "<strong>Health Connect & Cảm biến cơ thể (Wear OS):</strong> Tùy chọn, để đo nhịp tim (BPM) và calo.",
+                    "<strong>Thông báo &amp; Dịch vụ tiền cảnh:</strong> Cho bộ đếm thời gian nghỉ, nhắc nhở dùng thử và theo dõi buổi tập đang diễn ra.",
+                    "<strong>Health Connect, Cảm biến cơ thể (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) &amp; Nhận diện hoạt động:</strong> Tùy chọn, để đồng bộ Health Connect và đo nhịp tim (BPM), hoạt động và calo trên Wear OS.",
                     "<strong>Bluetooth / Thiết bị đeo:</strong> Để đồng bộ với đồng hồ Wear OS."
                 ],
                 h5: "5. Quyền kiểm soát của bạn",
-                p5: "Bạn có toàn quyền kiểm soát: tắt thống kê ẩn danh trong <strong>Cài đặt</strong>, xuất dữ liệu JSON hoặc xóa toàn bộ dữ liệu bằng cách gỡ cài đặt ứng dụng.",
+                p5: "Bạn có toàn quyền kiểm soát: tắt thống kê trong <strong>Cài đặt</strong>, thu hồi quyền Health Connect trong cài đặt Android, xuất dữ liệu hoặc gỡ ứng dụng. Để xóa mã ẩn danh RevenueCat, hãy gửi email cho chúng tôi.",
                 h6: "6. Liên hệ"
             },
             th: {
                 badge: "นโยบายความเป็นส่วนตัว",
-                date: "อัปเดตล่าสุด: ตุลาคม 2026",
+                date: "อัปเดตล่าสุด: พฤศจิกายน 2026",
                 intro: "ที่ <strong>Barbell Buddy</strong> (ชื่อเดิม <em>Barbell Bible</em>, รหัสแพ็กเกจ <code>com.xavisprojects.barbellbible</code>) เราให้ความสำคัญกับความเป็นส่วนตัวของคุณ นโยบายนี้อธิบายการจัดการข้อมูลในแอป Android และ Wear OS ของเรา",
                 summary: "<strong>สรุป:</strong> ตารางฝึก เซต และสถิติส่วนตัวของคุณจะถูกจัดเก็บไว้<strong>ในอุปกรณ์ของคุณเท่านั้น</strong> เราไม่ขายหรือแบ่งปันข้อมูลส่วนบุคคลหรือข้อมูลไบโอเมตริกซ์กับบุคคลที่สาม",
                 h1: "1. ข้อมูลที่เราจัดการ",
                 list1: [
-                    "<strong>ข้อมูลการออกกำลังกาย:</strong> ท่าฝึก เซต จำนวนครั้ง น้ำหนัก (KG/LBS) ค่า RPE และ 1RM จะถูกบันทึกไว้ในฐานข้อมูลภายในเครื่องของคุณ",
+                    "<strong>ข้อมูลการออกกำลังกาย:</strong> ท่าฝึก เซต จำนวนครั้ง น้ำหนัก (KG/LBS) ค่า RPE/RIR และ 1RM จะถูกบันทึกไว้ในฐานข้อมูลภายในเครื่องของคุณ",
                     "<strong>การซิงค์กับ Wear OS:</strong> ซิงค์ข้อมูลโดยตรงระหว่างโทรศัพท์และสมาร์ทวอทช์ผ่าน Google Play Services Wearable Data Layer",
-                    "<strong>Health Connect (ทางเลือก):</strong> หากคุณอนุญาต แอปจะซิงค์ข้อมูลการฝึก อัตราการเต้นของหัวใจ และน้ำหนักตัวกับ Google Health Connect",
-                    "<strong>การสมัครสมาชิกและการซื้อภายในแอป (Google Play Billing และ RevenueCat):</strong> การชำระเงินดำเนินการผ่าน Google Play และตรวจสอบสถานะ PRO ผ่าน RevenueCat ด้วยรหัสนิรนาม (<code>$RCAnonymousID</code>) เราไม่เก็บข้อมูลบัตรเครดิตของคุณ",
-                    "<strong>สถิติการใช้งานแบบไม่ระบุตัวตน (ทางเลือก – Google Firebase Analytics):</strong> เพื่อปรับปรุงความเสถียรของแอป คุณสามารถปิดได้ตลอดเวลาใน <em>การตั้งค่า &gt; ความเป็นส่วนตัว</em>"
+                    "<strong>Health Connect (ทางเลือกและการใช้งานแบบจำกัด):</strong> หากคุณอนุญาต แอปจะเขียนบันทึกการฝึกและชีพจร (<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>) และอ่านข้อมูลการนอนหลับกับชีพจรขณะพัก (<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>) บนเครื่องเท่านั้นเพื่อแนะนำการฟื้นตัว ตามนโยบาย Health Connect ของ Google Play (Limited Use) ข้อมูลสุขภาพจะไม่ถูกส่งออกไปยังเซิร์ฟเวอร์ภายนอก ไม่ถูกขาย และไม่ใช้เพื่อการโฆษณา",
+                    "<strong>วิดีโอสาธิตท่าฝึกแบบฝัง (YouTube):</strong> เมื่อเปิดดูวิดีโอสาธิต ระบบจะโหลดภาพตัวอย่าง (<code>img.youtube.com</code>) และเครื่องเล่น YouTube อย่างเป็นทางการ (<code>youtube.com</code>) ภายใต้นโยบายความเป็นส่วนตัวของ Google",
+                    "<strong>การสมัครสมาชิกและการซื้อภายในแอป (Google Play Billing และ RevenueCat):</strong> การชำระเงินดำเนินการผ่าน Google Play และตรวจสอบสถานะ PRO ผ่าน RevenueCat ด้วยรหัสนิรนาม (<code>$RCAnonymousID</code>) เราไม่เก็บข้อมูลบัตรหรืออีเมลของคุณ",
+                    "<strong>สถิติการใช้งานแบบไม่ระบุตัวตน (ทางเลือก – Google Firebase Analytics):</strong> เมื่อเปิดใช้งานใน <em>การตั้งค่า &gt; ความเป็นส่วนตัว</em> จะบันทึกการโต้ตอบแบบไม่ระบุตัวตนและภูมิภาคโดยประมาณจาก IP โดยปิดรหัสโฆษณา (AD_ID) ไม่มีการเก็บชื่อตารางฝึก น้ำหนัก หรือข้อมูล Health Connect"
                 ],
                 h2: "2. การใช้ข้อมูล",
                 list2: [
                     "บันทึกและติดตามความก้าวหน้าของการฝึกเวทเทรนนิ่ง คาร์ดิโอ และความยืดหยุ่น",
                     "คำนวณสถิติสูงสุด (PR) แผนที่กล้ามเนื้อ และค่าประมาณ 1RM",
                     "ซิงค์เวลาพักและตารางฝึกกับนาฬิกา Wear OS",
-                    "พัฒนาประสิทธิภาพและความเสถียรของแอปพลิเคชัน"
+                    "ตรวจสอบสิทธิ์ PRO ผ่าน Google Play และ RevenueCat รวมถึงพัฒนาความเสถียรของแอป"
                 ],
                 h3: "3. การจัดเก็บ การสำรองข้อมูล และบุคคลที่สาม",
                 p3: "ข้อมูลทั้งหมดอยู่ในอุปกรณ์ของคุณ คุณสามารถส่งออกและนำเข้าไฟล์สำรอง JSON/CSV ได้ตลอดเวลา แอปพลิเคชันไม่มีโฆษณาแฝง",
                 h4: "4. สิทธิ์การใช้งานอุปกรณ์",
                 list4: [
-                    "<strong>การแจ้งเตือนและบริการเบื้องหน้า:</strong> สำหรับตัวจับเวลาพักและการติดตามการฝึกที่กำลังดำเนินอยู่",
-                    "<strong>Health Connect และเซนเซอร์ร่างกาย (Wear OS):</strong> ทางเลือก สำหรับวัดอัตราการเต้นของหัวใจ (BPM) และแคลอรี",
+                    "<strong>การแจ้งเตือนและบริการเบื้องหน้า:</strong> สำหรับตัวจับเวลาพัก การแจ้งเตือนช่วงทดลองใช้ และการติดตามการฝึกที่กำลังดำเนินอยู่",
+                    "<strong>Health Connect, เซนเซอร์ร่างกาย (<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) และการตรวจจับกิจกรรม:</strong> ทางเลือก สำหรับซิงค์ Health Connect และวัดอัตราการเต้นหัวใจ (BPM) กิจกรรม และแคลอรีบน Wear OS",
                     "<strong>บลูทูธ / อุปกรณ์สวมใส่:</strong> สำหรับซิงค์ข้อมูลกับสมาร์ทวอทช์"
                 ],
                 h5: "5. สิทธิ์และการควบคุมของคุณ",
-                p5: "คุณควบคุมข้อมูลได้ทั้งหมด: สามารถปิดสถิติแบบไม่ระบุตัวตนใน <strong>การตั้งค่า</strong> ส่งออกข้อมูล หรือลบข้อมูลทั้งหมดโดยการถอนการติดตั้งแอป",
+                p5: "คุณควบคุมข้อมูลได้ทั้งหมด: ปิดสถิติใน <strong>การตั้งค่า</strong> เพิกถอนสิทธิ์ Health Connect ในระบบ Android ส่งออกข้อมูล หรือลบแอป หากต้องการลบรหัสนิรนามของ RevenueCat โปรดส่งอีเมลหาเรา",
                 h6: "6. ติดต่อเรา"
             },
             ja: {
                 badge: "プライバシーポリシー",
-                date: "最終更新日：2026年10月",
+                date: "最終更新日：2026年11月",
                 intro: "<strong>Barbell Buddy</strong>（旧称 <em>Barbell Bible</em>、パッケージID <code>com.xavisprojects.barbellbible</code>）は、ユーザーのプライバシーを尊重し保護します。本ポリシーでは、AndroidアプリおよびWear OSスマートウォッチアプリにおけるデータの取り扱いについて説明します。",
                 summary: "<strong>概要：</strong> トレーニングメニュー、セット記録、自己ベスト（PR）はすべて<strong>お使いの端末内にローカル保存</strong>されます。個人データや生体データを第三者に販売・共有することはありません。",
                 h1: "1. 取り扱う情報",
                 list1: [
-                    "<strong>トレーニングデータ：</strong> 種目、セット、回数、重量（KG/LBS）、RPE、推定1RMおよび履歴はお使いの端末内のデータベース（Room/SQLite）に保存されます。",
+                    "<strong>トレーニングデータ：</strong> 種目、セット、回数、重量（KG/LBS）、RPE/RIR、推定1RMおよび履歴はお使いの端末内のデータベース（Room/SQLite）に保存されます。",
                     "<strong>Wear OS 同期：</strong> スマートフォンとWear OSウォッチ間の通信は、Google Play開発者サービスのWearable Data Layer APIを介して直接行われます。",
-                    "<strong>ヘルスコネクト（任意）：</strong> 許可された場合のみ、ワークアウト、心拍数、体重を端末内のGoogle ヘルスコネクトと連携します。",
-                    "<strong>サブスクリプション・アプリ内課金（Google Play Billing &amp; RevenueCat）：</strong> 決済はGoogle Playによって安全に処理され、PROライセンスの状態は匿名ID（<code>$RCAnonymousID</code>）を用いてRevenueCat経由で確認されます。カード情報等は一切保持しません。",
-                    "<strong>匿名の利用統計（任意 – Google Firebase Analytics）：</strong> アプリの安定性向上のため、個人を特定しない匿名の利用イベントを記録する場合があります。<em>設定 &gt; プライバシー</em>からいつでもオフにできます。"
+                    "<strong>ヘルスコネクト（任意・限定使用）：</strong> 許可された場合のみ、ワークアウトと心拍数を書き込み（<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>）、回復度判定のために睡眠と安静時心拍数を端末内のみで読み取ります（<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>）。Google Playのヘルスコネクト権限ポリシー（Limited Use）に準拠し、健康データが外部サーバーへ送信・販売・広告利用されることはありません。",
+                    "<strong>埋め込みフォーム解説動画（YouTube）：</strong> 種目の解説動画を再生する場合、Googleのプライバシーポリシーに基づきサムネイル（<code>img.youtube.com</code>）と公式YouTubeプレーヤー（<code>youtube.com</code>）が読み込まれます。",
+                    "<strong>サブスクリプション・アプリ内課金（Google Play Billing &amp; RevenueCat）：</strong> 決済はGoogle Playで処理され、PRO状態は匿名ID（<code>$RCAnonymousID</code>）を用いてRevenueCat経由で確認されます。カード情報やメールアドレスは一切収集・保持しません。",
+                    "<strong>匿名の利用統計（任意 – Google Firebase Analytics）：</strong> <em>設定 &gt; プライバシー</em>で有効な場合、広告ID（AD_ID）を無効化した状態で匿名の操作イベント、アプリインスタンスID、IP由来のおおよその地域のみを記録します。ルーティン名、重量、ヘルスコネクト記録は収集されません。"
                 ],
                 h2: "2. 情報の利用目的",
                 list2: [
                     "筋トレ、有酸素運動、モビリティトレーニングの記録と進捗分析のため。",
                     "自己ベスト（PR）、筋肉マップ、推定1RMの算出のため。",
                     "スマートフォンとWear OSウォッチ間でインターバルタイマーや記録を同期するため。",
-                    "アプリの品質および動作安定性の向上のため。"
+                    "Google PlayおよびRevenueCatによるPRO権限確認と動作安定性の向上のため。"
                 ],
                 h3: "3. データ保存・バックアップ・第三者提供",
                 p3: "すべての記録は端末内に保存されます。JSON/CSV形式でのバックアップ出力・復元がいつでも可能です。広告ネットワークは含まれておらず、データの販売も行いません。",
                 h4: "4. 端末の権限",
                 list4: [
-                    "<strong>通知およびフォアグラウンドサービス：</strong> 休憩タイマーの通知とトレーニング中の記録維持のため。",
-                    "<strong>ヘルスコネクトおよびボディセンサー（Wear OS）：</strong> 任意。ワークアウト中の心拍数（BPM）と消費カロリー測定のため。",
+                    "<strong>通知およびフォアグラウンドサービス：</strong> 休憩タイマーの通知、トライアル通知、トレーニング中の記録維持のため。",
+                    "<strong>ヘルスコネクト・ボディセンサー（<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>）・身体活動認識：</strong> 任意。ヘルスコネクト連携およびWear OSでの心拍数（BPM）・消費カロリー計測のため。",
                     "<strong>Bluetooth / ウェアラブル：</strong> スマートウォッチとのデータ同期のため。"
                 ],
                 h5: "5. ユーザーの権利と管理",
-                p5: "データは完全にユーザーが管理できます。<strong>設定</strong>から匿名統計をオフにしたり、JSONへエクスポートしたり、アプリのアンインストールによって端末内のデータを完全に削除できます。",
+                p5: "<strong>設定</strong>から匿名統計をオフにしたり、Android設定でヘルスコネクト権限を解除、JSON出力やアンインストールで全データを削除できます。RevenueCat匿名IDの削除はサポートメールまでご連絡ください。",
                 h6: "6. お問い合わせ"
             },
             ko: {
                 badge: "개인정보 처리방침",
-                date: "최종 업데이트: 2026년 10월",
+                date: "최종 업데이트: 2026년 11월",
                 intro: "<strong>Barbell Buddy</strong>(이전 명칭 <em>Barbell Bible</em>, 패키지 ID <code>com.xavisprojects.barbellbible</code>)는 사용자의 개인정보를 소중하게 생각합니다. 본 방침은 Android 모바일 앱 및 Wear OS 스마트워치 앱에서의 데이터 처리 방식을 설명합니다.",
                 summary: "<strong>요약:</strong> 운동 루틴, 세트 기록 및 개인 기록(PR)은 <strong>사용자 기기 내부에 로컬로 저장</strong>됩니다. 당사는 개인정보나 생체 데이터를 제3자에게 판매하거나 공유하지 않습니다.",
                 h1: "1. 처리하는 정보",
                 list1: [
-                    "<strong>운동 및 피트니스 데이터:</strong> 운동 종목, 세트, 횟수, 중량(KG/LBS), RPE, 추정 1RM 및 기록은 기기 내 로컬 데이터베이스에만 저장됩니다.",
+                    "<strong>운동 및 피트니스 데이터:</strong> 운동 종목, 세트, 횟수, 중량(KG/LBS), RPE/RIR, 추정 1RM 및 기록은 기기 내 로컬 데이터베이스에만 저장됩니다.",
                     "<strong>Wear OS 동기화:</strong> 루틴과 운동 결과는 Google Play 서비스 Wearable Data Layer API를 통해 스마트폰과 워치 간에 직접 전송됩니다.",
-                    "<strong>Health Connect (선택 사항):</strong> 권한을 허용한 경우, 운동 세션, 심박수, 체중을 기기의 Google Health Connect와 동기화합니다.",
-                    "<strong>구독 및 인앱 결제 (Google Play Billing 및 RevenueCat):</strong> 결제는 Google Play를 통해 안전하게 처리되며, PRO 상태는 익명 ID(<code>$RCAnonymousID</code>)를 통해 RevenueCat에서 확인됩니다. 당사는 카드 및 결제 정보를 저장하지 않습니다.",
-                    "<strong>익명 사용 통계 (선택 사항 – Google Firebase Analytics):</strong> 앱 안정성 향상을 위해 익명화된 기술 이벤트가 수집될 수 있으며, <em>설정 &gt; 개인정보 보호</em>에서 언제든 비활성화할 수 있습니다."
+                    "<strong>Health Connect (선택 사항 및 제한적 사용):</strong> 권한을 허용한 경우에만 운동 세션과 심박수를 기록(<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>)하고, 회복 상태 제안을 위해 수면 및 안정시 심박수를 기기 내 로컬로만 읽습니다(<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>). Google Play Health Connect 정책(Limited Use)에 따라 건강 데이터는 외부 서버로 전송되거나 판매되거나 광고에 사용되지 않습니다.",
+                    "<strong>임베디드 운동 영상 (YouTube):</strong> 운동 자세 영상을 재생할 경우 Google 개인정보 처리방침에 따라 썸네일(<code>img.youtube.com</code>) 및 공식 YouTube 플레이어(<code>youtube.com</code>)가 로드됩니다.",
+                    "<strong>구독 및 인앱 결제 (Google Play Billing 및 RevenueCat):</strong> 결제는 Google Play에서 처리되며, PRO 상태는 익명 ID(<code>$RCAnonymousID</code>)를 통해 RevenueCat에서 확인됩니다. 카드 정보나 이메일 주소는 수집하지 않습니다.",
+                    "<strong>익명 사용 통계 (선택 사항 – Google Firebase Analytics):</strong> <em>설정 &gt; 개인정보 보호</em>에서 활성화된 경우 광고 ID(AD_ID)를 비활성화한 상태로 익명 상호작용, 앱 인스턴스 ID 및 IP 기반 대략적 지역만 기록됩니다. 루틴 이름, 중량, Health Connect 기록은 수집되지 않습니다."
                 ],
                 h2: "2. 정보의 사용 목적",
                 list2: [
                     "근력, 유산소 및 모빌리티 운동 기록 및 진행 상황 분석.",
                     "개인 최고 기록(PR), 근육 자극 맵 및 추정 1RM 계산.",
                     "스마트폰과 Wear OS 스마트워치 간의 휴식 타이머 및 운동 동기화.",
-                    "앱 성능 및 기술적 안정성 개선."
+                    "Google Play 및 RevenueCat을 통한 PRO 자격 확인과 기술적 안정성 개선."
                 ],
                 h3: "3. 저장, 백업 및 제3자 제공",
                 p3: "모든 운동 기록은 기기 내에 보관됩니다. 언제든지 JSON/CSV 백업 파일을 내보내거나 가져올 수 있습니다. 광고 네트워크를 포함하지 않으며 데이터를 외부에 판매하지 않습니다.",
                 h4: "4. 기기 권한",
                 list4: [
-                    "<strong>알림 및 포그라운드 서비스:</strong> 휴식 타이머 알림 및 진행 중인 운동 세션 유지를 위해 필요합니다.",
-                    "<strong>Health Connect 및 신체 센서 (Wear OS):</strong> 선택 사항으로, 운동 중 심박수(BPM)와 칼로리를 측정합니다.",
+                    "<strong>알림 및 포그라운드 서비스:</strong> 휴식 타이머 알림, 체험 알림 및 진행 중인 운동 세션 유지를 위해 필요합니다.",
+                    "<strong>Health Connect, 신체 센서(<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>) 및 신체 활동 인식:</strong> 선택 사항으로, Health Connect 연동 및 Wear OS 심박수(BPM), 활동, 칼로리 측정에 사용됩니다.",
                     "<strong>블루투스 / 웨어러블:</strong> 스마트워치와의 루틴 동기화를 위해 사용됩니다."
                 ],
                 h5: "5. 사용자의 권리 및 통제",
-                p5: "모든 데이터에 대한 통제권은 사용자에게 있습니다. <strong>설정</strong>에서 익명 통계를 끌 수 있으며, JSON 백업을 내보내거나 앱을 삭제하여 모든 로컬 데이터를 영구적으로 지울 수 있습니다.",
+                p5: "<strong>설정</strong>에서 익명 통계를 끄거나 Android 설정에서 Health Connect 권한을 철회하고, JSON 내보내기 또는 앱 삭제로 모든 로컬 데이터를 지울 수 있습니다. RevenueCat 익명 ID 삭제 요청은 이메일로 문의해 주세요.",
                 h6: "6. 문의하기"
             },
             zh: {
                 badge: "隐私政策",
-                date: "最后更新：2026年10月",
+                date: "最后更新：2026年11月",
                 intro: "在 <strong>Barbell Buddy</strong>（原名 <em>Barbell Bible</em>，应用包名 <code>com.xavisprojects.barbellbible</code>），我们高度重视并保护您的隐私。本隐私政策说明了我们的 Android 手机应用和 Wear OS 智能手表应用如何处理信息。",
                 summary: "<strong>隐私摘要：</strong> 您的训练计划、组数记录和个人纪录（PR）均<strong>保存在您的设备本地</strong>。我们绝不会向第三方出售、出租或共享您的个人或生物识别数据。",
                 h1: "1. 我们处理的信息",
                 list1: [
-                    "<strong>训练与健身数据：</strong> 动作、组数、次数、重量（KG/LBS）、RPE、预估 1RM 及历史记录仅存储在您设备本地的 SQLite/Room 数据库中。",
+                    "<strong>训练与健身数据：</strong> 动作、组数、次数、重量（KG/LBS）、RPE/RIR、预估 1RM 及历史记录仅存储在您设备本地的 SQLite/Room 数据库中。",
                     "<strong>Wear OS 同步：</strong> 训练计划和完成记录通过 Google Play 服务 Wearable Data Layer API 在您的手机和手表之间直接传输。",
-                    "<strong>Health Connect（可选）：</strong> 如果您授予权限，应用会与您设备上的 Google Health Connect 同步训练记录、心率和体重。",
-                    "<strong>订阅与应用内购买（Google Play Billing 与 RevenueCat）：</strong> 付款由 Google Play 安全处理，PRO 权益通过匿名标识符 (<code>$RCAnonymousID</code>) 经由 RevenueCat 验证。我们绝不收集或存储您的银行卡信息。",
-                    "<strong>匿名使用统计（可选 – Google Firebase Analytics）：</strong> 为提升应用稳定性，应用可能会记录匿名的功能使用事件（不包含任何个人或健康数据）。您可随时在<em>设置 &gt; 隐私</em>中将其关闭。"
+                    "<strong>Health Connect（可选及受限使用）：</strong> 仅在您授权后，应用才会写入训练记录和心率（<code>WRITE_EXERCISE</code>, <code>WRITE_HEART_RATE</code>），并在设备本地读取睡眠和静息心率（<code>READ_SLEEP</code>, <code>READ_RESTING_HEART_RATE</code>）以提供恢复状态建议。严格遵守 Google Play Health Connect 权限政策（受限使用条款），健康数据绝不上传外部服务器、不出售、不用于广告。",
+                    "<strong>嵌入式动作教学视频（YouTube）：</strong> 当您点击播放动作视频时，应用会加载缩略图（<code>img.youtube.com</code>）及官方 YouTube 播放器（<code>youtube.com</code>），该过程受 Google 隐私政策约束。",
+                    "<strong>订阅与应用内购买（Google Play Billing 与 RevenueCat）：</strong> 付款由 Google Play 安全处理，PRO 权益通过匿名标识符 (<code>$RCAnonymousID</code>) 经由 RevenueCat 验证。我们绝不收集或存储您的银行卡信息或电子邮箱。",
+                    "<strong>匿名使用统计（可选 – Google Firebase Analytics）：</strong> 当在<em>设置 &gt; 隐私</em>中开启时，仅在禁用广告 ID (AD_ID) 的情况下收集匿名交互事件、匿名应用实例 ID 及大致 IP 地区。绝不收集训练计划名称、重量或 Health Connect 记录。"
                 ],
                 h2: "2. 信息的使用方式",
                 list2: [
                     "记录、追踪并分析您的力量、有氧和灵活性训练。",
                     "计算个人纪录（PR）、肌肉热力图以及预估极限重量（1RM）。",
                     "在手机与 Wear OS 智能手表之间同步休息计时器和训练状态。",
-                    "优化应用的性能与技术稳定性。"
+                    "通过 Google Play 与 RevenueCat 验证 PRO 权益并优化应用稳定性。"
                 ],
                 h3: "3. 数据存储、备份与第三方",
                 p3: "所有训练数据均保存在您的设备本地。您可以随时导出或导入 JSON/CSV 备份。本应用不包含任何第三方广告网络，也不会出售数据。",
                 h4: "4. 设备权限说明",
                 list4: [
-                    "<strong>通知与前台服务：</strong> 用于组间休息倒计时提醒以及保持活跃训练不被系统中断。",
-                    "<strong>Health Connect 与身体传感器（Wear OS）：</strong> 可选，用于在训练期间测量实时心率（BPM）和卡路里消耗。",
+                    "<strong>通知与前台服务：</strong> 用于组间休息倒计时提醒、试用提醒以及保持活跃训练不被系统中断。",
+                    "<strong>Health Connect、身体传感器（<code>BODY_SENSORS</code> / <code>READ_HEART_RATE</code>）与健身运动识别：</strong> 可选，用于 Health Connect 同步及在 Wear OS 上测量心率（BPM）、活动量与卡路里消耗。",
                     "<strong>蓝牙 / 可穿戴设备：</strong> 用于手机与智能手表之间的数据同步。"
                 ],
                 h5: "5. 您的权利与数据控制",
-                p5: "您对自己的数据拥有完全控制权：您可以在<strong>设置</strong>中关闭匿名统计，导出完整 JSON 备份，或通过清除应用存储/卸载应用永久删除所有本地记录。",
+                p5: "您可以在<strong>设置</strong>中关闭匿名统计，在系统设置中撤销 Health Connect 权限，导出 JSON 备份或卸载应用以永久清除所有数据。如需删除 RevenueCat 匿名购买 ID，请通过下方邮箱联系我们。",
                 h6: "6. 联系方式"
             }
         };
