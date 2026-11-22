@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbell Buddy — Gym Tracker &amp; Wear OS Companion</title>
+    <meta name="description" content="Offline Android &amp; Wear OS gym tracker with automatic progressive overload (Buddy Coach), RIR tracking, 5/3/1 &amp; GZCLP blocks, and free Strong/Hevy/Jefit CSV import.">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xavisprojects.github.io/barbellbuddy/app/">
+    <meta property="og:title" content="Barbell Buddy — Train without your phone. Progress without guesswork.">
+    <meta property="og:description" content="100% offline Android &amp; Wear OS strength tracker. No forced accounts, free Strong/Hevy/Jefit CSV import + instant plateau audit, Buddy Coach progression &amp; Health Connect readiness.">
+    <meta property="og:image" content="https://xavisprojects.github.io/barbellbuddy/app/assets/icon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Barbell Buddy — Android &amp; Wear OS Gym Tracker">
+    <meta name="twitter:description" content="Leave your phone in the locker. Native offline Wear OS app, automatic progressive overload, RIR tracking &amp; free CSV migration.">
+    <meta name="twitter:image" content="https://xavisprojects.github.io/barbellbuddy/app/assets/icon.png">
+
+    <link rel="icon" type="image/png" href="assets/icon.png">
+
+    <style>
+        :root {
+            --bg: #000000;
+            --surface: #1E1E1E;
+            --surface-elevated: #262626;
+            --primary: #D4AF37;
+            --primary-variant: #A6882B;
+            --success: #4CAF50;
+            --text: #ECECEC;
+            --text-secondary: #A0A0A0;
+            --border: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 18px 18px 48px;
+        }
+
+        /* Top Navigation Bar */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0 22px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand-mini {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: 0.2px;
+        }
+
+        .brand-mini img {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .lang-select {
+            background-color: #121212;
+            color: var(--text);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .lang-select:focus {
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.28);
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 26px;
+            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.14), transparent 55%), var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .hero-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+        }
+
+        .badge-platform {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--primary);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            color: #FFFFFF;
+            font-size: 1.95rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-sub {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 1.02rem;
+            max-width: 700px;
+        }
+
+        .hero-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pill {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+            background: #121212;
+            border: 1px solid var(--border);
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .pill.green {
+            border-color: rgba(76, 175, 80, 0.45);
+            color: #9EE2A0;
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            width: 100%;
+            margin-top: 6px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-variant));
+            color: #000000;
+            font-weight: 800;
+            font-size: 0.98rem;
+            text-decoration: none;
+            padding: 14px 22px;
+            border-radius: 12px;
+            min-height: 48px;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+            transition: transform 0.15s ease, filter 0.15s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.06);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #121212;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            padding: 13px 20px;
+            border-radius: 12px;
+            min-height: 48px;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.12);
+            color: #FFFFFF;
+        }
+
+        /* Section Headings */
+        .section {
+            margin-top: 40px;
+        }
+
+        .section-head {
+            margin-bottom: 18px;
+        }
+
+        .section-kicker {
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 4px;
+        }
+
+        .section-title {
+            margin: 0;
+            color: #FFFFFF;
+            font-size: 1.45rem;
+            line-height: 1.25;
+        }
+
+        .section-desc {
+            margin: 6px 0 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Feature Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--primary);
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            color: #FFFFFF;
+            font-size: 1.12rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+        }
+
+        /* Screenshots Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 14px;
+        }
+
+        .shot-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .shot-media {
+            background: #0B0B0B;
+            border: 1px solid #2A2A2A;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 9 / 16;
+        }
+
+        .shot-media.wear-frame {
+            padding: 18px;
+            background: radial-gradient(circle, #181818 0%, #050505 75%);
+        }
+
+        .shot-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .shot-media.wear-frame img {
+            width: 84%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 50%;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.85);
+        }
+
+        .shot-caption {
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: var(--text);
+            text-align: center;
+        }
+
+        /* Routines Grid */
+        .routine-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 14px;
+            transition: border-color 0.2s;
+        }
+
+        .routine-card:hover {
+            border-color: var(--primary);
+        }
+
+        .routine-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .routine-chip {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            background: #121212;
+            border: 1px solid var(--border);
+            padding: 3px 9px;
+            border-radius: 6px;
+        }
+
+        .routine-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.14);
+            color: var(--primary);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+            padding: 11px 14px;
+            min-height: 44px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .routine-btn:hover {
+            background: var(--primary);
+            color: #000000;
+        }
+
+        .note-banner {
+            margin-top: 14px;
+            background: rgba(76, 175, 80, 0.09);
+            border: 1px solid rgba(76, 175, 80, 0.35);
+            border-inline-start: 4px solid var(--success);
+            border-radius: 10px;
+            padding: 14px 16px;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        /* Free vs PRO */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .tier-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+        }
+
+        .tier-card.pro {
+            border-color: rgba(212, 175, 55, 0.6);
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.09), var(--surface) 45%);
+        }
+
+        .tier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .tier-name {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #FFFFFF;
+        }
+
+        .tier-price {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .tier-price.free {
+            color: var(--success);
+        }
+
+        .tier-list {
+            margin: 0;
+            padding-inline-start: 18px;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+        }
+
+        .tier-list li {
+            margin-bottom: 7px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 44px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 720px) {
+            .hero {
+                padding: 36px 34px;
+            }
+            .hero h1 {
+                font-size: 2.35rem;
+            }
+            .grid-2,
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .cta-row {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="topbar">
+            <a href="#" class="brand-mini">
+                <img src="assets/icon.png" alt="Barbell Buddy icon">
+                <span>Barbell Buddy</span>
+            </a>
+            <select id="lang-switcher" class="lang-select" aria-label="Language">
+                <option value="en">🇬🇧 English</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="it">🇮🇹 Italiano</option>
+                <option value="pt">🇵🇹 Português</option>
+                <option value="nl">🇳🇱 Nederlands</option>
+                <option value="pl">🇵🇱 Polski</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="uk">🇺🇦 Українська</option>
+                <option value="tr">🇹🇷 Türkçe</option>
+                <option value="ar">🇸🇦 العربية</option>
+                <option value="hi">🇮🇳 हिन्दी</option>
+                <option value="bn">🇧🇩 বাংলা</option>
+                <option value="id">🇮🇩 Bahasa Indonesia</option>
+                <option value="vi">🇻🇳 Tiếng Việt</option>
+                <option value="th">🇹🇭 ไทย</option>
+                <option value="ja">🇯🇵 日本語</option>
+                <option value="ko">🇰🇷 한국어</option>
+                <option value="zh">🇨🇳 中文</option>
+            </select>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-header">
+                <img src="assets/icon.png" alt="Barbell Buddy" class="hero-icon">
+                <div>
+                    <div class="badge-platform" id="t-badge">Android &amp; Wear OS</div>
+                </div>
+            </div>
+            <h1 id="t-hero-title">Train without your phone. Progress without guesswork.</h1>
+            <p class="hero-sub" id="t-hero-sub">
+                100% offline gym tracker with native Wear OS app, automatic progressive overload, RIR tracking and free instant CSV import from Strong, Hevy &amp; Jefit. No forced accounts.
+            </p>
+            <div class="hero-pills">
+                <span class="pill green" id="t-pill-1">14-Day Cardless Reverse Trial</span>
+                <span class="pill" id="t-pill-2">0 Mandatory Accounts</span>
+                <span class="pill" id="t-pill-3">100% Offline &amp; OLED Dark</span>
+            </div>
+            <div class="cta-row">
+                <a class="btn-primary" id="t-cta-play"
+                   href="https://play.google.com/store/apps/details?id=com.xavisprojects.barbellbible&utm_source=landing_hub&utm_medium=bio&utm_campaign=launch_3a"
+                   target="_blank" rel="noopener">
+                    Download on Google Play
+                </a>
+                <a class="btn-secondary" id="t-cta-routines" href="#routines">
+                    Free Routines
+                </a>
+            </div>
+        </section>
+
+        <!-- Advantages -->
+        <section class="section">
+            <div class="section-head">
+                <div class="section-kicker" id="t-adv-kicker">Why lifters switch</div>
+                <h2 class="section-title" id="t-adv-title">Built for the gym floor, not social feeds</h2>
+            </div>
+            <div class="grid-2">
+                <article class="card">
+                    <span class="card-tag" id="t-f1-tag">Wear OS</span>
+                    <h3 id="t-f1-title">Wear OS Native &amp; Offline</h3>
+                    <p id="t-f1-desc">
+                        Leave your phone in the locker. Launch from the Wear OS Tile, log RIR with the rotating crown, get haptic HR recovery alerts between sets, and follow Buddy Coach right on your wrist.
+                    </p>
+                </article>
+                <article class="card">
+                    <span class="card-tag" id="t-f2-tag">Zero Lock-In</span>
+                    <h3 id="t-f2-title">Free Strong / Hevy / Jefit CSV Import</h3>
+                    <p id="t-f2-desc">
+                        Import your entire workout history in seconds for free. Run an instant Day-0 audit to spot stalled lifts and undertrained muscles over the last 28 days.
+                    </p>
+                </article>
+                <article class="card">
+                    <span class="card-tag" id="t-f3-tag">Auto Progression</span>
+                    <h3 id="t-f3-title">Buddy Coach + 5/3/1 &amp; GZCLP</h3>
+                    <p id="t-f3-desc">
+                        Automatic weight &amp; rep targets (double progression, linear &amp; %TM blocks) tailored to your RIR. Plus smart exercise swaps with equivalent weight and superset time compression.
+                    </p>
+                </article>
+                <article class="card">
+                    <span class="card-tag" id="t-f4-tag">Health Connect</span>
+                    <h3 id="t-f4-title">Daily Readiness &amp; 100% Private</h3>
+                    <p id="t-f4-desc">
+                        Automatically suggests a -10% Light Session if your Health Connect sleep is low or resting heart rate spikes. All training data stays local on your device.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="section">
+            <div class="section-head">
+                <div class="section-kicker" id="t-gal-kicker">Inside the app</div>
+                <h2 class="section-title" id="t-gal-title">Phone + Smartwatch, synced silently</h2>
+            </div>
+            <div class="gallery">
+                <figure class="shot-card" style="margin:0;">
+                    <div class="shot-media wear-frame">
+                        <img src="assets/wear_companion.png" alt="Barbell Buddy Wear OS workout screen" loading="lazy">
+                    </div>
+                    <figcaption class="shot-caption" id="t-shot-1">Wear OS: Live BPM, sets &amp; rest timer</figcaption>
+                </figure>
+                <figure class="shot-card" style="margin:0;">
+                    <div class="shot-media">
+                        <img src="assets/phone_active.jpg" alt="Active workout logging screen" loading="lazy">
+                    </div>
+                    <figcaption class="shot-caption" id="t-shot-2">Fast active set logging &amp; rest timer</figcaption>
+                </figure>
+                <figure class="shot-card" style="margin:0;">
+                    <div class="shot-media">
+                        <img src="assets/phone_muscle.jpg" alt="Anatomical muscle map and form guide" loading="lazy">
+                    </div>
+                    <figcaption class="shot-caption" id="t-shot-3">Anatomical muscle map &amp; form guides</figcaption>
+                </figure>
+                <figure class="shot-card" style="margin:0;">
+                    <div class="shot-media">
+                        <img src="assets/phone_progress.jpg" alt="Workout consistency heatmap and volume chart" loading="lazy">
+                    </div>
+                    <figcaption class="shot-caption" id="t-shot-4">Consistency heatmap &amp; volume charts</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Free 1-Tap Importable Routines -->
+        <section class="section" id="routines">
+            <div class="section-head">
+                <div class="section-kicker" id="t-rt-kicker">Starter Templates</div>
+                <h2 class="section-title" id="t-rt-title">Free 1-Tap Importable Routines</h2>
+                <p class="section-desc" id="t-rt-desc">
+                    Preview any routine in your browser and import it straight into Barbell Buddy in one tap.
+                </p>
+            </div>
+
+            <div class="grid-2">
+                <article class="routine-card">
+                    <div>
+                        <h3 id="t-r1-title">PPL — Push Day (Hypertrophy)</h3>
+                        <p id="t-r1-desc">Bench Press, Incline DB Press, Overhead Press, Lateral Raises &amp; Triceps Pushdown with rep ranges ready for double progression.</p>
+                        <div class="routine-meta">
+                            <span class="routine-chip" id="t-r1-m1">5 Exercises · 16 Sets</span>
+                            <span class="routine-chip" id="t-r1-m2">Reps 6–15</span>
+                        </div>
+                    </div>
+                    <a class="routine-btn" id="t-r1-btn"
+                       href="../r#H4sIAAAAAAAC_7WT0WqDMBSGXyXkagMZSdCueNfOiw10FdnYxehF1AMKNkqi66QM9hB7wj3JYhpLCxZ2I7kIyflzzvfnJAcssI_jOES_3z8o7lSBAt6jm8e-AdnKuin6W-zgXIuiWuS81wvA_vvBnFtzmUJVoTWIrECxBKV0XGKfesTByuj22HeJ2Vw6uNWH3lZJ9BrjL8fEFhex500SrUKdY1fq_As9808dnE27HdSDk6Du0gpQ0O1S4-hJZFUpYMIZO3fG2J133CZThZa2EGWWaj79ycnYk80HyAJ4fh3e_ccVUWJJ5hBfvf2QtyB5hRJeKjii33tn5JTYVzZVgLKxgmdx5pKf-B_4gP8iywwaZX5RXu_FBDiz3WSTqcmY2h3bP5N8q8cfNx0eYvoDAAA">
+                        Preview &amp; Import Routine →
+                    </a>
+                </article>
+
+                <article class="routine-card">
+                    <div>
+                        <h3 id="t-r2-title">Upper / Lower — Upper Strength &amp; Hypertrophy</h3>
+                        <p id="t-r2-desc">Balanced heavy horizontal/vertical push &amp; pull plus rear delts and arms for 4-day Upper/Lower splits.</p>
+                        <div class="routine-meta">
+                            <span class="routine-chip" id="t-r2-m1">6 Exercises · 20 Sets</span>
+                            <span class="routine-chip" id="t-r2-m2">Reps 5–18</span>
+                        </div>
+                    </div>
+                    <a class="routine-btn" id="t-r2-btn"
+                       href="../r#H4sIAAAAAAAC_82TwU6EMBCGX6XpwRNRaCyu3GQ3xgO6m109bfZQYCKbdIGUIm42Jj6ET-iTWEohxNSDB6Lh0DD955__G8IJ5zjAT2UJAl2gqGjU-fn-gbrKRgrIn2WGztDdURWkKMrsiB2cqqbHGqqUtW-Ag-1JG4VMxMA5CiFPMrQSUFXqXuDAo66DK61rcHDl6qLvYKmaHpbr-5tI6Q575UHVyV5xMHtz_oF216q_kUm0fFHLWReNYSNjNp_q4szm6xtfzzUh_lw88C2KOuaAFvUh1pwbYBJSTZoBS8ff8nqMS7o1eq5t0KwfREyqadQDRMQkWtWcp0WTW7JS-pvp06h_XHi4T6BE81rwLrk_Tu6Rc-NPbP7t1G7ApYkzZcOAMGctwS1LQG_dltt4Uqsn6T37f3Iq-U49X7r4XmfqBAAA">
+                        Preview &amp; Import Routine →
+                    </a>
+                </article>
+
+                <article class="routine-card">
+                    <div>
+                        <h3 id="t-r3-title">Full Body — 3-Day Strength Foundation</h3>
+                        <p id="t-r3-desc">Back Squat, Bench Press, Romanian Deadlift, Pull-Ups &amp; Lateral Raises. Classic 3x/week compound foundation.</p>
+                        <div class="routine-meta">
+                            <span class="routine-chip" id="t-r3-m1">5 Exercises · 15 Sets</span>
+                            <span class="routine-chip" id="t-r3-m2">Reps 5–15</span>
+                        </div>
+                    </div>
+                    <a class="routine-btn" id="t-r3-btn"
+                       href="../r#H4sIAAAAAAAC_7WSwWqDQBCGX2XYswVN0Iq3ioQc0jYklB5KDmN2Gpfq2upKK6HQh-gT9kk6GhOkldJDZFmWWT7_-Zh1L7QIxKxKUwhzWcPXxydMLyKsYW0K0juTwCyvtESjci0sIZm-J6mplFhzTSJ42LcZIRYxccxc7RLggvf2CdYvFRrmChE4vm2JsuVfRdAUfOlawvDHN7er66sFc5nS7WWGb3y-WyOxm4buW4ektwksCyrLztbt23ru_w3Oz_6yXeUZaoUaIkKZqkcz5Hx5mIQ_lO132Y7diYwB97Vh2fxid8-d6KQv-kea97P1-dmTZZRXcUoQVVncDnmBhgrkYaMq6eDt9bUduxv6UANncuxwfOqx8A2vbz9xI9HGAwAA">
+                        Preview &amp; Import Routine →
+                    </a>
+                </article>
+
+                <article class="routine-card">
+                    <div>
+                        <h3 id="t-r4-title">GZCLP / Strength — Squat &amp; Bench Day</h3>
+                        <p id="t-r4-desc">T1 Heavy Back Squat (5×3), T2 Bench Press (3×10) and T3 Lat Pulldown &amp; Leg Curl accessories.</p>
+                        <div class="routine-meta">
+                            <span class="routine-chip" id="t-r4-m1">4 Exercises · 14 Sets</span>
+                            <span class="routine-chip">T1 / T2 / T3</span>
+                        </div>
+                    </div>
+                    <a class="routine-btn" id="t-r4-btn"
+                       href="../r#H4sIAAAAAAAC_6tWylOyUnKPcvYJUNBXCC4pSs1LL8lQeNQwRSG4sDSxREFNwSk1LzlDwSWxUklHKQWo2K0oMwXMSVWyiq4G63dKLEpKzclR8MhMz1AAcoA4ORtiAFBdkZKVoYWBjlIxWH25kpWlAVjQWEepBKjZzz_I19EHqC43Mw8smJtYAaRrdYaY2liQauTQgARcQFFqcTE0FIyQQ8HUFCJogM1YkCjYXEMDqCNopRzubB9gbAeU5uSk5JfnQdxriexcE6iBplgNNIIZaAq1n1bK4c4NTk0sSU1R8ElNV3AuLcqBuNjcFNnFBtBQxx8EJjAn0Eh5LBACADEi2y9nAwAA">
+                        Preview &amp; Import Routine →
+                    </a>
+                </article>
+            </div>
+
+            <div class="note-banner" id="t-rt-note">
+                Importing routines via shared links or CSV (Strong, Hevy, Jefit) is <strong>unlimited and free forever</strong> — imported routines never count against the 3 manual Free routine slots.
+            </div>
+        </section>
+
+        <!-- Transparent Free vs PRO -->
+        <section class="section">
+            <div class="section-head">
+                <div class="section-kicker" id="t-pr-kicker">Honest Pricing</div>
+                <h2 class="section-title" id="t-pr-title">Generous Free Tier. Fair PRO Upgrade.</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <span class="tier-name" id="t-free-name">Free Forever</span>
+                        <span class="tier-price free" id="t-free-price">0 €</span>
+                    </div>
+                    <ul class="tier-list" id="t-free-list">
+                        <li>Unlimited workout history &amp; local backups</li>
+                        <li>Unlimited CSV imports (Strong / Hevy / Jefit) &amp; routine links</li>
+                        <li>Up to 3 custom manual routines &amp; 5 manual exercises</li>
+                        <li>Multi-profile Plate Calculator &amp; 1RM estimator</li>
+                        <li>14-day cardless Reverse Trial + 5 full Wear OS trial sessions</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card pro">
+                    <div class="tier-header">
+                        <span class="tier-name">Barbell Buddy PRO</span>
+                        <span class="tier-price" id="t-pro-price">19,99 €/yr · or Lifetime</span>
+                    </div>
+                    <ul class="tier-list" id="t-pro-list">
+                        <li>Buddy Coach: automatic progressive overload + RIR &amp; plateau detector</li>
+                        <li>5/3/1, GZCLP &amp; hypertrophy %TM adaptive blocks</li>
+                        <li>Full offline Wear OS catalog, Quick Tile, rotary RIR &amp; HR rest alerts</li>
+                        <li>Daily Readiness via Health Connect + Superset time compression</li>
+                        <li>7/28-day Muscle Volume Balance &amp; 1RM goal date projection</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <span id="t-footer-copy">Barbell Buddy · Built independently for Android &amp; Wear OS</span>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="../index.html" id="t-link-privacy">Privacy Policy</a>
+                <a href="../terms.html" id="t-link-terms">Terms of Service</a>
+            </nav>
+        </footer>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script>
+        const i18n = window.BARBELL_BUDDY_I18N || {};
+
+        function normalizeLangCode(raw) {
+            const code = (raw || "").toLowerCase().split("-")[0];
+            return code === "in" ? "id" : code;
+        }
+
+        function resolveInitialLang() {
+            const params = new URLSearchParams(window.location.search);
+            const queryLang = normalizeLangCode(params.get("lang"));
+            if (i18n[queryLang]) return queryLang;
+
+            const browserLangs = navigator.languages || [navigator.language || "en"];
+            for (const raw of browserLangs) {
+                const code = normalizeLangCode(raw);
+                if (i18n[code]) return code;
+            }
+            return "en";
+        }
+
+        function applyLang(lang) {
+            const safeLang = i18n[lang] ? lang : "en";
+            const t = i18n[safeLang] || i18n.en;
+            if (!t) return;
+
+            document.documentElement.lang = safeLang;
+            document.documentElement.dir = safeLang === "ar" ? "rtl" : "ltr";
+            document.title = t.title;
+
+            const switcher = document.getElementById("lang-switcher");
+            if (switcher) {
+                switcher.value = safeLang;
+            }
+
+            document.getElementById("t-badge").textContent = t.badge;
+            document.getElementById("t-hero-title").textContent = t.hero_title;
+            document.getElementById("t-hero-sub").textContent = t.hero_sub;
+            document.getElementById("t-pill-1").textContent = t.pill_1;
+            document.getElementById("t-pill-2").textContent = t.pill_2;
+            document.getElementById("t-pill-3").textContent = t.pill_3;
+            document.getElementById("t-cta-play").textContent = t.cta_play;
+            document.getElementById("t-cta-routines").textContent = t.cta_routines;
+
+            document.getElementById("t-adv-kicker").textContent = t.adv_kicker;
+            document.getElementById("t-adv-title").textContent = t.adv_title;
+            document.getElementById("t-f1-tag").textContent = t.f1_tag;
+            document.getElementById("t-f1-title").textContent = t.f1_title;
+            document.getElementById("t-f1-desc").textContent = t.f1_desc;
+            document.getElementById("t-f2-tag").textContent = t.f2_tag;
+            document.getElementById("t-f2-title").textContent = t.f2_title;
+            document.getElementById("t-f2-desc").textContent = t.f2_desc;
+            document.getElementById("t-f3-tag").textContent = t.f3_tag;
+            document.getElementById("t-f3-title").textContent = t.f3_title;
+            document.getElementById("t-f3-desc").textContent = t.f3_desc;
+            document.getElementById("t-f4-tag").textContent = t.f4_tag;
+            document.getElementById("t-f4-title").textContent = t.f4_title;
+            document.getElementById("t-f4-desc").textContent = t.f4_desc;
+
+            document.getElementById("t-gal-kicker").textContent = t.gal_kicker;
+            document.getElementById("t-gal-title").textContent = t.gal_title;
+            document.getElementById("t-shot-1").textContent = t.shot_1;
+            document.getElementById("t-shot-2").textContent = t.shot_2;
+            document.getElementById("t-shot-3").textContent = t.shot_3;
+            document.getElementById("t-shot-4").textContent = t.shot_4;
+
+            document.getElementById("t-rt-kicker").textContent = t.rt_kicker;
+            document.getElementById("t-rt-title").textContent = t.rt_title;
+            document.getElementById("t-rt-desc").textContent = t.rt_desc;
+            document.getElementById("t-r1-title").textContent = t.r1_title;
+            document.getElementById("t-r1-desc").textContent = t.r1_desc;
+            document.getElementById("t-r1-m1").textContent = t.r1_m1;
+            document.getElementById("t-r1-m2").textContent = t.r1_m2;
+            document.getElementById("t-r2-title").textContent = t.r2_title;
+            document.getElementById("t-r2-desc").textContent = t.r2_desc;
+            document.getElementById("t-r2-m1").textContent = t.r2_m1;
+            document.getElementById("t-r2-m2").textContent = t.r2_m2;
+            document.getElementById("t-r3-title").textContent = t.r3_title;
+            document.getElementById("t-r3-desc").textContent = t.r3_desc;
+            document.getElementById("t-r3-m1").textContent = t.r3_m1;
+            document.getElementById("t-r3-m2").textContent = t.r3_m2;
+            document.getElementById("t-r4-title").textContent = t.r4_title;
+            document.getElementById("t-r4-desc").textContent = t.r4_desc;
+            document.getElementById("t-r4-m1").textContent = t.r4_m1;
+
+            ["t-r1-btn", "t-r2-btn", "t-r3-btn", "t-r4-btn"].forEach(id => {
+                const el = document.getElementById(id);
+                const hash = el.getAttribute("href").split("#")[1] || "";
+                el.setAttribute("href", `../r/?lang=${safeLang}#${hash}`);
+                el.textContent = t.rt_btn;
+            });
+
+            document.getElementById("t-rt-note").innerHTML = t.rt_note;
+
+            document.getElementById("t-pr-kicker").textContent = t.pr_kicker;
+            document.getElementById("t-pr-title").textContent = t.pr_title;
+            document.getElementById("t-free-name").textContent = t.free_name;
+            document.getElementById("t-free-price").textContent = t.free_price;
+            document.getElementById("t-free-list").innerHTML = t.free_list.map(x => `<li>${x}</li>`).join("");
+            document.getElementById("t-pro-price").textContent = t.pro_price;
+            document.getElementById("t-pro-list").innerHTML = t.pro_list.map(x => `<li>${x}</li>`).join("");
+
+            document.getElementById("t-footer-copy").textContent = t.footer_copy;
+            const privacyLink = document.getElementById("t-link-privacy");
+            privacyLink.textContent = t.link_privacy;
+            privacyLink.setAttribute("href", `../index.html?lang=${safeLang}`);
+            const termsLink = document.getElementById("t-link-terms");
+            termsLink.textContent = t.link_terms;
+            termsLink.setAttribute("href", `../terms.html?lang=${safeLang}`);
+        }
+
+        const langSwitcher = document.getElementById("lang-switcher");
+        if (langSwitcher) {
+            langSwitcher.addEventListener("change", (e) => {
+                const newLang = e.target.value;
+                applyLang(newLang);
+                const url = new URL(window.location);
+                url.searchParams.set("lang", newLang);
+                window.history.replaceState({}, "", url);
+            });
+        }
+
+        applyLang(resolveInitialLang());
+    </script>
+</body>
+</html>
