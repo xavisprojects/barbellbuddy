@@ -52,7 +52,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Honest Pricing",
         pr_title: "Generous Free Tier. Fair PRO Upgrade.",
         free_name: "Free Forever",
-        free_price: "0 €",
+        free_price: "Free",
         free_list: [
             "Unlimited workout history & local backups",
             "Unlimited CSV imports (Strong / Hevy / Jefit) & routine links",
@@ -60,7 +60,7 @@ window.BARBELL_BUDDY_I18N = {
             "Multi-profile Plate Calculator & 1RM estimator",
             "14-day cardless Reverse Trial + 5 full Wear OS trial sessions"
         ],
-        pro_price: "19,99 €/yr · or Lifetime",
+        pro_price: "Monthly · Annual · Lifetime",
         pro_list: [
             "Buddy Coach: automatic progressive overload + RIR & plateau detector",
             "5/3/1, GZCLP & hypertrophy %TM adaptive blocks",
@@ -125,7 +125,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Precio Transparente",
         pr_title: "Versión Gratis Generosa. PRO Justo.",
         free_name: "Gratis Para Siempre",
-        free_price: "0 €",
+        free_price: "Gratis",
         free_list: [
             "Historial de entrenamientos ilimitado y backups locales",
             "Importación ilimitada de CSV (Strong / Hevy / Jefit) y enlaces",
@@ -133,7 +133,7 @@ window.BARBELL_BUDDY_I18N = {
             "Calculadora de discos multi-perfil y estimador de 1RM",
             "14 días de Reverse Trial sin tarjeta + 5 sesiones completas en Wear OS"
         ],
-        pro_price: "19,99 €/año · o Vitalicio",
+        pro_price: "Mensual · Anual · Vitalicio",
         pro_list: [
             "Buddy Coach: sobrecarga progresiva automática + RIR y detector de estancamientos",
             "Bloques adaptativos %TM (5/3/1, GZCLP e hipertrofia)",
@@ -198,7 +198,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Faire Preise",
         pr_title: "Großzügige Free-Version. Faires PRO-Upgrade.",
         free_name: "Für immer Gratis",
-        free_price: "0 €",
+        free_price: "Gratis",
         free_list: [
             "Unbegrenzte Trainingshistorie & lokale Backups",
             "Unbegrenzter CSV-Import (Strong / Hevy / Jefit) & Plan-Links",
@@ -206,7 +206,7 @@ window.BARBELL_BUDDY_I18N = {
             "Multi-Profil Scheibenrechner & 1RM-Schätzer",
             "14 Tage Reverse Trial ohne Karte + 5 volle Wear OS-Testsitzungen"
         ],
-        pro_price: "19,99 €/Jahr · oder Lifetime",
+        pro_price: "Monatlich · Jährlich · Lifetime",
         pro_list: [
             "Buddy Coach: automatische Überlastung + RIR & Stagnationserkennung",
             "Adaptive %TM-Blöcke (5/3/1, GZCLP & Hypertrophie)",
@@ -271,7 +271,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Tarifs Transparents",
         pr_title: "Version Gratuite Généreuse. PRO Équitable.",
         free_name: "Gratuit à Vie",
-        free_price: "0 €",
+        free_price: "Gratuit",
         free_list: [
             "Historique d'entraînement illimité & sauvegardes locales",
             "Imports CSV illimités (Strong / Hevy / Jefit) & liens de séance",
@@ -279,7 +279,7 @@ window.BARBELL_BUDDY_I18N = {
             "Calculateur de disques multi-profils & estimateur 1RM",
             "Essai inversé 14 jours sans carte + 5 séances Wear OS complètes"
         ],
-        pro_price: "19,99 €/an · ou À Vie",
+        pro_price: "Mensuel · Annuel · À Vie",
         pro_list: [
             "Buddy Coach : surcharge progressive auto + RIR & détecteur de stagnation",
             "Blocs adaptatifs %TM (5/3/1, GZCLP & hypertrophie)",
@@ -344,7 +344,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Prezzi Chiari",
         pr_title: "Versione Gratis Generosa. PRO Onesto.",
         free_name: "Gratis per Sempre",
-        free_price: "0 €",
+        free_price: "Gratis",
         free_list: [
             "Storico allenamenti illimitato & backup locali",
             "Import CSV illimitati (Strong / Hevy / Jefit) & link schede",
@@ -352,7 +352,7 @@ window.BARBELL_BUDDY_I18N = {
             "Calcolatore dischi multi-profilo & stima 1RM",
             "14 giorni di Reverse Trial senza carta + 5 sessioni Wear OS complete"
         ],
-        pro_price: "19,99 €/anno · o A Vita",
+        pro_price: "Mensile · Annuale · A Vita",
         pro_list: [
             "Buddy Coach: sovraccarico progressivo auto + RIR e rilevatore stalli",
             "Blocchi adattivi %TM (5/3/1, GZCLP & ipertrofia)",
@@ -417,7 +417,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Preço Transparente",
         pr_title: "Versão Grátis Generosa. PRO Justo.",
         free_name: "Grátis Para Sempre",
-        free_price: "0 €",
+        free_price: "Grátis",
         free_list: [
             "Histórico de treinos ilimitado e backups locais",
             "Importações CSV ilimitadas (Strong / Hevy / Jefit) e links",
@@ -425,7 +425,7 @@ window.BARBELL_BUDDY_I18N = {
             "Calculadora de anilhas multi-perfil e estimador de 1RM",
             "14 dias de Reverse Trial sem cartão + 5 sessões completas no Wear OS"
         ],
-        pro_price: "19,99 €/ano · ou Vitalício",
+        pro_price: "Mensal · Anual · Vitalício",
         pro_list: [
             "Buddy Coach: sobrecarga progressiva automática + RIR e detector de platô",
             "Blocos adaptativos %TM (5/3/1, GZCLP e hipertrofia)",
@@ -490,7 +490,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Eerlijke Prijzen",
         pr_title: "Royale Gratis Versie. Eerlijke PRO Upgrade.",
         free_name: "Voor Altijd Gratis",
-        free_price: "0 €",
+        free_price: "Gratis",
         free_list: [
             "Onbeperkte trainingshistorie & lokale back-ups",
             "Onbeperkte CSV-imports (Strong / Hevy / Jefit) & schemalinks",
@@ -498,7 +498,7 @@ window.BARBELL_BUDDY_I18N = {
             "Multi-profiel Halterschijven-calculator & 1RM-schatter",
             "14 dagen Reverse Trial zonder kaart + 5 volledige Wear OS-testsessies"
         ],
-        pro_price: "19,99 €/jr · of Lifetime",
+        pro_price: "Maandelijks · Jaarlijks · Lifetime",
         pro_list: [
             "Buddy Coach: automatische progressive overload + RIR & plateau-detector",
             "Adaptieve %TM-blokken (5/3/1, GZCLP & hypertrofie)",
@@ -563,7 +563,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Uczciwy Cennik",
         pr_title: "Hojna Wersja Darmowa. Uczciwe PRO.",
         free_name: "Darmowa na Zawsze",
-        free_price: "0 €",
+        free_price: "Darmowe",
         free_list: [
             "Nielimitowana historia treningów i lokalne kopie zapasowe",
             "Nielimitowany import CSV (Strong / Hevy / Jefit) i linków",
@@ -571,7 +571,7 @@ window.BARBELL_BUDDY_I18N = {
             "Wieloprofilowy kalkulator talerzy i estymator 1RM",
             "14 dni Reverse Trial bez karty + 5 pełnych sesji na Wear OS"
         ],
-        pro_price: "19,99 €/rok · lub Dożywotnio",
+        pro_price: "Miesięczny · Roczny · Dożywotni",
         pro_list: [
             "Buddy Coach: automatyczna progresja + RIR i wykrywacz stagnacji",
             "Adaptacyjne bloki %TM (5/3/1, GZCLP i hipertrofia)",
@@ -636,7 +636,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Честные цены",
         pr_title: "Щедрая бесплатная версия. Разумный PRO.",
         free_name: "Бесплатно навсегда",
-        free_price: "0 €",
+        free_price: "Бесплатно",
         free_list: [
             "Безлимитная история тренировок и локальные бэкапы",
             "Безлимитный импорт CSV (Strong / Hevy / Jefit) и ссылок",
@@ -644,7 +644,7 @@ window.BARBELL_BUDDY_I18N = {
             "Мультипрофильный калькулятор блинов и расчёт 1RM",
             "14 дней Reverse Trial без карты + 5 полных сессий на Wear OS"
         ],
-        pro_price: "19,99 €/год · или Навсегда",
+        pro_price: "Месяц · Год · Навсегда",
         pro_list: [
             "Buddy Coach: автопрогрессия + учёт RIR и детектор плато",
             "Адаптивные блоки %TM (5/3/1, GZCLP и гипертрофия)",
@@ -709,7 +709,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Прозорі ціни",
         pr_title: "Щедра безкоштовна версія. Чесний PRO.",
         free_name: "Безкоштовно назавжди",
-        free_price: "0 €",
+        free_price: "Безкоштовно",
         free_list: [
             "Безлімітна історія тренувань та локальні резервні копії",
             "Безлімітний імпорт CSV (Strong / Hevy / Jefit) і посилань",
@@ -717,7 +717,7 @@ window.BARBELL_BUDDY_I18N = {
             "Мультипрофільний калькулятор млинців та оцінка 1RM",
             "14 днів Reverse Trial без картки + 5 повних сесій на Wear OS"
         ],
-        pro_price: "19,99 €/рік · або Назавжди",
+        pro_price: "Місяць · Рік · Назавжди",
         pro_list: [
             "Buddy Coach: автопрогресія + RIR і детектор плато",
             "Адаптивні блоки %TM (5/3/1, GZCLP та гіпертрофія)",
@@ -782,7 +782,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Şeffaf Fiyatlandırma",
         pr_title: "Cömert Ücretsiz Sürüm. Adil PRO Yükseltme.",
         free_name: "Sonsuza Dek Ücretsiz",
-        free_price: "0 €",
+        free_price: "Ücretsiz",
         free_list: [
             "Sınırsız antrenman geçmişi ve yerel yedeklemeler",
             "Sınırsız CSV (Strong / Hevy / Jefit) ve bağlantı aktarımı",
@@ -790,7 +790,7 @@ window.BARBELL_BUDDY_I18N = {
             "Çok profilli Plaka Hesaplayıcı ve 1RM tahmincisi",
             "Kartsız 14 günlük Reverse Trial + 5 tam Wear OS deneme seansı"
         ],
-        pro_price: "19,99 €/yıl · veya Ömür Boyu",
+        pro_price: "Aylık · Yıllık · Ömür Boyu",
         pro_list: [
             "Buddy Coach: otomatik progresif yükleme + RIR ve plato dedektörü",
             "Uyarlanabilir %TM blokları (5/3/1, GZCLP ve hipertrofi)",
@@ -855,7 +855,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "تسعير واضح",
         pr_title: "نسخة مجانية سخية. وترقية PRO عادلة.",
         free_name: "مجاني للأبد",
-        free_price: "0 €",
+        free_price: "مجاني",
         free_list: [
             "سجل تمارين غير محدود ونسخ احتياطي محلي",
             "استيراد غير محدود لملفات CSV (Strong / Hevy / Jefit) والروابط",
@@ -863,7 +863,7 @@ window.BARBELL_BUDDY_I18N = {
             "حاسبة الأوزان والأقراص متعددة الملفات ومقدّر 1RM",
             "تجربة عكسية 14 يوماً بدون بطاقة + 5 جلسات كاملة على Wear OS"
         ],
-        pro_price: "19,99 €/سنة · أو مدى الحياة",
+        pro_price: "شهري · سنوي · مدى الحياة",
         pro_list: [
             "Buddy Coach: زيادة أحمال تلقائية + RIR وكاشف ثبات المستوى",
             "كتل %TM التكيفية (5/3/1 و GZCLP والتضخيم)",
@@ -928,7 +928,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "पारदर्शी कीमत",
         pr_title: "उदार मुफ्त वर्ज़न। उचित PRO अपग्रेड।",
         free_name: "हमेशा के लिए मुफ्त",
-        free_price: "0 €",
+        free_price: "मुफ्त",
         free_list: [
             "असीमित वर्कआउट इतिहास और लोकल बैकअप",
             "असीमित CSV इम्पोर्ट (Strong / Hevy / Jefit) और रूटीन लिंक",
@@ -936,7 +936,7 @@ window.BARBELL_BUDDY_I18N = {
             "मल्टी-प्रोफाइल प्लेट कैलकुलेटर और 1RM एस्टिमेटर",
             "बिना कार्ड 14-दिन का रिवर्स ट्रायल + 5 पूरे Wear OS ट्रायल सेशन"
         ],
-        pro_price: "19,99 €/वर्ष · या लाइफटाइम",
+        pro_price: "मासिक · वार्षिक · लाइफटाइम",
         pro_list: [
             "Buddy Coach: ऑटो प्रोग्रेसिव ओवरलोड + RIR और प्लैटो डिटेक्टर",
             "अडैप्टिव %TM ब्लॉक्स (5/3/1, GZCLP और हाइपरट्रॉफी)",
@@ -1001,7 +1001,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "স্বচ্ছ মূল্য",
         pr_title: "উদার ফ্রি সংস্করণ। ন্যায্য PRO আপগ্রেড।",
         free_name: "চিরকাল ফ্রি",
-        free_price: "0 €",
+        free_price: "ফ্রি",
         free_list: [
             "সীমাহীন ওয়ার্কআউট ইতিহাস ও লোকাল ব্যাকআপ",
             "সীমাহীন CSV ইম্পোর্ট (Strong / Hevy / Jefit) ও রুটিন লিংক",
@@ -1009,7 +1009,7 @@ window.BARBELL_BUDDY_I18N = {
             "মাল্টি-প্রোফাইল প্লেট ক্যালকুলেটর ও 1RM অনুমানক",
             "কার্ড ছাড়া ১৪ দিনের রিভার্স ট্রায়াল + ৫টি পূর্ণ Wear OS সেশন"
         ],
-        pro_price: "19,99 €/বছর · অথবা লাইফটাইম",
+        pro_price: "মাসিক · বার্ষিক · লাইফটাইম",
         pro_list: [
             "Buddy Coach: অটো প্রগ্রেসিভ ওভারলোড + RIR ও প্ল্যাটো ডিটেক্টর",
             "অ্যাডাপ্টিভ %TM ব্লক (5/3/1, GZCLP ও হাইপারট্রফি)",
@@ -1074,7 +1074,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Harga Jujur",
         pr_title: "Versi Gratis Leluasa. Upgrade PRO Adil.",
         free_name: "Gratis Selamanya",
-        free_price: "0 €",
+        free_price: "Gratis",
         free_list: [
             "Riwayat latihan tanpa batas & cadangan lokal",
             "Impor CSV (Strong / Hevy / Jefit) & tautan rutinitas tanpa batas",
@@ -1082,7 +1082,7 @@ window.BARBELL_BUDDY_I18N = {
             "Kalkulator pelat barbel multi-profil & estimator 1RM",
             "Reverse Trial 14 hari tanpa kartu + 5 sesi penuh Wear OS"
         ],
-        pro_price: "19,99 €/thn · atau Seumur Hidup",
+        pro_price: "Bulanan · Tahunan · Seumur Hidup",
         pro_list: [
             "Buddy Coach: progressive overload otomatis + RIR & detektor stagnasi",
             "Blok adaptif %TM (5/3/1, GZCLP & hipertrofi)",
@@ -1147,7 +1147,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "Giá Minh Bạch",
         pr_title: "Bản Miễn Phí Hào Phóng. Nâng Cấp PRO Hợp Lý.",
         free_name: "Miễn Phí Mãi Mãi",
-        free_price: "0 €",
+        free_price: "Miễn phí",
         free_list: [
             "Lịch sử tập luyện không giới hạn & sao lưu cục bộ",
             "Nhập CSV (Strong / Hevy / Jefit) & liên kết giáo án không giới hạn",
@@ -1155,7 +1155,7 @@ window.BARBELL_BUDDY_I18N = {
             "Tính bánh tạ đa hồ sơ & ước tính 1RM",
             "14 ngày dùng thử không thẻ + 5 buổi tập đầy đủ trên Wear OS"
         ],
-        pro_price: "19,99 €/năm · hoặc Trọn Đời",
+        pro_price: "Tháng · Năm · Trọn đời",
         pro_list: [
             "Buddy Coach: tự động tăng tiến + RIR & phát hiện chững tạ",
             "Chu kỳ %TM thích ứng (5/3/1, GZCLP & phát triển cơ)",
@@ -1220,7 +1220,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "ราคาชัดเจน",
         pr_title: "เวอร์ชันฟรีใจกว้าง อัปเกรด PRO ราคาเป็นธรรม",
         free_name: "ฟรีตลอดไป",
-        free_price: "0 €",
+        free_price: "ฟรี",
         free_list: [
             "ประวัติการฝึกไม่จำกัดและสำรองข้อมูลในเครื่อง",
             "นำเข้า CSV (Strong / Hevy / Jefit) และลิงก์ตารางไม่จำกัด",
@@ -1228,7 +1228,7 @@ window.BARBELL_BUDDY_I18N = {
             "เครื่องคำนวณแผ่นน้ำหนักหลายโปรไฟล์และคำนวณ 1RM",
             "ทดลองใช้ 14 วันไม่ต้องใช้บัตร + ใช้งาน Wear OS เต็มรูปแบบ 5 ครั้ง"
         ],
-        pro_price: "19,99 €/ปี · หรือ ตลอดชีพ",
+        pro_price: "รายเดือน · รายปี · ตลอดชีพ",
         pro_list: [
             "Buddy Coach: เพิ่มน้ำหนักอัตโนมัติ + RIR และตรวจจับจุดตัน",
             "บล็อกฝึกแบบปรับตัว %TM (5/3/1, GZCLP และไฮเปอร์โทรฟี)",
@@ -1293,7 +1293,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "明朗な料金体系",
         pr_title: "充実の無料版。納得のPROプラン。",
         free_name: "永久無料",
-        free_price: "0 €",
+        free_price: "無料",
         free_list: [
             "無制限のトレーニング履歴とローカルバックアップ",
             "無制限のCSVインポート（Strong / Hevy / Jefit）＆共有リンク",
@@ -1301,7 +1301,7 @@ window.BARBELL_BUDDY_I18N = {
             "マルチプロフィール対応プレート計算機＆1RM推定",
             "カード不要14日間リバーストライアル＋Wear OSフル機能5回体験"
         ],
-        pro_price: "年額 19,99 € · または買い切り",
+        pro_price: "月額 · 年額 · 買い切り",
         pro_list: [
             "Buddy Coach：自動漸進性過負荷＋RIR管理＆停滞検知",
             "適応型 %TM ブロック（5/3/1、GZCLP、筋肥大）",
@@ -1366,7 +1366,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "투명한 가격",
         pr_title: "넉넉한 무료 버전. 합리적인 PRO 업그레이드.",
         free_name: "평생 무료",
-        free_price: "0 €",
+        free_price: "무료",
         free_list: [
             "무제한 운동 기록 및 로컬 백업",
             "Strong / Hevy / Jefit CSV 및 루틴 링크 무제한 가져오기",
@@ -1374,7 +1374,7 @@ window.BARBELL_BUDDY_I18N = {
             "다중 프로필 원판 계산기 & 1RM 추정기",
             "카드 없는 14일 역체험 + Wear OS 전체 기능 5회 체험"
         ],
-        pro_price: "연 19,99 € · 또는 평생 소장",
+        pro_price: "월간 · 연간 · 평생 소장",
         pro_list: [
             "Buddy Coach: 자동 점진적 과부하 + RIR 및 정체기 감지",
             "적응형 %TM 블록 (5/3/1, GZCLP & 근비대)",
@@ -1439,7 +1439,7 @@ window.BARBELL_BUDDY_I18N = {
         pr_kicker: "透明定价",
         pr_title: "诚意满满的免费版。公平合理的 PRO 升级。",
         free_name: "永久免费",
-        free_price: "0 €",
+        free_price: "免费",
         free_list: [
             "无限训练历史记录与本地备份",
             "无限导入 Strong / Hevy / Jefit CSV 与分享计划链接",
@@ -1447,7 +1447,7 @@ window.BARBELL_BUDDY_I18N = {
             "多规格杠铃配重计算器与 1RM 估算",
             "14 天免绑卡完整试用 + 5 次完整 Wear OS 试用"
         ],
-        pro_price: "19,99 €/年 · 或买断版",
+        pro_price: "月付 · 年付 · 买断版",
         pro_list: [
             "Buddy Coach：自动渐进超负荷 + RIR 追踪与平台期检测",
             "%TM 自适应周期模板（5/3/1、GZCLP 与肌肥大）",
